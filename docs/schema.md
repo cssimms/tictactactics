@@ -1,46 +1,15 @@
-# Schema Information
+# Schema
 
-## notes
+## MVP schema will only need users and games
+
+## games
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
-
-## notebooks
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
-
-## reminders
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
-
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-tag_id      | integer   | not null, foreign key (references tags), indexed
+status      | string    | not null, default: "open"
+moveset     | string    | not null, default: '{}'
+x_id        | integer   | not null, foreign key (references player as x), indexed
+o_id        | integer   | not null, foreign key (references player as o), indexed
 
 ## users
 column name     | data type | details
@@ -49,3 +18,12 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+
+<!-- ## Extra Features will need as Follows
+
+## friendships
+column name     | data type | details
+----------------|-----------|---------------
+id              | integer   | not null, primary key
+user_id_one     | integer   | not_null, foreign key
+user_id_two     | integer   | not_null, foreign key -->
