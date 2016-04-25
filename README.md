@@ -40,7 +40,7 @@ the player's turn (not MVP)
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 
-[views]: ./docs/viewwireframes.md
+[viewwireframes]: ./docs/viewwireframes.md
 [components]: ./docs/components.md
 [flux-cycles]: ./docs/flux-cycles.md
 [api-endpoints]: ./docs/api-endpoints.md
