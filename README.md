@@ -1,6 +1,6 @@
 # Tic Tac Tactics
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku] Coming Soon!
 
 [heroku]: http://www.herokuapp.com
 
@@ -35,12 +35,10 @@ the player's turn (not MVP)
 
 ## Design Docs
 * [View Wireframes][viewwireframes]
-* [Routes][routes]
 * [React Components][components]
 * [Flux Cycles][flux-cycles]
 * [DB schema][schema]
 
-[routes]: ./docs/routes.md
 [viewwireframes]: ./docs/viewwireframes.md
 [components]: ./docs/components.md
 [flux-cycles]: ./docs/flux-cycles.md
