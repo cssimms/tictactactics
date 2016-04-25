@@ -35,15 +35,15 @@ the player's turn (not MVP)
 
 ## Design Docs
 * [View Wireframes][viewwireframes]
+* [Routes][routes]
 * [React Components][components]
 * [Flux Cycles][flux-cycles]
-* [API endpoints][api-endpoints]
 * [DB schema][schema]
 
+[routes]: ./docs/routes.md
 [viewwireframes]: ./docs/viewwireframes.md
 [components]: ./docs/components.md
 [flux-cycles]: ./docs/flux-cycles.md
-[api-endpoints]: ./docs/api-endpoints.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
@@ -143,10 +143,3 @@ the player's turn (not MVP)
 - [ ] Flush out stats for each user, win %
 - [ ] Integrate pusher, for immediate response when it's player's turn
 - [ ] Live games
-
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
