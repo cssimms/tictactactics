@@ -19,7 +19,6 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Interesting and interactive seed data to demonstrate the site's features
 - [ ] Game creation and play between two different users
 - [ ] Store current and past games on the database
-- [ ] User ranking based on past wins
 - [ ] Hosting on Heroku
 
 ### Specific Features
@@ -28,7 +27,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Log in / Log out, including as a Guest/Demo User (MVP)
 - [ ] Create, play, and complete games of TTT (MVP)
 - [ ] History of past games stored in player's history (MVP)
-- [ ] User ranking and leaderboard page (MVP)
+- [ ] User ranking and leaderboard page (not MVP)
 - [ ] Enable data push to clients, updating play page when it becomes
 the player's turn (not MVP)
 - [ ] Animated gameplay (not MVP)
@@ -58,7 +57,7 @@ the player's turn (not MVP)
 - [ ] blank landing page after signin
 
 
-### Phase 2: Setup Flux Architecture / integrate user components (1 day)
+### Phase 2: Setup Flux Architecture / integrate user components (2 day)
 
 **Objective:** All Skeleton and basic routes done
 
@@ -71,13 +70,14 @@ the player's turn (not MVP)
 - [ ] fill out basic signin and signup forms
 
 
-### Phase 3: Game Model, finalize game logic (1 day)
+### Phase 3: Game Model, finalize game logic (2 days)
 
   **Objective:** Game logic finished, model and controller up
 
   - [ ] create `Game` model
+  - [ ] write custom game validations for valid play
   - [ ] CRUD API for games (`GamesController`)
-  - [ ] fully test and polish code for gameplay
+  - [ ] fully test and polish js code for gameplay
 
 ### Phase 4: Game API integration (0.5)
 

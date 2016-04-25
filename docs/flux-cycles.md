@@ -24,7 +24,7 @@
   0. `receiveSingleGame` is set as the callback.
 
 * `saveGame`
-  0. invoked from `CurrentGame` `willUnmount`
+  0. invoked from `CurrentGame` `handleSubmit`
   0. `POST /api/game/:id` is called.
   0. `receiveSingleGame` is set as the callback.
 

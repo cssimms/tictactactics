@@ -1,5 +1,5 @@
 var ServerActions = require('../actions/serverActions.js');
- 
+
  module.exports = {
  // Example Function
  // createPokemon: function (pokemon, callback) {
@@ -14,4 +14,4 @@ var ServerActions = require('../actions/serverActions.js');
  // }
  // });
  // }
- }
+ };
