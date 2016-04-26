@@ -1,4 +1,4 @@
-var ServerActions = require('../actions/serverActions.js');
+var ServerActions = require('../actions/user/ServerActions');
 
  module.exports = {
    getCurrentUser: function () {
@@ -12,20 +12,18 @@ var ServerActions = require('../actions/serverActions.js');
          ServerActions.handleError(response);
        }
      });
+   },
+
+   signIn: function () {
+     $.ajax({
+       url: "api/session",
+       type: "POST",
+       success: function(response){
+         ServerActions.signIn(response);
+       }
+     });
    }
 
 
- // Example Function
- // createPokemon: function (pokemon, callback) {
- // $.ajax({
- // url: 'api/pokemon',
- // method: 'POST',
- // dataType: 'json',
- // data: {pokemon: pokemon},
- // success: function (pokemon) {
- // ServerActions.receiveSinglePokemon(pokemon);
- // callback && callback(pokemon.id);
- // }
- // });
- // }
+
  };

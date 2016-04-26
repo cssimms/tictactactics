@@ -1,9 +1,31 @@
-var React = require('react');
+var React = require('react'),
+UserClientActions = require('../actions/user/UserClientActions'),
+UserStore = require('../stores/UserStore');
 
 var SignInForm = React.createClass({
+  getInitialState: function() {
+    return {
+      user: ""
+    };
+  },
 
-  handleSubmit: function () {
+  componentDidMount: function() {
+    UserStore.addListener(this._onChange);
+  },
 
+  _onChange: function () {
+    this.setState({
+      user: UserStore.current_user()
+    });
+  },
+
+  handleSubmit: function (event) {
+    console.log(event.target);
+    var userInfo = {
+      username: event.target
+    };
+    event.preventDefault();
+    UserClientActions.signIn(userInfo);
   },
 
   render: function () {
