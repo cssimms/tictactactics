@@ -9,15 +9,23 @@ var _users = {};
 var _currentUser, _errors = [];
 
 UserStore.current_user = function () {
-  return _currentUser[0];
+  return _currentUser;
+};
+
+UserStore.errors = function () {
+  return _errors;
 };
 
 UserStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case UserConstants.SIGN_IN:
-        _currentUser.push(payload.user);
+        _currentUser = payload.user;
+      break;
+    case UserConstants.LOGIN_ERROR:
+        _errors.push(payload.errors);
       break;
   }
+  this.__emitChange();
 };
 
 

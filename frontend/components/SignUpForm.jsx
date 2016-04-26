@@ -1,18 +1,15 @@
-var React = require('react');
+var React = require('react'),
+UserClientActions = require('../actions/user/UserClientActions');
+var SignUpForm = React.createClass({
 
-var UserForm = React.createClass({
+  handleSubmit: function () {
+
+  },
 
   render: function () {
-    var formTitle = '';
-
-    if (this.props.formType === 'signin') {
-      formTitle = 'Sign In';
-    } else if (this.prop.formType === 'signup') {
-      formTitle = 'Register';
-    }
     return(
       <div>
-        <h3>{formTitle}</h3>
+        <h3>Register</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Username
             <input type='text' placeholder='Username'/>
@@ -27,3 +24,5 @@ var UserForm = React.createClass({
   }
 
 });
+
+module.exports = SignUpForm;

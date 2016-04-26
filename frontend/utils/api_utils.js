@@ -1,4 +1,4 @@
-var ServerActions = require('../actions/user/ServerActions');
+var UserServerActions = require('../actions/user/UserServerActions');
 
  module.exports = {
    getCurrentUser: function () {
@@ -6,20 +6,24 @@ var ServerActions = require('../actions/user/ServerActions');
        url: "api/user",
        type: "GET",
        success: function(response){
-         ServerActions.receiveCurrentUser(response);
+         UserServerActions.receiveCurrentUser(response);
        },
        error: function (response) {
-         ServerActions.handleError(response);
+         UserServerActions.handleError(response);
        }
      });
    },
 
-   signIn: function () {
+   signIn: function (userInfo) {
      $.ajax({
        url: "api/session",
        type: "POST",
+       data: {user: userInfo},
        success: function(response){
-         ServerActions.signIn(response);
+         UserServerActions.signIn(response);
+       },
+       error: function (response) {
+         UserServerActions.loginError(response);
        }
      });
    }

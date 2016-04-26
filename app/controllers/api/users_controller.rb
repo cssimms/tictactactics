@@ -8,9 +8,9 @@ class Api::UsersController < ApplicationController
   def show
     @user = current_user
     if @user
-      render: show
+      render show
     else
-      render: :errors status: 402
+      render :errors, status: 402
     end
   end
 
@@ -18,9 +18,9 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render: 'api/users/show'
+      render 'api/users/show'
     else
-      render: :errors, status: 422
+      render :errors, status: 422
     end
   end
 

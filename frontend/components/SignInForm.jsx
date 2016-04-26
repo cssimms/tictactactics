@@ -5,7 +5,8 @@ UserStore = require('../stores/UserStore');
 var SignInForm = React.createClass({
   getInitialState: function() {
     return {
-      user: ""
+      user: [],
+      errors: []
     };
   },
 
@@ -15,23 +16,32 @@ var SignInForm = React.createClass({
 
   _onChange: function () {
     this.setState({
-      user: UserStore.current_user()
+      user: UserStore.current_user(),
+      errors: UserStore.errors()
     });
   },
 
   handleSubmit: function (event) {
-    console.log(event.target);
-    var userInfo = {
-      username: event.target
-    };
     event.preventDefault();
+    var userInfo = {
+      username: event.target[0].value,
+      password: event.target[1].value
+    };
     UserClientActions.signIn(userInfo);
+  },
+
+  errors: function () {
+    return(
+      <div>{this.state.errors}</div>
+    );
   },
 
   render: function () {
     return(
       <div>
         <h3>Sign In</h3>
+        <h4>{this.state.errors}</h4>
+        <h5>{this.state.user.username}</h5>
         <form onSubmit={this.handleSubmit}>
           <label>Username
             <input type='text' placeholder='Username'/>

@@ -5,7 +5,14 @@ module.exports = {
   signIn: function (res) {
     Dispatcher.dispatch({
       actionType: UserConstants.SIGN_IN,
-      user: res.user
+      user: res
+    });
+  },
+
+  loginError: function (res) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.LOGIN_ERROR,
+      errors: res
     });
   }
 };
