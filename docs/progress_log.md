@@ -8,3 +8,4 @@
 - wrote dispatcher
 - setup shell of entryfile (entry.jsx)
 - wrote app.jsx component shell (mother component)
+- user model prepped for auth

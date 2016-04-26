@@ -1,2 +1,3 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
+  
 end
