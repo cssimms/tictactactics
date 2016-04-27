@@ -6,10 +6,9 @@ InfoBox = require('./InfoBox');
  	render: function () {
  		return(
  			<div>
-        TicTacTactics <br/>
-      <MenuBar />
-      <InfoBox />
- 				{this.props.children}
+        <MenuBar />
+        <InfoBox />
+   				{this.props.children}
  			</div>
  		);
  	}
