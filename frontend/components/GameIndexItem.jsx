@@ -1,10 +1,8 @@
 var React = require('react');
 
-var User = React.createClass({
+var GameIndexItem = React.createClass({
   getInitialState: function() {
-    return {
-      username: ""
-    };
+
   },
 
   render: function () {
@@ -14,4 +12,4 @@ var User = React.createClass({
   }
 });
 
-module.exports = User;
+module.exports = GameIndexItem;
