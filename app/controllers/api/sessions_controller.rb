@@ -6,7 +6,8 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render :errors, status: 422
+      @errors = ["Invalid Password"]
+      render "api/errors", status: 401
     end
   end
 

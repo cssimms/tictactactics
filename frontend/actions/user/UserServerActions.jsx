@@ -9,10 +9,10 @@ module.exports = {
     });
   },
 
-  loginError: function (res) {
+  signInError: function (res) {
     Dispatcher.dispatch({
       actionType: UserConstants.LOGIN_ERROR,
-      errors: res
+      errors: res.responseJSON['errors']
     });
   }
 };

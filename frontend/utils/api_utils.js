@@ -23,7 +23,7 @@ var UserServerActions = require('../actions/user/UserServerActions');
          UserServerActions.signIn(response);
        },
        error: function (response) {
-         UserServerActions.loginError(response);
+         UserServerActions.signInError(response);
        }
      });
    },
@@ -35,6 +35,16 @@ var UserServerActions = require('../actions/user/UserServerActions');
        data: {user: userInfo},
        success: function(response){
          UserServerActions.signIn(response);
+       }
+     });
+   },
+
+   signOut: function (userInfo) {
+     $.ajax({
+       url: "api/session",
+       type: "DELETE",
+       success: function(response){
+         UserServerActions.signOut(response);
        }
      });
    }

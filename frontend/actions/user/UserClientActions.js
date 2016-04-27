@@ -7,5 +7,9 @@ module.exports ={
 
   signUp: function (userInfo) {
     ApiUtil.signUp(userInfo);
+  },
+
+  signOut: function (userInfo) {
+    ApiUtil.signOut(userInfo);
   }
 };

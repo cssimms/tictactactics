@@ -1,6 +1,7 @@
 var React = require('react'),
 UserClientActions = require('../actions/user/UserClientActions'),
-UserStore = require('../stores/UserStore');
+UserStore = require('../stores/UserStore'),
+HashHistory = require('react-router').hashHistory;
 
 var SignInForm = React.createClass({
   getInitialState: function() {
@@ -15,10 +16,14 @@ var SignInForm = React.createClass({
   },
 
   _onChange: function () {
+    if (UserStore.current_user()) {
+      HashHistory.push('/');
+    }
     this.setState({
       user: UserStore.current_user(),
       errors: UserStore.errors()
     });
+
   },
 
   handleSubmit: function (event) {
@@ -31,9 +36,15 @@ var SignInForm = React.createClass({
   },
 
   errors: function () {
-    return(
-      <div>{this.state.errors}</div>
-    );
+    if (!this.state.errors) {
+      return;
+    } else {
+      return(
+        this.state.errors.map(function(err, i){
+          return <li key={i}>{err}</li>;
+        }.bind(this))
+      );
+    }
   },
 
 //TODO change state of comp. while text is typed in!
@@ -42,8 +53,7 @@ var SignInForm = React.createClass({
     return(
       <div>
         <h3>Sign In</h3>
-        <h4>{this.state.errors}</h4>
-        <h5>{this.state.user.username}</h5>
+        <h4>{this.errors()}</h4>
         <form onSubmit={this.handleSubmit}>
           <label>Username
             <input type='text' placeholder='Username'/>

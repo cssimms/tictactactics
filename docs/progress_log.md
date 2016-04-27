@@ -9,3 +9,7 @@
 - setup shell of entryfile (entry.jsx)
 - wrote app.jsx component shell (mother component)
 - user model prepped for auth
+
+## Day 2 (4/26/16)
+
+- cleaned up file names
