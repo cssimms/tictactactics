@@ -1,10 +1,11 @@
 ## Component Hierarchy
 
 * `App`
+  * `Home`
   * `MenuBar`
   * `InfoBox`
   * `SignInForm`
-  * `RegisterForm`
+  * `SignUpForm`
   * `GamesIndex`
     * `GameIndexItem`
   * `GameMenu`

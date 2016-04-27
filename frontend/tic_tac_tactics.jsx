@@ -5,7 +5,7 @@
  IndexRoute = require('react-router').IndexRoute,
 hashHistory = require('react-router').hashHistory;
 
-var User = require('./components/User'),
+var UserShow = require('./components/UserShow'),
     App = require('./components/App'),
     Home = require('./components/Home'),
     SignInForm = require('./components/SignInForm'),

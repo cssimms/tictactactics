@@ -50,7 +50,7 @@ the player's turn (not MVP)
 **Objective:** Functioning rails project with Authentication
 
 - [x] create new project
-- [ ] migrate user and game tables
+- [x] migrate user and game tables
 - [x] create `User` model / controller
 - [x] authentication (session controller)
 - [x] user signup/signin pages and components
@@ -65,16 +65,18 @@ the player's turn (not MVP)
 - [x] setup React Router
 - [x] setup Webpack & Flux scaffold
 - [x] write Dispatcher
-- [ ] setup basic userStore and gameStore
-- [ ] write blank skeletons for all Components
+- [x] setup basic userStore and gameStore
+- [x] write blank skeletons for all Components
 - [x] fill out basic signin and signup forms
+- [ ] basic styling of all current pages (signin/signout)
 
 
 ### Phase 3: Game Model, finalize game logic (2 days)
 
   **Objective:** Game logic finished, model and controller up
 
-  - [ ] create `Game` model
+  - [x] create `Game` model
+  - [ ] actually write `Game` model
   - [ ] write custom game validations for valid play
   - [ ] CRUD API for games (`GamesController`)
   - [ ] fully test and polish js code for gameplay
@@ -141,3 +143,4 @@ the player's turn (not MVP)
 - [ ] Flush out stats for each user, win %
 - [ ] Integrate pusher, for immediate response when it's player's turn
 - [ ] Live games
+- [ ] Sign in Button changes to user dropdown menu on login

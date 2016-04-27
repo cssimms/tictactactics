@@ -23,6 +23,14 @@
 - error handling for signup complete
 - updated wireframes with new component organization
 - updated component hierarchy
+- so many problems with heroku
+- skeleton for menubar and info box
+- games table and controller generated
+
+
 
 Q's :
   - labels on input elements that are invisible??
+  - GameHistoryItem component necessary?? GameHistory could just
+  generate some li's with className=ghistitem or something
+  - start styling now? wait until game logic is integrated??
