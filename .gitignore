@@ -1,6 +1,7 @@
 # Ignore bundler and config
 /.bundle
 bundle.js
+bundle.js.map
 
 # Ignore all logfiles and tempfiles.
 /log/*

@@ -1,4 +1,4 @@
-var Dispatcher = require('../../dispatcher/Dispatcher'),
+var Dispatcher = require('../../dispatcher/dispatcher'),
 UserConstants = require('../../constants/UserConstants');
 
 module.exports = {

@@ -1,9 +1,17 @@
+class Api::GamesController < ApplicationController
+  def index
+    @games = Games.all
+  end
 
+  def show
+  end
 
+  def create
+  end
 
+  def update
+  end
 
-validate :user_is_cool
-
-def user_is_cool
-  self.errors[:coolness] = "string"
+  def destroy
+  end
 end
