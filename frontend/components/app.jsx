@@ -6,9 +6,9 @@ module.exports = React.createClass({
 	render: function () {
 		return(
 			<div>
-      <MenuBar />
-      <InfoBox />
- 				{this.props.children}
+	      <MenuBar />
+	      <InfoBox />
+	 				{this.props.children}
 			</div>
 		);
 	}
