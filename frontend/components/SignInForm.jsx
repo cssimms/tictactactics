@@ -36,6 +36,8 @@ var SignInForm = React.createClass({
     );
   },
 
+//TODO change state of comp. while text is typed in!
+
   render: function () {
     return(
       <div>

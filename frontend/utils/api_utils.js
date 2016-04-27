@@ -3,7 +3,7 @@ var UserServerActions = require('../actions/user/UserServerActions');
  module.exports = {
    getCurrentUser: function () {
      $.ajax({
-       url: "api/user",
+       url: "api/users",
        type: "GET",
        success: function(response){
          UserServerActions.receiveCurrentUser(response);
@@ -26,8 +26,17 @@ var UserServerActions = require('../actions/user/UserServerActions');
          UserServerActions.loginError(response);
        }
      });
+   },
+
+   signUp: function (userInfo) {
+     $.ajax({
+       url: "api/users",
+       type: "POST",
+       data: {user: userInfo},
+       success: function(response){
+         UserServerActions.signIn(response);
+       }
+     });
    }
-
-
 
  };

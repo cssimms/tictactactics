@@ -1,10 +1,28 @@
 var React = require('react'),
-UserClientActions = require('../actions/user/UserClientActions');
+UserClientActions = require('../actions/user/UserClientActions'),
+UserStore = require('../stores/UserStore'),
+HashHistory = require('react-router').hashHistory;
+
 var SignUpForm = React.createClass({
-
-  handleSubmit: function () {
-
+  componentDidMount: function() {
+    UserStore.addListener(this._onChange);
   },
+
+  _onChange: function () {
+    if (UserStore.current_user()) {
+      HashHistory.push('/');
+    }
+  },
+
+  handleSubmit: function (event) {
+    var userInfo = {
+      username: event.target[0].value,
+      password: event.target[1].value
+    };
+    UserClientActions.signUp(userInfo);
+  },
+
+//TODO update state of comp as text is typed in
 
   render: function () {
     return(
