@@ -3,13 +3,14 @@
 * `App`
   * `MenuBar`
   * `InfoBox`
+  * `SignInForm`
+  * `RegisterForm`
   * `GamesIndex`
     * `GameIndexItem`
   * `GameMenu`
-  * `GameHistory`
-    * `GameHistoryItem`
   * `CurrentGame`
     * `GameInterface`
+      * `GameCell`
   * `UserShow`
-  * `SignInForm`
-  * `RegisterForm`
+    * `GameHistory`
+    * `GameHistoryItem`

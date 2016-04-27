@@ -20,7 +20,8 @@ class Api::UsersController < ApplicationController
       login(@user)
       render 'api/users/show'
     else
-      render :errors, status: 422
+      @errors = @user.errors.full_messages
+      render 'api/errors', status: 422
     end
   end
 
@@ -32,7 +33,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-
     params.require(:user).permit(:username, :password)
   end
 end

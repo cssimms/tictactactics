@@ -13,7 +13,11 @@ UserStore.current_user = function () {
 };
 
 UserStore.errors = function () {
-  return _errors.slice();
+  if (_errors){
+    return _errors.slice();
+  } else {
+    return null;
+  }
 };
 
 UserStore.signIn = function (user) {

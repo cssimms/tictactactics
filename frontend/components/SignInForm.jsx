@@ -6,48 +6,62 @@ HashHistory = require('react-router').hashHistory;
 var SignInForm = React.createClass({
   getInitialState: function() {
     return {
-      user: [],
-      errors: []
+      username: "",
+      password: "",
+      errors: ""
     };
   },
 
   componentDidMount: function() {
-    UserStore.addListener(this._onChange);
+    this.storeToken = UserStore.addListener(this._onChange);
+  },
+
+  componentWillUnmount: function() {
+      this.storeToken.remove();
   },
 
   _onChange: function () {
     if (UserStore.current_user()) {
       HashHistory.push('/');
+    } else {
+      this.setState({
+        errors: UserStore.errors()
+      });
     }
-    this.setState({
-      user: UserStore.current_user(),
-      errors: UserStore.errors()
-    });
-
   },
 
   handleSubmit: function (event) {
     event.preventDefault();
     var userInfo = {
-      username: event.target[0].value,
-      password: event.target[1].value
+      username: this.state.username,
+      password: this.state.password
     };
     UserClientActions.signIn(userInfo);
   },
 
+  nameChange: function (event) {
+    this.setState({
+      username: event.target.value
+    });
+  },
+
+  passwordChange: function (event) {
+    this.setState({
+      password: event.target.value
+    });
+  },
+
   errors: function () {
-    if (!this.state.errors) {
-      return;
-    } else {
+    if (this.state.errors) {
       return(
         this.state.errors.map(function(err, i){
           return <li key={i}>{err}</li>;
-        }.bind(this))
-      );
+          })
+        );
+    } else {
+      return;
     }
   },
-
-//TODO change state of comp. while text is typed in!
 
   render: function () {
     return(
@@ -56,10 +70,14 @@ var SignInForm = React.createClass({
         <h4>{this.errors()}</h4>
         <form onSubmit={this.handleSubmit}>
           <label>Username
-            <input type='text' placeholder='Username'/>
+            <input type='text'
+              onChange={this.nameChange}
+              placeholder='Username'/>
           </label><br/><br/>
           <label>Password
-            <input type='text' placeholder='Password'/>
+            <input type='text'
+              onChange={this.passwordChange}
+              placeholder='Password'/>
           </label>
           <input type='submit' />
         </form>

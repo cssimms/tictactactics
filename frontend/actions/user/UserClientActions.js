@@ -1,4 +1,4 @@
-var ApiUtil = require('../../utils/api_utils');
+var ApiUtil = require('../../utils/ApiUtil');
 
 module.exports ={
   signIn: function (userInfo) {

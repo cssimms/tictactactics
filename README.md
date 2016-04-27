@@ -49,25 +49,25 @@ the player's turn (not MVP)
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
+- [x] create new project
 - [ ] migrate user and game tables
-- [ ] create `User` model / controller
-- [ ] authentication (session controller)
-- [ ] user signup/signin pages and components
-- [ ] blank landing page after signin
+- [x] create `User` model / controller
+- [x] authentication (session controller)
+- [x] user signup/signin pages and components
+- [x] blank landing page after signin
 
 
 ### Phase 2: Setup Flux Architecture / integrate user components (2 day)
 
 **Objective:** All Skeleton and basic routes done
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- [ ] setup Webpack & Flux scaffold
-- [ ] write Dispatcher
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
+- [x] setup Webpack & Flux scaffold
+- [x] write Dispatcher
 - [ ] setup basic userStore and gameStore
 - [ ] write blank skeletons for all Components
-- [ ] fill out basic signin and signup forms
+- [x] fill out basic signin and signup forms
 
 
 ### Phase 3: Game Model, finalize game logic (2 days)

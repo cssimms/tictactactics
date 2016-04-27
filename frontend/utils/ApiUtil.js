@@ -35,6 +35,9 @@ var UserServerActions = require('../actions/user/UserServerActions');
        data: {user: userInfo},
        success: function(response){
          UserServerActions.signIn(response);
+       },
+       error: function (response) {
+         UserServerActions.signInError(response);
        }
      });
    },
