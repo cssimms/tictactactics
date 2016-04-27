@@ -27,7 +27,7 @@
 - skeleton for menubar and info box
 - games table and controller generated
 
-
+TODO: sign in button not changing
 
 Q's :
   - labels on input elements that are invisible??

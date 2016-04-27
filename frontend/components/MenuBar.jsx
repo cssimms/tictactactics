@@ -45,7 +45,7 @@ var MenuBar = React.createClass({
     }
 
     return (
-      <ul className="menu-bar">
+      <ul className="menu-bar group">
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
         <li className="menu-bar-item">MenuOptions!</li>

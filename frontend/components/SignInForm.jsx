@@ -65,20 +65,19 @@ var SignInForm = React.createClass({
 
   render: function () {
     return(
-      <div>
+      <div className='userForm'>
         <h3>Sign In</h3>
         <h4>{this.errors()}</h4>
         <form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input type='text'
+          <label htmlFor='name' className='invis'>Username</label>
+            <input id='name' type='text'
               onChange={this.nameChange}
               placeholder='Username'/>
-          </label><br/><br/>
-          <label>Password
-            <input type='text'
+            <br/><br/>
+        <label htmlFor='pass' className='invis'>Password</label>
+            <input id='pass' type='text'
               onChange={this.passwordChange}
               placeholder='Password'/>
-          </label>
           <input type='submit' />
         </form>
       </div>
