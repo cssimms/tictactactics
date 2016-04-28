@@ -17,11 +17,9 @@ var MenuBar = React.createClass({
   },
 
   _onChange: function () {
-    if (UserStore.currentUser) {
       this.setState({
         currentUser: UserStore.currentUser()
       });
-    }
   },
 
   signIn: function (event) {
@@ -31,7 +29,7 @@ var MenuBar = React.createClass({
 
   signOut: function (event) {
     event.preventDefault();
-    UserClientActions.logOut(this.state.currentUser);
+    UserClientActions.signOut(this.state.currentUser);
   },
 
   render: function () {

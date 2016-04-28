@@ -14,5 +14,12 @@ module.exports = {
       actionType: UserConstants.LOGIN_ERROR,
       errors: res.responseJSON['errors']
     });
+  },
+
+  signOut: function (res) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.SIGN_OUT,
+      user: res
+    });
   }
 };

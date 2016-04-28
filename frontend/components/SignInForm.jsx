@@ -21,7 +21,7 @@ var SignInForm = React.createClass({
   },
 
   _onChange: function () {
-    if (UserStore.current_user()) {
+    if (UserStore.currentUser()) {
       HashHistory.push('/');
     } else {
       this.setState({

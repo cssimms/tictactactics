@@ -8,7 +8,7 @@ var UserStore = new Store(Dispatcher);
 var _users = {};
 var _currentUser, _errors = null;
 
-UserStore.current_user = function () {
+UserStore.currentUser = function () {
   return _currentUser;
 };
 
