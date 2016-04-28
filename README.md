@@ -68,7 +68,11 @@ the player's turn (not MVP)
 - [x] setup basic userStore and gameStore
 - [x] write blank skeletons for all Components
 - [x] fill out basic signin and signup forms
+<<<<<<< HEAD
 - [x] basic styling of all current pages (signin/signout/menubar/infobox)
+=======
+- [ ] basic styling of all current pages (signin/signout)
+>>>>>>> 001959d0026fdef76df0230930a0eda8bc328ec7
 
 
 ### Phase 3: Game Model, finalize game logic (2 days)

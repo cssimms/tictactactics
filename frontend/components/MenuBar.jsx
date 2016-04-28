@@ -17,9 +17,17 @@ var MenuBar = React.createClass({
   },
 
   _onChange: function () {
+<<<<<<< HEAD
       this.setState({
         currentUser: UserStore.currentUser()
       });
+=======
+    if (UserStore.currentUser) {
+      this.setState({
+        currentUser: UserStore.currentUser()
+      });
+    }
+>>>>>>> 001959d0026fdef76df0230930a0eda8bc328ec7
   },
 
   signIn: function (event) {
@@ -29,7 +37,11 @@ var MenuBar = React.createClass({
 
   signOut: function (event) {
     event.preventDefault();
+<<<<<<< HEAD
     UserClientActions.signOut(this.state.currentUser);
+=======
+    UserClientActions.logOut(this.state.currentUser);
+>>>>>>> 001959d0026fdef76df0230930a0eda8bc328ec7
   },
 
   render: function () {

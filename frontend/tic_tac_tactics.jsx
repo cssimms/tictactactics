@@ -6,7 +6,11 @@
 hashHistory = require('react-router').hashHistory;
 
 var UserShow = require('./components/UserShow'),
+<<<<<<< HEAD
      App = require('./components/app'),
+=======
+    App = require('./components/App'),
+>>>>>>> 001959d0026fdef76df0230930a0eda8bc328ec7
     Home = require('./components/Home'),
     SignInForm = require('./components/SignInForm'),
     SignUpForm = require('./components/SignUpForm');
