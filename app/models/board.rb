@@ -1,10 +1,10 @@
 class Board
   attr_reader :grid
-  
+
   def initialize(grid = Array.new(3){Array.new(3)})
    @grid = grid
   end
-  
+
   def [](row, col)
     @grid[row][col]
   end
@@ -12,24 +12,25 @@ class Board
   def []=(row, col, mark)
     @grid[row][col] = mark
   end
-  
+
   def place_mark(pos, mark)
     return nil unless empty?(pos)
     self[*pos] = mark
   end
-  
+
   def empty?(pos)
     true unless self[*pos]
   end
-  
+
   def winner
+    win = nil
     (diagonals + columns + rows).each do |line|
-      return :X if line.all?{|pos| self[*pos] == :X}
-      return :O if line.all?{|pos| self[*pos] == :O}
+      win = "X" if line.all?{|pos| self[*pos] == "X"}
+      win = "O" if line.all?{|pos| self[*pos] == "O"}
     end
-    nil
+    win
   end
-    
+
   def rows
     rows_array = []
     for idx in (0..2) do
@@ -41,7 +42,7 @@ class Board
     end
     rows_array
   end
-  
+
   def diagonals
     left_diagonal = []
     right_diagonal = []
@@ -51,8 +52,8 @@ class Board
     end
     [left_diagonal, right_diagonal]
   end
-  
-  
+
+
   def columns
     columns_array = []
     for idx in (0..2) do
@@ -64,12 +65,9 @@ class Board
     end
     columns_array
   end
-  
+
   def over?
     return true if winner || !grid.any?{|row| row.any?{|x| x.nil?}}
     false
   end
 end
-
-
-

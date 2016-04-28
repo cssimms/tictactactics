@@ -1,4 +1,5 @@
-var UserServerActions = require('../actions/user/UserServerActions');
+var UserServerActions = require('../actions/user/UserServerActions'),
+GameServerActions = require('../actions/games/GameServerActions');
 
  module.exports = {
    getCurrentUser: function () {
@@ -48,6 +49,19 @@ var UserServerActions = require('../actions/user/UserServerActions');
        type: "DELETE",
        success: function(response){
          UserServerActions.signOut(response);
+       }
+     });
+   },
+
+   submitMove: function (gameInfo) {
+     $.ajax({
+       url: "api/games/" + gameInfo.id,
+       type: "PATCH",
+       success: function(response){
+         GameServerActions.receiveMove(response);
+       },
+       error: function (response) {
+         GameServerActions.moveError(response);
        }
      });
    }
