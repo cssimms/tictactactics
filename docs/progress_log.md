@@ -26,7 +26,6 @@
 - so many problems with heroku
 - skeleton for menubar and info box
 - games table and controller generated
-<<<<<<< HEAD
 - fix labels on input forms
 
 
@@ -34,13 +33,5 @@ TODO: sign in button not changing, persistant login status?
 
 Q's :
   - sessionsStore? or one UserStore cool for school?
-=======
 
 TODO: sign in button not changing
-
-Q's :
-  - labels on input elements that are invisible??
->>>>>>> 001959d0026fdef76df0230930a0eda8bc328ec7
-  - GameHistoryItem component necessary?? GameHistory could just
-  generate some li's with className=ghistitem or something
-  - start styling now? wait until game logic is integrated??
