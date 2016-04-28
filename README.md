@@ -68,7 +68,7 @@ the player's turn (not MVP)
 - [x] setup basic userStore and gameStore
 - [x] write blank skeletons for all Components
 - [x] fill out basic signin and signup forms
-- [x] basic styling of all current page (signin/signout/menubar/infobox)
+- [x] basic styling of all current page(signin/signout/menubar/infobox)
 
 
 

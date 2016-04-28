@@ -27,6 +27,8 @@
 - skeleton for menubar and info box
 - games table and controller generated
 - fix labels on input forms
+- heroku hell
+- file renaming to get rid of camel case, switching all js to kneeling camel
 
 
 TODO: sign in button not changing, persistant login status?
