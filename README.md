@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] Coming Soon!
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://tic-tac-tactics.herokuapp.com/#/
 
 
 ## TTTactics Project Priorities and Features
@@ -57,7 +57,7 @@ the player's turn (not MVP)
 - [x] blank landing page after signin
 
 
-### Phase 2: Setup Flux Architecture / integrate user components (2 day)
+### Phase 2: Setup Flux Architecture / Integrate user components (2 day)
 
 **Objective:** All Skeleton and basic routes done
 

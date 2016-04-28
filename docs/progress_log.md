@@ -28,12 +28,14 @@
 - games table and controller generated
 - fix labels on input forms
 - heroku hell
-- file renaming to get rid of camel case, switching all js to kneeling camel
 
+TODO:
+- add ruby ~'2.1.2' to gemfile
 
-TODO: sign in button not changing, persistant login status?
+TODO much later:
+- refactor ruby ttt code.. it's amateur...  
 
 Q's :
-  - sessionsStore? or one UserStore cool for school?
-
-TODO: sign in button not changing
+  - rename component files to kneeling camel? or is the inconsistency ok?
+  - is it better for game move checks to use falsey return values or throw and catch errors?
+  - write my move validations using validate rails method??

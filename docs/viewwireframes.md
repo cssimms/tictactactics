@@ -19,4 +19,4 @@
 [new-session]: ./wireframes/TTT_signin.png
 [home]: ./wireframes/ttt_home.png
 [game]: ./wireframes/ttt_gameshow.png
-[player]: ./wireframes/ttt_playershow.png
+[player]: ./wireframes/TTT_usershow.png
