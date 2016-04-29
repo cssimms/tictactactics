@@ -1,13 +1,19 @@
 var React = require('react');
 
 var GameInterface = React.createClass({
-  getInitialState: function() {
 
-  },
 
   render: function () {
+    var moves;
+    if (this.props.game) {
+      moves = this.props.game.moveset;
+    } else {
+      moves = "Loading Game";
+    }
     return (
-      <div>{this.state.username}</div>
+      <div>
+        {moves}
+      </div>
     );
   }
 });

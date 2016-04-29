@@ -3,7 +3,6 @@ GameConstants = require('../../constants/GameConstants');
 
 module.exports = {
   receiveGame: function (res) {
-    console.log(res);
     Dispatcher.dispatch({
       actionType: GameConstants.RECEIVE_GAME,
       game: res
@@ -18,7 +17,6 @@ module.exports = {
   },
 
   receiveError: function (res) {
-    console.log(res);
     Dispatcher.dispatch({
       actionType: GameConstants.MOVE_ERROR,
       erros: res

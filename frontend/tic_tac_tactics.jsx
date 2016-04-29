@@ -9,7 +9,8 @@ var UserShow = require('./components/UserShow'),
      App = require('./components/app'),
     Home = require('./components/Home'),
     SignInForm = require('./components/SignInForm'),
-    SignUpForm = require('./components/SignUpForm');
+    SignUpForm = require('./components/SignUpForm'),
+    CurrentGame = require('./components/CurrentGame');
 
 var routes = (
 	<Route path='/' component={App}>
@@ -17,7 +18,7 @@ var routes = (
     <Route path='home' component={Home} />
     <Route path='signin' component={SignInForm} />
     <Route path='signup' component={SignUpForm} />
-    <Route path='signup' component={SignUpForm} />
+    <Route path='play' component={CurrentGame} />
 	</Route>
 );
 

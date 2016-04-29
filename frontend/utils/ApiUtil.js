@@ -78,7 +78,6 @@ var ApiUtil = {
          mark: gameInfo.move.mark
         }},
        success: function(response){
-         console.log('hi');
          GameServerActions.receiveMove(response);
        },
        error: function (response) {
