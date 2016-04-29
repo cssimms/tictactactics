@@ -1,13 +1,12 @@
 var React = require('react');
 
 var GameCell = React.createClass({
-  getInitialState: function() {
-
-  },
 
   render: function () {
     return (
-      <div></div>
+      <div className='game-cell'>
+        {this.props.mark}
+      </div>
     );
   }
 });

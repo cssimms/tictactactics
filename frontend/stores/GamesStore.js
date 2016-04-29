@@ -1,6 +1,7 @@
 var Store = require('flux/utils').Store,
 Dispatcher = require('../dispatcher/dispatcher'),
-GameConstants = require('../constants/GameConstants');
+GameConstants = require('../constants/GameConstants'),
+GameTranslator = require('../utils/ttt_js/gameTranslator');
 
 var GameStore = new Store(Dispatcher);
 
@@ -13,7 +14,7 @@ GameStore.currentGame = function () {
 };
 
 GameStore.loadGame = function(game) {
-  _currentGame = game;
+  _currentGame = GameTranslator.translate(game);
   _errors = null;
 };
 

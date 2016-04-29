@@ -42,7 +42,6 @@
 
 
 TODO:
-- test ApiUtil reqs to games on server (verify changes persist in db)
 - build out CurrentGame components and children (minimal styling)
 - add ruby ~'2.1.2' to gemfile
 - need to pass CurrentGame and id in props, so redirect(nested)
