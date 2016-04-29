@@ -25,8 +25,9 @@ class Api::GamesController < ApplicationController
 
   def update
     @game = Game.find_by_id(params[:id])
-    new_move = [ game_params[:x_coord].to_i, game_params[:y_coord].to_i]
-    if @game.make_move(new_move, game_params[:mark]) && @game.save
+    pos = [ game_params[:x_coord].to_i, game_params[:y_coord].to_i]
+    move = {'pos'=> pos, 'mark'=> game_params[:mark]}
+    if @game.make_move(move) && @game.save
       render :show
     else
       @errors = ["Invalid Move Submitted"]

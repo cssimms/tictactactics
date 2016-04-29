@@ -14,7 +14,6 @@ class Board
   end
 
   def place_mark(pos, mark)
-
     if in_bounds?(pos) && your_turn?(mark) && empty?(pos)
       self[*pos] = mark
     else
