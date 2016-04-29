@@ -2,6 +2,8 @@ var React = require('react');
 
 var GameInterface = React.createClass({
 
+  
+
 
   render: function () {
     var moves;

@@ -81,6 +81,7 @@ var ApiUtil = {
          GameServerActions.receiveMove(response);
        },
        error: function (response) {
+
          GameServerActions.receiveError(response);
        }
      });

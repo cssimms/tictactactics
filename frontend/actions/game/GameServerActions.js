@@ -12,14 +12,14 @@ module.exports = {
   receiveMove: function (res) {
     Dispatcher.dispatch({
       actionType: GameConstants.RECEIVE_MOVE,
-      move: res
+      game: res
     });
   },
 
   receiveError: function (res) {
     Dispatcher.dispatch({
       actionType: GameConstants.MOVE_ERROR,
-      erros: res
+      errors: res.responseJSON['errors']
     });
   }
 };

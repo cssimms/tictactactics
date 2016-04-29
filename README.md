@@ -77,8 +77,9 @@ the player's turn (not MVP)
   **Objective:** Game logic finished, model and controller up
 
   - [x] create `Game` model
-  - [ ] actually write `Game` model
-  - [ ] write custom game validations for valid play
+  - [X] actually write `Game` model
+  - [X] write custom game validations for valid play (backend)
+  - [ ] write custom game validations for valid play (frontend)
   - [ ] CRUD API for games (`GamesController`)
   - [ ] fully test and polish js code for gameplay
 
@@ -138,10 +139,10 @@ the player's turn (not MVP)
 - [ ] Add animations or transitions
 
 ### Bonus Features
+- [ ] Integrate pusher, for immediate response when it's player's turn
 - [ ] User Rankings
 - [ ] Animated gameplay
 - [ ] Puzzles for your TTT training
 - [ ] Flush out stats for each user, win %
-- [ ] Integrate pusher, for immediate response when it's player's turn
 - [ ] Live games
 - [ ] Sign in Button changes to user dropdown menu on login

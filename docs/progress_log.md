@@ -34,9 +34,16 @@
 - built game model
 - worked in logic checks for valid moves
 - game model/controller translate json to interact with ruby board object
+- ApiUtil fetchGame request
+
+## Day 5 (4/29/16)
+
+- have a better attitude because it's friday
 
 
 TODO:
+- test ApiUtil reqs to games on server (verify changes persist in db)
+- build out CurrentGame components and children (minimal styling)
 - add ruby ~'2.1.2' to gemfile
 - need to pass CurrentGame and id in props, so redirect(nested)
 under.....user show? not sure

@@ -6,7 +6,8 @@ GameInterface = require('./GameInterface');
 var CurrentGame = React.createClass({
   getInitialState: function() {
     return ({
-      game: null
+      game: null,
+      errors: null
     });
   },
 
@@ -17,13 +18,27 @@ var CurrentGame = React.createClass({
 
   _onChange: function () {
     this.setState({
-      game: GameStore.currentGame()
+      game: GameStore.currentGame(),
+      errors: GameStore.errors()
     });
+  },
+
+  errors: function () {
+    if (this.state.errors) {
+      return(
+        this.state.errors.map(function(err, i){
+          return <li key={i}>{err}</li>;
+          })
+        );
+    } else {
+      return;
+    }
   },
 
   render: function () {
     return (
       <div>
+        <h5>{this.errors()}</h5>
         <GameInterface game={this.state.game}/>
       </div>
     );

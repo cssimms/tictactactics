@@ -19,7 +19,7 @@ class Api::GamesController < ApplicationController
       render :create
     else
       @errors = @game.errors.full_messages
-      render 'api/errors'
+      render 'api/errors', status: 400
     end
   end
 
@@ -30,7 +30,7 @@ class Api::GamesController < ApplicationController
       render :show
     else
       @errors = ["Invalid Move Submitted"]
-      render 'api/errors'
+      render 'api/errors', status: 400
     end
   end
 
