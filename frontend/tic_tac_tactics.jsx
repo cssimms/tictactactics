@@ -17,6 +17,7 @@ var routes = (
     <Route path='home' component={Home} />
     <Route path='signin' component={SignInForm} />
     <Route path='signup' component={SignUpForm} />
+    <Route path='signup' component={SignUpForm} />
 	</Route>
 );
 

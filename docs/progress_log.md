@@ -29,6 +29,13 @@
 - fix labels on input forms
 - heroku hell
 
+## Day 4 (4/28/16)
+
+- built game model
+- worked in logic checks for valid moves
+- game model/controller translate json to interact with ruby board object
+
+
 TODO:
 - add ruby ~'2.1.2' to gemfile
 

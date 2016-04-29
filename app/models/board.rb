@@ -14,12 +14,39 @@ class Board
   end
 
   def place_mark(pos, mark)
-    return nil unless empty?(pos)
-    self[*pos] = mark
+
+    if in_bounds?(pos) && your_turn?(mark) && empty?(pos)
+      self[*pos] = mark
+    else
+      nil
+    end
   end
 
   def empty?(pos)
     true unless self[*pos]
+  end
+
+  def in_bounds?(pos)
+    pos.first >= 0 && pos.first <= 2 && pos.last >= 0 && pos.last <= 2
+  end
+
+  def your_turn?(mark)
+    empties = 0
+    @grid.each do |row|
+      row.each do |cell|
+        empties += 1 if !cell
+      end
+    end
+
+    case mark
+    when 'X'
+      #number of empty positions is odd, X's turn
+      return true if empties.odd?
+    when 'O'
+      #number of empty positions is even, O's turn
+      return true if empties.even?
+    end
+    nil
   end
 
   def winner

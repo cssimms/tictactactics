@@ -1,7 +1,9 @@
 var UserServerActions = require('../actions/user/UserServerActions'),
-GameServerActions = require('../actions/games/GameServerActions');
+GameServerActions = require('../actions/game/GameServerActions');
 
- module.exports = {
+
+
+var ApiUtil = {
    getCurrentUser: function () {
      $.ajax({
        url: "api/users",
@@ -53,17 +55,40 @@ GameServerActions = require('../actions/games/GameServerActions');
      });
    },
 
+   fetchGame: function (id) {
+     $.ajax({
+       url: "api/games/" + id,
+       type: "GET",
+       success: function(response){
+         GameServerActions.receiveGame(response);
+       },
+       error: function (response) {
+         GameServerActions.receiveError(response);
+       }
+     });
+   },
+
    submitMove: function (gameInfo) {
      $.ajax({
        url: "api/games/" + gameInfo.id,
        type: "PATCH",
+       data: {game: {
+         x_coord: gameInfo.move.pos[0],
+         y_coord: gameInfo.move.pos[1],
+         mark: gameInfo.move.mark
+        }},
        success: function(response){
+         console.log('hi');
          GameServerActions.receiveMove(response);
        },
        error: function (response) {
-         GameServerActions.moveError(response);
+         GameServerActions.receiveError(response);
        }
      });
    }
 
  };
+
+
+window.ApiUtil = ApiUtil;
+module.exports = ApiUtil;

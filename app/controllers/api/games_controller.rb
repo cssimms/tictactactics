@@ -6,7 +6,7 @@ class Api::GamesController < ApplicationController
   def show
     @game = Game.find_by_id(params[:id])
     if @game
-      render
+      render :show
     else
       @errors = @game.errors.full_messages
       render 'api/errors'
@@ -16,7 +16,7 @@ class Api::GamesController < ApplicationController
   def create
     @game = Game.new
     if @game.save
-      render
+      render :create
     else
       @errors = @game.errors.full_messages
       render 'api/errors'
@@ -25,9 +25,8 @@ class Api::GamesController < ApplicationController
 
   def update
     @game = Game.find_by_id(params[:id])
-    new_move = game_params[:game][:new_move]
-
-    if @game.make_move(new_move) && @game.save
+    new_move = [ game_params[:x_coord].to_i, game_params[:y_coord].to_i]
+    if @game.make_move(new_move, game_params[:mark]) && @game.save
       render :show
     else
       @errors = ["Invalid Move Submitted"]
@@ -40,6 +39,6 @@ class Api::GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:moveset, :x_id, :o_id, :new_move)
+    params.require(:game).permit(:x_coord, :y_coord, :mark)
   end
 end

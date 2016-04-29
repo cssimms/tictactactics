@@ -1,6 +1,6 @@
 # Tic Tac Tactics
 
-[Heroku link][heroku] Coming Soon!
+[Heroku link][heroku]
 
 [heroku]: https://tic-tac-tactics.herokuapp.com/#/
 

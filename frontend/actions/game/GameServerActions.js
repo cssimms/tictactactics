@@ -1,11 +1,27 @@
-var Dispatcher = require('../../dispatcher/dispatcher');
+var Dispatcher = require('../../dispatcher/dispatcher'),
+GameConstants = require('../../constants/GameConstants');
 
 module.exports = {
-  receiveMove: function () {
-
+  receiveGame: function (res) {
+    console.log(res);
+    Dispatcher.dispatch({
+      actionType: GameConstants.RECEIVE_GAME,
+      game: res
+    });
   },
 
-  moveError: function () {
-    
+  receiveMove: function (res) {
+    Dispatcher.dispatch({
+      actionType: GameConstants.RECEIVE_MOVE,
+      move: res
+    });
+  },
+
+  receiveError: function (res) {
+    console.log(res);
+    Dispatcher.dispatch({
+      actionType: GameConstants.MOVE_ERROR,
+      erros: res
+    });
   }
 };
