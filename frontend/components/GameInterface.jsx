@@ -31,9 +31,12 @@ var GameInterface = React.createClass({
       });
       return grid.map(function (cell, i) {
         return (
-          <GameCell key={i} pos={cell.pos} mark={cell.mark} />
+          <GameCell key={i}
+              pos={cell.pos}
+              mark={cell.mark}
+              id={this.props.game.id} />
         );
-      });
+      }.bind(this));
     }
   },
 
