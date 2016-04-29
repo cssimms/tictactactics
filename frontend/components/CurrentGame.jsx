@@ -13,7 +13,7 @@ var CurrentGame = React.createClass({
 
   componentDidMount: function() {
     this.storeToken = GameStore.addListener(this._onChange);
-    GameClientActions.fetchGame(3);
+    GameClientActions.fetchGame(5);
   },
 
   componentWillUnmount: function () {
