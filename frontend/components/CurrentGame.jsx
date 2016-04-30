@@ -15,27 +15,43 @@ var CurrentGame = React.createClass({
 
   componentDidMount: function() {
     this.gameStoreToken = GameStore.addListener(this._onChange);
-    GameClientActions.fetchGame(5);
+    GameClientActions.fetchGame(1);
   },
 
   componentWillUnmount: function () {
     this.gameStoreToken.remove();
   },
 
+  appropriateMark: function () {
+    var mark;
+    if (GameStore.currentMove()){
+      var move =  GameStore.currentMove();
+      var userId = move.mark;
+      if (this.state.game.x_id === userId){
+        mark = 'X';
+      } else if (this.state.game.o_id === userId){
+        mark = 'O';
+      }
+      move.mark = mark;
+      return move;
+    }
+    return null;
+  },
+
   _onChange: function () {
     this.setState({
       game: GameStore.currentGame(),
       errors: GameStore.errors(),
-      selected: GameStore.currentMove()
+      currentMove: this.appropriateMark()
     });
   },
 
   submitMove: function (event) {
     event.preventDefault();
-    if (this.state.selected){
+    if (this.state.currentMove){
       GameClientActions.submitMove({
         id: this.state.game.id,
-        move: this.state.selected
+        move: this.state.currentMove
       });
     }
   },

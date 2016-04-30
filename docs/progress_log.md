@@ -42,7 +42,14 @@
 - not so far
 - persistant login implemented
 
+## Day 6 (4/30/16)
+
+- 
+
 TODO:
+- bug free everything WORKS
+- naviagtion buttons and layout
+
 - build out CurrentGame components and children (minimal styling)
 - add ruby ~'2.1.2' to gemfile
 - need to pass CurrentGame and id in props, so redirect(nested)

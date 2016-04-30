@@ -10,10 +10,10 @@ var ApiUtil = {
        type: "GET",
        success: function(response){
          UserServerActions.receiveCurrentUser(response);
-       },
-       error: function (response) {
-         UserServerActions.signInError(response);
        }
+      //  error: function (response) {
+      //    UserServerActions.signInError(response);
+      //  }
      });
    },
 
@@ -51,6 +51,7 @@ var ApiUtil = {
        type: "DELETE",
        success: function(response){
          UserServerActions.signOut(response);
+         GameServerActions.clearGame();
        }
      });
    },
@@ -69,6 +70,7 @@ var ApiUtil = {
    },
 
    submitMove: function (gameInfo) {
+
      $.ajax({
        url: "api/games/" + gameInfo.id,
        type: "PATCH",

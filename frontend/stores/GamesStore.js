@@ -21,6 +21,7 @@ GameStore.currentMove = function () {
 GameStore.loadGame = function(game) {
   _currentGame = GameTranslator.translate(game);
   _errors = null;
+  _currentMove = null;
 };
 
 GameStore.errors = function () {

@@ -9,11 +9,16 @@ var CurrentUser = {
 		};
 	},
 	componentDidMount: function(){
-		UserStore.addListener(this.updateUser);
+		this.token = UserStore.addListener(this.updateUser);
 		if (!UserStore.currentUser()) {
 			UserClientActions.getCurrentUser();
 		}
 	},
+
+  componentWillUnmount: function() {
+    this.token.remove();
+  },
+
 	updateUser: function(){
 		this.setState({
 			currentUser: UserStore.currentUser(),

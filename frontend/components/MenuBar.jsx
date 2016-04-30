@@ -35,21 +35,28 @@ var MenuBar = React.createClass({
     UserClientActions.signOut(this.state.currentUser);
   },
 
+  redirectPlay: function () {
+    HashHistory.push('/play');
+  },
+
   render: function () {
     var userButtonAction, userButtonTitle;
     if (this.state.currentUser) {
       userButtonAction = this.signOut;
-      userButtonTitle = "Sign Out";
+      userButtonTitle = "Sign Out of " + this.state.currentUser.username;
     } else {
       userButtonAction = this.signIn;
       userButtonTitle = "Sign In";
     }
 
+    var playButtonAction = this.redirectPlay;
+
     return (
       <ul className="menu-bar group">
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
-        <li className="menu-bar-item"> </li>
+        <button onClick={playButtonAction}
+          className="menu-bar-item">Play!</button>
         <li className="menu-bar-item">more cool stuff!</li>
       </ul>
     );

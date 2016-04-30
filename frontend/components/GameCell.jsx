@@ -12,6 +12,14 @@ var GameCell = React.createClass({
     };
   },
 
+  componentWillReceiveProps: function () {
+    if (this.state.selected) {
+      this.setState({
+        selected: ""
+      });
+    } 
+  },
+
   handleClick: function (event) {
     event.preventDefault();
     if (this.props.mark === 'e') {

@@ -3,7 +3,6 @@ GameCell = require('./GameCell');
 
 var GameInterface = React.createClass({
 
-
   generateGrid: function () {
     var grid = [];
     var pos;
@@ -17,7 +16,7 @@ var GameInterface = React.createClass({
     }
     return grid;
   },
-  
+
   cells: function () {
     var grid = this.generateGrid();
     if (this.props.game) {

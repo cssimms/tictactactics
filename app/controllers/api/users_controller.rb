@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
     if @user
       render :show
     else
-      render :errors, status: 402
+      render 'api/errors', status: 422
     end
   end
 

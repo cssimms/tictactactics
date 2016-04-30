@@ -80,17 +80,17 @@ the player's turn (not MVP)
   - [X] actually write `Game` model
   - [X] write custom game validations for valid play (backend)
   - [ ] write custom game validations for valid play (frontend)
-  - [ ] CRUD API for games (`GamesController`)
+  - [X] CRU API for games (`GamesController`)
   - [ ] fully test and polish js code for gameplay
 
 ### Phase 4: Game API integration (0.5)
 
 **Objective** Successfully save and retrieve games through API
 
-  - [ ] jBuilder views for games
+  - [X] jBuilder views for games
   - [ ] seed the database with a small amount of test data
-  - [ ] setup `APIUtil` to interact with the API
-  - [ ] test out API interaction in the console
+  - [X] setup `APIUtil` to interact with the API
+  - [X] test out API interaction in the console
 
 ### Phase 4: Basic Aesthetics (1 day)
 
