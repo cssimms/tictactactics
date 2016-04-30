@@ -1,4 +1,6 @@
-var ApiUtil = require('../../utils/ApiUtil');
+var ApiUtil = require('../../utils/ApiUtil'),
+Dispatcher = require('../../dispatcher/dispatcher'),
+GameConstants = require('../../constants/GameConstants');
 
 module.exports = {
   fetchGame: function (id) {
@@ -7,5 +9,12 @@ module.exports = {
 
   submitMove: function (move) {
     ApiUtil.submitMove(move);
+  },
+
+  selectMove: function (move) {
+    Dispatcher.dispatch({
+      actionType: GameConstants.MOVE_SELECTED,
+      move: move
+    });
   }
 };

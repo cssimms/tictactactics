@@ -17,7 +17,7 @@ var GameInterface = React.createClass({
     }
     return grid;
   },
-
+  
   cells: function () {
     var grid = this.generateGrid();
     if (this.props.game) {
@@ -34,7 +34,7 @@ var GameInterface = React.createClass({
           <GameCell key={i}
               pos={cell.pos}
               mark={cell.mark}
-              id={this.props.game.id} />
+              id={this.props.game.id}/>
         );
       }.bind(this));
     }

@@ -3,12 +3,14 @@ class Api::UsersController < ApplicationController
   def index
   end
 
+  def show
+  end
 
 #actually showing the current_user, will change to individual users
-  def show
+  def get_current_user
     @user = current_user
     if @user
-      render show
+      render :show
     else
       render :errors, status: 402
     end

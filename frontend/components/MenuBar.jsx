@@ -1,10 +1,13 @@
 var React = require('react'),
 HashHistory = require('react-router').hashHistory,
 UserStore = require('../stores/UserStore'),
-UserClientActions = require('../actions/user/UserClientActions');
+UserClientActions = require('../actions/user/UserClientActions'),
+CurrentUserMixin = require('../mixins/currentUser');
 
 
 var MenuBar = React.createClass({
+
+  mixins: [CurrentUserMixin],
 
   getInitialState: function() {
     return {
@@ -46,7 +49,7 @@ var MenuBar = React.createClass({
       <ul className="menu-bar group">
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
-        <li className="menu-bar-item">MenuOptions!</li>
+        <li className="menu-bar-item"> </li>
         <li className="menu-bar-item">more cool stuff!</li>
       </ul>
     );

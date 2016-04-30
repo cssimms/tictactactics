@@ -39,7 +39,8 @@
 ## Day 5 (4/29/16)
 
 - have a better attitude because it's friday
-
+- not so far
+- persistant login implemented
 
 TODO:
 - build out CurrentGame components and children (minimal styling)

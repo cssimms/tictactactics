@@ -1,4 +1,5 @@
 var React = require('react'),
+Link = require('react-router').Link,
 UserClientActions = require('../actions/user/UserClientActions'),
 UserStore = require('../stores/UserStore'),
 HashHistory = require('react-router').hashHistory;
@@ -80,6 +81,7 @@ var SignInForm = React.createClass({
               placeholder='Password'/>
           <input type='submit' />
         </form>
+        <Link to='signup'>Not a Member?</Link>
       </div>
     );
   }

@@ -7,10 +7,15 @@ var GameStore = new Store(Dispatcher);
 
 var _games = [],
     _currentGame,
+    _currentMove,
     _errors;
 
 GameStore.currentGame = function () {
   return _currentGame;
+};
+
+GameStore.currentMove = function () {
+  return _currentMove;
 };
 
 GameStore.loadGame = function(game) {
@@ -19,7 +24,6 @@ GameStore.loadGame = function(game) {
 };
 
 GameStore.errors = function () {
-
   return _errors;
 };
 
@@ -33,6 +37,9 @@ GameStore.__onDispatch = function (payload) {
       break;
     case GameConstants.MOVE_ERROR:
         _errors = payload.errors;
+      break;
+    case GameConstants.MOVE_SELECTED:
+        _currentMove = payload.move;
       break;
   }
   this.__emitChange();

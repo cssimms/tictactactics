@@ -6,13 +6,13 @@ GameServerActions = require('../actions/game/GameServerActions');
 var ApiUtil = {
    getCurrentUser: function () {
      $.ajax({
-       url: "api/users",
+       url: "api/user/current_user",
        type: "GET",
        success: function(response){
          UserServerActions.receiveCurrentUser(response);
        },
        error: function (response) {
-         UserServerActions.handleError(response);
+         UserServerActions.signInError(response);
        }
      });
    },

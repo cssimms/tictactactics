@@ -11,5 +11,9 @@ module.exports ={
 
   signOut: function (userInfo) {
     ApiUtil.signOut(userInfo);
+  },
+
+  getCurrentUser: function () {
+    ApiUtil.getCurrentUser();
   }
 };

@@ -31,15 +31,16 @@
 
 body {
   background-color: gainsboro;
+  margin-top: 50px;
 }
 
 .menu-bar {
   background-color: lightgrey;
   list-style-type: none;
   padding: 10px;
-  /*position: fixed;
+  position: fixed;
   top: 0;
-  width: 100%;*/
+  width: 100%;
 }
 
 .menu-bar-item {
@@ -48,14 +49,19 @@ body {
   padding: 8px;
 }
 
+.mommaDiv {
+
+}
+
 .info-box {
-  float: left;
   border: 1px solid lightgrey;
   padding: 10px;
+  display: inline-block;
+  width: 150px;
 }
 
 .info-box-title{
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .info-box-item {
@@ -63,18 +69,29 @@ body {
 }
 
 .userForm {
-  float: left;
+  /*float: left;*/
   border: 2px solid grey;
   padding: 10px;
 }
 
 .game-container {
   border: 3px solid lightgrey;
+  width: 600px;
+  height: 600px;
 }
 
 .game-cell {
   float: left;
   border: 1px solid grey;
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px
+}
+
+.game-cell.selected {
+  background-color: orange;
 }
 
 .invis {

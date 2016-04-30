@@ -9,10 +9,23 @@ module.exports = {
     });
   },
 
+  receiveCurrentUser: function (res) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.SIGN_IN,
+      user: res
+    });
+  },
+
   signInError: function (res) {
+    var err;
+    if (res.responseJSON){
+      err = res.responseJSON['errors'];
+    } else {
+      err = res.statusText;
+    }
     Dispatcher.dispatch({
       actionType: UserConstants.LOGIN_ERROR,
-      errors: res.responseJSON['errors']
+      errors: res
     });
   },
 

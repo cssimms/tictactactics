@@ -7,8 +7,10 @@ module.exports = React.createClass({
 		return(
 			<div>
 				<MenuBar />
-				<InfoBox />
-	 				{this.props.children}
+					<div className="mommaDiv group">
+						<InfoBox />
+		 				{this.props.children}
+					</div>
 			</div>
 		);
 	}
