@@ -44,7 +44,7 @@
 
 ## Day 6 (4/30/16)
 
-- 
+- selecting cells and submitting moves works with backend validations
 
 TODO:
 - bug free everything WORKS

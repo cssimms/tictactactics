@@ -68,12 +68,31 @@ var CurrentGame = React.createClass({
     }
   },
 
+  endGameMessage: function () {
+    var endGameMessage,
+        victoriousMark;
+    if (this.state.game) {
+      if (this.state.game.status === 'closed') {
+        victoriousMark = this.state.game.winner;
+        if (victoriousMark === 'f'){
+          endGameMessage = "It's a Draw...";
+        } else {
+          endGameMessage = "Congradulations " +
+                            victoriousMark +
+                            "! You are the winner!";
+        }
+      }
+    }
+    return endGameMessage;
+  },
+
   render: function () {
     return (
       <div>
         <GameInterface game={this.state.game}/>
-        <button onClick={this.submitMove} value='Submit Move'/>
         <h5>{this.errors()}</h5>
+        <h5>{this.endGameMessage()}</h5>
+        <button onClick={this.submitMove}>Submit Move</button>
       </div>
     );
   }

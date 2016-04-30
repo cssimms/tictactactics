@@ -76,18 +76,18 @@ body {
 
 .game-container {
   border: 3px solid lightgrey;
-  width: 600px;
-  height: 600px;
+  width: 450px;
+  height: 450px;
 }
 
 .game-cell {
   float: left;
   border: 1px solid grey;
   box-sizing: border-box;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   text-align: center;
-  line-height: 200px
+  line-height: 150px
 }
 
 .game-cell.selected {
