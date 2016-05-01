@@ -9,14 +9,7 @@ module.exports = {
     });
   },
 
-  receiveCurrentUser: function (res) {
-    Dispatcher.dispatch({
-      actionType: UserConstants.SIGN_IN,
-      user: res
-    });
-  },
-
-  signInError: function (res) {
+  receiveError: function (res) {
     var err;
     if (res.responseJSON){
       err = res.responseJSON['errors'];
@@ -24,7 +17,7 @@ module.exports = {
       err = res.statusText;
     }
     Dispatcher.dispatch({
-      actionType: UserConstants.LOGIN_ERROR,
+      actionType: UserConstants.RECEIVE_ERROR,
       errors: res
     });
   },
@@ -33,6 +26,20 @@ module.exports = {
     Dispatcher.dispatch({
       actionType: UserConstants.SIGN_OUT,
       user: res
+    });
+  },
+
+  receiveCurrentUser: function (res) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.SIGN_IN,
+      user: res
+    });
+  },
+
+  receiveAllUsers: function (res) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.RECEIVE_ALL_USERS,
+      users: res
     });
   }
 };

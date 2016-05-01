@@ -3,6 +3,8 @@ MenuBar = require('./MenuBar'),
 InfoBox = require('./InfoBox');
 
 module.exports = React.createClass({
+
+
 	render: function () {
 		return(
 			<div>

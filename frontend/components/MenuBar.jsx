@@ -36,7 +36,7 @@ var MenuBar = React.createClass({
   },
 
   redirectPlay: function () {
-    HashHistory.push('/play');
+    HashHistory.push('home');
   },
 
   render: function () {
@@ -49,14 +49,14 @@ var MenuBar = React.createClass({
       userButtonTitle = "Sign In";
     }
 
-    var playButtonAction = this.redirectPlay;
+    var gameButtonAction = this.redirectPlay;
 
     return (
       <ul className="menu-bar group">
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
-        <button onClick={playButtonAction}
-          className="menu-bar-item">Play!</button>
+        <button onClick={gameButtonAction}
+          className="menu-bar-item">Your Games</button>
         <li className="menu-bar-item">more cool stuff!</li>
       </ul>
     );

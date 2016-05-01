@@ -74,6 +74,13 @@ body {
   padding: 10px;
 }
 
+.gameItemList:hover {
+  background-color: grey;
+}
+
+.gameItem {
+}
+
 .game-container {
   border: 3px solid lightgrey;
   width: 450px;

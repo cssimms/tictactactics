@@ -1,6 +1,8 @@
 class Api::GamesController < ApplicationController
   def index
-    @games = Games.all
+    userId = game_params[:userId]
+
+    @games = Game.where('x_id = ? OR o_id = ?', userId, userId)
   end
 
   def show
@@ -40,6 +42,6 @@ class Api::GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:x_coord, :y_coord, :mark)
+    params.require(:game).permit(:x_coord, :y_coord, :mark, :userId)
   end
 end

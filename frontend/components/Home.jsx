@@ -1,9 +1,14 @@
-var React = require('react');
+var React = require('react'),
+GameIndex = require('./GameIndex'),
+ GameMenu = require('./GameMenu');
 
 module.exports = React.createClass({
   render: function () {
     return(
-      <div></div>
+      <div>
+        <GameIndex />
+        <GameMenu />
+      </div>
     );
   }
 });

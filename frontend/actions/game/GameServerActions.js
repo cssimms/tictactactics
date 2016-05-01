@@ -9,6 +9,13 @@ module.exports = {
     });
   },
 
+  receiveGames: function (res) {
+    Dispatcher.dispatch({
+      actionType: GameConstants.RECEIVE_GAMES,
+      games: res
+    });
+  },
+
   clearGame: function () {
     Dispatcher.dispatch({
       actionType: GameConstants.RECEIVE_GAME,

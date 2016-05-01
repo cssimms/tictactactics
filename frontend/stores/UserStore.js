@@ -1,6 +1,7 @@
 var Store = require('flux/utils').Store,
 Dispatcher = require('../dispatcher/dispatcher'),
-UserConstants = require('../constants/UserConstants');
+UserConstants = require('../constants/UserConstants'),
+HashHistory = require('react-router').hashHistory;
 
 
 var UserStore = new Store(Dispatcher);
@@ -13,7 +14,7 @@ UserStore.currentUser = function () {
 };
 
 UserStore.errors = function () {
-  if (_errors){
+  if (Array.isArray(_errors)){
     return _errors.slice();
   } else {
     return null;
@@ -26,8 +27,21 @@ UserStore.signIn = function (user) {
 };
 
 UserStore.signOut = function (user) {
+  HashHistory.push('signin');
   _currentUser = null;
   _errors = null;
+};
+
+UserStore.allUsers = function () {
+  return Object.keys(_users).map(function (key) {
+    return _users[key];
+  });
+};
+
+UserStore.receiveAllUsers = function (users) {
+  users.forEach(function (usr) {
+    _users[usr.id] = usr;
+  });
 };
 
 UserStore.__onDispatch = function (payload) {
@@ -40,6 +54,9 @@ UserStore.__onDispatch = function (payload) {
       break;
     case UserConstants.LOGIN_ERROR:
         _errors = payload.errors;
+      break;
+    case UserConstants.RECEIVE_ALL_USERS:
+      UserStore.receiveAllUsers(payload.users);
       break;
   }
   this.__emitChange();

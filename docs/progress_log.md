@@ -57,8 +57,9 @@ under.....user show? not sure
 
 TODO much later:
 - refactor ruby ttt code.. it's amateur...  
+- refactor queries in game controller
 
 Q's :
+  - nest routes under home?
   - rename component files to kneeling camel? or is the inconsistency ok?
   - is it better for game move checks to use falsey return values or throw and catch errors?
-  - write my move validations using validate rails method??

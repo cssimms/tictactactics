@@ -18,7 +18,7 @@ var SignInForm = React.createClass({
   },
 
   componentWillUnmount: function() {
-      this.storeToken.remove();
+    this.storeToken.remove();
   },
 
   _onChange: function () {
@@ -80,7 +80,7 @@ var SignInForm = React.createClass({
               onChange={this.passwordChange}
               placeholder='Password'/>
           <input type='submit' />
-        </form>
+        </form><br/>
         <Link to='signup'>Not a Member?</Link>
       </div>
     );

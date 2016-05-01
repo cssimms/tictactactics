@@ -16,5 +16,9 @@ module.exports = {
       actionType: GameConstants.MOVE_SELECTED,
       move: move
     });
+  },
+
+  fetchUserGames: function (userId) {
+    ApiUtil.fetchUserGames(userId);
   }
 };

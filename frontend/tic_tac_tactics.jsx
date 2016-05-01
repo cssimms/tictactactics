@@ -3,26 +3,36 @@
      Router = require('react-router').Router,
       Route = require('react-router').Route,
  IndexRoute = require('react-router').IndexRoute,
-hashHistory = require('react-router').hashHistory;
+hashHistory = require('react-router').hashHistory,
+      Modal = require('react-modal');
 
-var UserShow = require('./components/UserShow'),
-     App = require('./components/app'),
-    Home = require('./components/Home'),
-    SignInForm = require('./components/SignInForm'),
-    SignUpForm = require('./components/SignUpForm'),
-    CurrentGame = require('./components/CurrentGame');
+    var App = require('./components/app'),
+       Home = require('./components/Home'),
+   UserShow = require('./components/UserShow'),
+ SignInForm = require('./components/SignInForm'),
+ SignUpForm = require('./components/SignUpForm'),
+CurrentGame = require('./components/CurrentGame'),
+  UserStore = require('./stores/UserStore');
+
+var requireLogin = function () {
+  if (!UserStore.currentUser()){
+    hashHistory.push('signin');
+  }
+};
+
 
 var routes = (
 	<Route path='/' component={App}>
     <IndexRoute component={Home} />
-    <Route path='home' component={Home} />
+    <Route path='home' onEnter={requireLogin} component={Home} />
     <Route path='signin' component={SignInForm} />
     <Route path='signup' component={SignUpForm} />
-    <Route path='play' component={CurrentGame} />
+    <Route path='play/:gameId' onEnter={requireLogin} component={CurrentGame} />
 	</Route>
 );
 
 document.addEventListener('DOMContentLoaded', function () {
+  Modal.setAppElement(document.body);
 	ReactDOM.render(
 		<Router history={hashHistory}>
       {routes}

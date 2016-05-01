@@ -15,5 +15,9 @@ module.exports ={
 
   getCurrentUser: function () {
     ApiUtil.getCurrentUser();
+  },
+
+  fetchUsers: function () {
+    ApiUtil.fetchUsers();
   }
 };

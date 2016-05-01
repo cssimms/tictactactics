@@ -1,1 +1,1 @@
-json.array! @games, :status, :moveset, :x_id, :o_id
+json.array! @games, :id, :status, :moveset, :x_id, :o_id

@@ -1,6 +1,7 @@
 var React = require('react'),
 UserClientActions = require('../actions/user/UserClientActions'),
 UserStore = require('../stores/UserStore'),
+Link = require('react-router').Link,
 HashHistory = require('react-router').hashHistory;
 
 var SignUpForm = React.createClass({
@@ -78,7 +79,8 @@ var SignUpForm = React.createClass({
               onChange={this.passwordChange}
               placeholder='Password'/>
           <input type='submit' />
-        </form>
+        </form><br/>
+        <Link to='signin'>Already Registered?</Link>
       </div>
     );
   }

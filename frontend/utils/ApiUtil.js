@@ -10,10 +10,23 @@ var ApiUtil = {
        type: "GET",
        success: function(response){
          UserServerActions.receiveCurrentUser(response);
+       },
+       error: function (response) {
+         UserServerActions.receiveError(response);
        }
-      //  error: function (response) {
-      //    UserServerActions.signInError(response);
-      //  }
+     });
+   },
+
+   fetchUsers: function () {
+     $.ajax({
+       url: "api/users",
+       type: "GET",
+       success: function(response){
+         UserServerActions.receiveAllUsers(response);
+       },
+       error: function (response) {
+         UserServerActions.receiveError(response);
+       }
      });
    },
 
@@ -26,7 +39,7 @@ var ApiUtil = {
          UserServerActions.signIn(response);
        },
        error: function (response) {
-         UserServerActions.signInError(response);
+         UserServerActions.receiveError(response);
        }
      });
    },
@@ -40,7 +53,7 @@ var ApiUtil = {
          UserServerActions.signIn(response);
        },
        error: function (response) {
-         UserServerActions.signInError(response);
+         UserServerActions.receiveError(response);
        }
      });
    },
@@ -65,6 +78,23 @@ var ApiUtil = {
        },
        error: function (response) {
          GameServerActions.receiveError(response);
+       }
+     });
+   },
+
+   fetchUserGames: function (id) {
+     $.ajax({
+       url: "api/games",
+       type: "GET",
+       data: {
+         game: {
+           userId: id
+         }},
+       success: function(response){
+         GameServerActions.receiveGames(response);
+       },
+       error: function (response) {
+         GameServerActions.receiveError(response) ;
        }
      });
    },

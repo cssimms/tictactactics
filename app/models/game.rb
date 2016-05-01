@@ -3,6 +3,14 @@ require_relative 'board'
 class Game < ActiveRecord::Base
   validates :status, :moveset, :x_id, :o_id, :winner, presence: true
 
+  belongs_to :x_user,
+  foreign_key: :x_id,
+  class_name: :User
+
+  belongs_to :o_user,
+  foreign_key: :o_id,
+  class_name: :User
+
   def make_move(move)
     if self.build_game && @board.place_mark(move['pos'], move['mark'])
       self.update_moveset(move)
