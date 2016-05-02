@@ -127,6 +127,10 @@ ul {
 .gameItem {
 }
 
+.gameItemList.your-turn:hover {
+  background: darkorange;
+}
+
 .game-container {
   border: 3px solid lightgrey;
   width: 450px;

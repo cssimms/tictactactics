@@ -1,11 +1,13 @@
-var React = require('react'),
-CurrentUserMixin = require('../mixins/currentUser'),
-GameTranslator = require('../utils/ttt_js/gameTranslator'),
-GamesStore = require('../stores/GamesStore'),
+        var React = require('react'),
+            Modal = require('react-modal'),
+      hashHistory = require('react-router').hashHistory,
+ CurrentUserMixin = require('../mixins/currentUser'),
+   GameTranslator = require('../utils/ttt_js/gameTranslator'),
+       GamesStore = require('../stores/GamesStore'),
 GameClientActions = require('../actions/game/GameClientActions'),
-GameIndexItem = require('./GameIndexItem'),
-hashHistory = require('react-router').hashHistory,
-Modal = require('react-modal');
+    GameIndexItem = require('./GameIndexItem'),
+        UserStore = require('../stores/UserStore'),
+UserClientActions = require('../actions/user/UserClientActions');
 
 var GameIndex = React.createClass({
 
@@ -20,8 +22,11 @@ var GameIndex = React.createClass({
 
   componentDidMount: function() {
     this.gameToken = GamesStore.addListener(this._onChange);
-    var currUser = this.state.currentUser;
+    this.userToken = UserStore.addListener(this._onChange);
+    UserClientActions.fetchUsers();
+
     // are you logged in?
+    var currUser = this.state.currentUser;
     if (currUser){
       GameClientActions.fetchUserGames(currUser.id, 'open');
     }
@@ -29,6 +34,7 @@ var GameIndex = React.createClass({
 
   componentWillUnmount: function () {
     this.gameToken.remove();
+    this.userToken.remove();
   },
 
   _onChange: function () {
@@ -47,16 +53,33 @@ var GameIndex = React.createClass({
     var unreadyGames =  [];
 
     gameArray.forEach(function (game, i) {
-      var mark;
+      var mark, oppMark, opponent;
+
+      // set marks
       if (this.state.currentUser.id === game.x_id) {
         mark = 'X';
+        oppMark = 'O';
       } else if (this.state.currentUser.id === game.o_id) {
         mark = 'O';
+        oppMark = 'X';
       }
 
-      var yourTurn = GameTranslator.yourTurn(game, mark);
-      var gameItem = <GameIndexItem key={i} game={game} yourTurn={yourTurn}/>;
+      // find opponent
+      if (oppMark === 'O'){
+        opponent = UserStore.find(game.o_id);
+      } else if (oppMark === 'X'){
+        opponent = UserStore.find(game.x_id);
+      }
 
+      // determine who's turn
+      var yourTurn = GameTranslator.yourTurn(game, mark);
+      var gameItem = <GameIndexItem key={i}
+                                    game={game}
+                                    yourMark={mark}
+                                    yourTurn={yourTurn}
+                                    opponent={opponent} />;
+
+      //  group based on turn
       if (yourTurn){
         readyGames.push(gameItem);
       } else {
@@ -76,7 +99,10 @@ var GameIndex = React.createClass({
   render: function () {
     var idInfo, gameItems;
     if (this.state.currentUser){
-      idInfo = <p>{'Your id is: ' + this.state.currentUser.id}</p>;
+      idInfo = <p>
+        {'Hello, ' + this.state.currentUser.username +
+        '! Are you ready to play? \n Your id is: ' + this.state.currentUser.id}
+      </p>;
       gameItems = this.gameItems();
     }
 

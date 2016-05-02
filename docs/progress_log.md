@@ -59,7 +59,7 @@
 
 
 TODO:
-
+- fix overlap when sqwishedededed
 - add ruby ~'2.1.2' to gemfile
 
 TODO much later:
