@@ -87,8 +87,30 @@ ul {
   padding: 8px;
 }
 
-.mommaDiv {
+.game-menu {
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  height: 150px;
+  width: 150px;
+  border: 1px solid lightgrey;
+}
 
+.game-button {
+  margin: 0 auto;
+  width: 100%;
+  background-color: silver;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.game-button:hover {
+  background-color: gray;
+  color: lightgrey;
 }
 
 
