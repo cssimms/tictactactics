@@ -117,8 +117,8 @@ the player's turn (not MVP)
 **Objective:** Get home page fulling working and pretty
 
 - fill out GamesIndex and GameIndexItem components, enabling:
-  - [ ] home page listing all current games
-  - [ ] linking GameIndexItem to CurrentGame, so moves can be made
+  - [X] home page listing all current games
+  - [X] linking GameIndexItem to CurrentGame, so moves can be made
 - [ ] Work in MenuBar, InfoBox, GamesIndex and GameMenu
 - [ ] Style all of above
 
