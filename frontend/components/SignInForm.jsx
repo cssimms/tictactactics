@@ -81,7 +81,7 @@ var SignInForm = React.createClass({
               placeholder='Password'/>
           <input type='submit' />
         </form><br/>
-        <Link to='signup'>Not a Member?</Link>
+      <Link className='signon-link' to='signup'>Not a Member?</Link>
       </div>
     );
   }

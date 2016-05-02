@@ -16,9 +16,9 @@ class Api::GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new
+    @game = Game.new({x_id: game_params[:x_id], o_id: game_params[:o_id]})
     if @game.save
-      render :create
+      render :show
     else
       @errors = @game.errors.full_messages
       render 'api/errors', status: 400
@@ -42,6 +42,6 @@ class Api::GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:x_coord, :y_coord, :mark, :userId)
+    params.require(:game).permit(:x_coord, :y_coord, :mark, :userId, :x_id, :o_id)
   end
 end

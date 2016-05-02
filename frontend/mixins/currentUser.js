@@ -3,12 +3,12 @@ UserClientActions = require('../actions/user/UserClientActions');
 
 var CurrentUser = {
   getInitialState: function(){
-
 		return {
 			currentUser: UserStore.currentUser(),
 			userErrors: UserStore.errors()
 		};
 	},
+  
 	componentDidMount: function(){
 		this.token = UserStore.addListener(this.updateUser);
 		if (!UserStore.currentUser()) {

@@ -9,10 +9,8 @@ module.exports = React.createClass({
 		return(
 			<div>
 				<MenuBar />
-					<div className="mommaDiv group">
-						<InfoBox />
-		 				{this.props.children}
-					</div>
+				<InfoBox />
+ 				{this.props.children}
 			</div>
 		);
 	}

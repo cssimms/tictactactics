@@ -1,14 +1,14 @@
-var ApiUtil = require('../../utils/ApiUtil'),
+var GameApiUtil = require('../../utils/gameApiUtil'),
 Dispatcher = require('../../dispatcher/dispatcher'),
 GameConstants = require('../../constants/GameConstants');
 
 module.exports = {
   fetchGame: function (id) {
-    ApiUtil.fetchGame(id);
+    GameApiUtil.fetchGame(id);
   },
 
   submitMove: function (move) {
-    ApiUtil.submitMove(move);
+    GameApiUtil.submitMove(move);
   },
 
   selectMove: function (move) {
@@ -19,6 +19,10 @@ module.exports = {
   },
 
   fetchUserGames: function (userId) {
-    ApiUtil.fetchUserGames(userId);
+    GameApiUtil.fetchUserGames(userId);
+  },
+
+  createGame: function (players) {
+    GameApiUtil.createGame(players);
   }
 };

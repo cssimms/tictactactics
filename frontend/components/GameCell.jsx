@@ -1,6 +1,6 @@
-var React = require('react'),
-GameClientActions = require('../actions/game/GameClientActions'),
-CurrentUserMixin = require('../mixins/currentUser');
+        var React = require('react'),
+ CurrentUserMixin = require('../mixins/currentUser'),
+GameClientActions = require('../actions/game/GameClientActions');
 
 var GameCell = React.createClass({
 
@@ -17,12 +17,12 @@ var GameCell = React.createClass({
       this.setState({
         selected: ""
       });
-    } 
+    }
   },
 
   handleClick: function (event) {
     event.preventDefault();
-    if (this.props.mark === 'e') {
+    if (this.props.mark === 'e' && this.props.currTurn) {
       GameClientActions.selectMove({
         pos: this.props.pos,
         mark: this.state.currentUser.id

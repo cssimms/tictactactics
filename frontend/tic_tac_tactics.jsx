@@ -14,20 +14,25 @@ hashHistory = require('react-router').hashHistory,
 CurrentGame = require('./components/CurrentGame'),
   UserStore = require('./stores/UserStore');
 
-var requireLogin = function () {
+var requireSignIn = function () {
   if (!UserStore.currentUser()){
     hashHistory.push('signin');
   }
 };
 
+var requireSignOut = function () {
+  if (UserStore.currentUser()){
+    hashHistory.push('/');
+  }
+};
 
 var routes = (
 	<Route path='/' component={App}>
     <IndexRoute component={Home} />
-    <Route path='home' onEnter={requireLogin} component={Home} />
+    <Route path='home' onEnter={requireSignIn} component={Home} />
     <Route path='signin' component={SignInForm} />
     <Route path='signup' component={SignUpForm} />
-    <Route path='play/:gameId' onEnter={requireLogin} component={CurrentGame} />
+    <Route path='play/:gameId' onEnter={requireSignIn} component={CurrentGame} />
 	</Route>
 );
 

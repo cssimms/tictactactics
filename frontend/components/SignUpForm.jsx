@@ -80,7 +80,7 @@ var SignUpForm = React.createClass({
               placeholder='Password'/>
           <input type='submit' />
         </form><br/>
-        <Link to='signin'>Already Registered?</Link>
+      <Link className='signon-link' to='signin'>Already Registered?</Link>
       </div>
     );
   }

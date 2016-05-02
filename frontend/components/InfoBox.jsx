@@ -1,13 +1,18 @@
-var React = require('react');
+var React = require('react'),
+Link = require('react-router').Link;
 
 var InfoBox = React.createClass({
 
   render: function () {
+    var titleStyle = {
+      fontSize: '18px'
+    };
     return (
       <ul className="info-box">
-        <li className="info-box-title">TicTacTactics.com</li>
+        <Link to='/'
+          style={titleStyle}
+          className="signon-link">TicTacTactics.com</Link>
         <li className="info-box-item">App Information</li>
-        <li className="info-box-item">Charlie is a good Programmer!</li>
       </ul>
     );
   }

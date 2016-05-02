@@ -1,6 +1,6 @@
 var React = require('react'),
 CurrentUserMixin = require('../mixins/currentUser'),
-GameStore = require('../stores/GamesStore'),
+GamesStore = require('../stores/GamesStore'),
 GameClientActions = require('../actions/game/GameClientActions'),
 GameIndexItem = require('./GameIndexItem'),
 hashHistory = require('react-router').hashHistory,
@@ -18,7 +18,7 @@ var GameIndex = React.createClass({
   },
 
   componentDidMount: function() {
-    this.gameToken = GameStore.addListener(this._onChange);
+    this.gameToken = GamesStore.addListener(this._onChange);
     var currUser = this.state.currentUser;
     if (currUser){
       GameClientActions.fetchUserGames(currUser.id);
@@ -30,8 +30,9 @@ var GameIndex = React.createClass({
   },
 
   _onChange: function () {
+    this.updateUser();
     this.setState({
-      games: GameStore.userGames()
+      games: GamesStore.userGames()
     });
   },
 
@@ -58,11 +59,15 @@ var GameIndex = React.createClass({
   },
 
   render: function () {
+    var idInfo;
+    if (this.state.currentUser){
+      idInfo = <p>{'Your id is: ' + this.state.currentUser.id}</p>;
+    }
 
     return (
       <div>
         <h4>Your Games</h4>
-
+        <h5>{idInfo}</h5><br/>
         {this.gameItems()}
       </div>
     );

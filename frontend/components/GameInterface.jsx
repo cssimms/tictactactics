@@ -33,6 +33,7 @@ var GameInterface = React.createClass({
           <GameCell key={i}
               pos={cell.pos}
               mark={cell.mark}
+              currTurn={this.props.currTurn}
               id={this.props.game.id}/>
         );
       }.bind(this));
