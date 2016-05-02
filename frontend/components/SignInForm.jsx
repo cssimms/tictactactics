@@ -2,9 +2,13 @@ var React = require('react'),
 Link = require('react-router').Link,
 UserClientActions = require('../actions/user/UserClientActions'),
 UserStore = require('../stores/UserStore'),
-HashHistory = require('react-router').hashHistory;
+HashHistory = require('react-router').hashHistory,
+currentUser = require('../mixins/currentUser');
 
 var SignInForm = React.createClass({
+
+  mixins: [currentUser],
+
   getInitialState: function() {
     return {
       username: "",
@@ -15,6 +19,7 @@ var SignInForm = React.createClass({
 
   componentDidMount: function() {
     this.storeToken = UserStore.addListener(this._onChange);
+    this._onChange();
   },
 
   componentWillUnmount: function() {
@@ -66,7 +71,7 @@ var SignInForm = React.createClass({
 
   render: function () {
     return(
-      <div className='userForm'>
+      <div className='home group'>
         <h3>Sign In</h3>
         <h4>{this.errors()}</h4>
         <form onSubmit={this.handleSubmit}>

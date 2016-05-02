@@ -41,8 +41,10 @@ var GameInterface = React.createClass({
   },
 
   render: function () {
+    var status = (this.props.game) ? ' ' + this.props.game.status : '';
+    
     return (
-      <div className={'game-container group'}>
+      <div className={'game-container group' + status}>
         {this.cells()}
       </div>
     );

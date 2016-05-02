@@ -1,0 +1,122 @@
+.game-menu {
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  height: 150px;
+  width: 150px;
+  border: 1px solid lightgrey;
+}
+
+.game-button {
+  margin: 0 auto;
+  width: 100%;
+  background-color: silver;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1em;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.game-button:hover {
+  background-color: gray;
+  color: lightgrey;
+}
+
+.game-button.submit {
+  margin-top: 5%;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
+}
+
+.game-button.submit:hover {
+  background-color: orange;
+}
+
+.game-button.create:hover {
+  background-color: orange;
+}
+.game-item-box {
+  padding: 10px;
+}
+
+.game-item-box:hover {
+  background-color: grey;
+}
+
+.game-item-box.your-turn:hover {
+  background: darkorange;
+}
+
+.game-summary {
+  float: left;
+}
+
+.game-info {
+  float: right;
+}
+
+
+.game-container {
+  border: 2px solid black;
+  width: 450px;
+  height: 450px;
+  margin: auto;
+}
+
+.game-container.closed {
+  background: repeating-linear-gradient(
+    45deg,
+    darkgrey,
+    darkgrey 10px,
+    lightgrey 10px,
+    lightgrey 20px
+  );
+}
+
+.game-cell {
+  float: left;
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  color: goldenrod;
+  font-size: 38px;
+  text-align: center;
+  line-height: 150px
+}
+
+.game-cell.filled{
+  background-color: grey;
+}
+
+.game-cell.avail:hover {
+  background-color: grey;
+}
+
+.game-cell.selected {
+  background-color: orange;
+}
+
+.game-cell.selected.avail:hover {
+  background-color: saddlebrown;
+}
+
+.game-header-message {
+  font-size: 24px;
+  width: 450px;
+  height: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin: auto;
+}
+
+.game-tail-message {
+  width: 450px;
+  height: 50px;
+  text-align: center;
+  margin: 5% auto;
+
+}

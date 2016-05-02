@@ -22,7 +22,12 @@ var GameCell = React.createClass({
 
   handleClick: function (event) {
     event.preventDefault();
-    if (this.props.mark === 'e' && this.props.currTurn) {
+    if (this.state.selected){
+      GameClientActions.deSelectMove({
+        pos: this.props.pos,
+        mark: this.state.currentUser.id
+      });
+    } else if (this.props.mark === 'e' && this.props.currTurn) {
       GameClientActions.selectMove({
         pos: this.props.pos,
         mark: this.state.currentUser.id
@@ -35,12 +40,12 @@ var GameCell = React.createClass({
 
   render: function () {
     var mark = (this.props.mark === 'e') ? '' : this.props.mark;
-    var sel = "";
-    if (this.state.selected){
-      sel = " selected";
-    }
+    var filled = (mark !== '') ? ' filled' : '';
+    var sel = (this.state.selected) ? ' selected' : '';
+    var avail = (this.props.currTurn) ? ' avail' : '';
     return (
-      <div className={'game-cell' + sel} onClick={this.handleClick} >
+      <div className={'game-cell' + sel + filled + avail}
+        onClick={this.handleClick} >
         {mark}
       </div>
     );

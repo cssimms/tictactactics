@@ -54,14 +54,34 @@
 
 - ordered gameindex
 - style and position game menu
+- create game modal styled
 - fix mysterious json bug
-- gameindex now displays opponent 
+- gameindex now displays opponent
+- games index layout made a little better
+- modal fixed width
+- fix submit button,
 
 
 
 TODO:
 - fix overlap when sqwishedededed
 - add ruby ~'2.1.2' to gemfile
+
+styles:
+
+hover shows mark,
+gameboard different color background-color,
+menu bar button margins (for no squishy),
+backgound image - pretty!
+table for games (opacity)
+tabs for players/games
+make a logogogogo
+
+
+marks look lame... transitions?
+
+
+
 
 TODO much later:
 - refactor ruby ttt code.. it's amateur...  

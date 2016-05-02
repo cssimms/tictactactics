@@ -40,7 +40,7 @@ var UserShow = React.createClass({
 
   render: function () {
     return (
-      <div className='user-show'>
+      <div className='home group'>
         <p className='stats'>Here are you sweet stats</p>
         <GameHistory
           owner={this.state.user}

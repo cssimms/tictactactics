@@ -13,7 +13,7 @@ module.exports = React.createClass({
       return (
           <div>
             <GameIndex />
-            <GameMenu />
+            <GameMenu currentUser={this.state.currentUser} />
           </div>
       );
     } else {

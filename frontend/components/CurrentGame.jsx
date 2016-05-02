@@ -107,20 +107,30 @@ var CurrentGame = React.createClass({
   },
 
   render: function () {
-    var submitButton;
+    var gameTail;
     if (this.state.game) {
-      if (this.state.game.status === 'closed'){
-        submitButton = '';
+      if (this.state.game.status === 'closed') {
+        gameTail = '';
+      } else if (!this.currTurn()) {
+        gameTail =
+          <div className='game-tail-message'>
+            Waiting for other player to move...</div>;
       } else {
-        submitButton = <button onClick={this.submitMove}>Submit Move</button>;
+        gameTail =
+          <button className='game-button submit'
+            onClick={this.submitMove}>Submit Move</button>;
       }
     }
     return (
       <div>
-        <h5>{this.errors()}</h5>
-        <h5>{this.gameMessage()}</h5>
-        <GameInterface currTurn={this.currTurn()} game={this.state.game}/>
-        {submitButton}
+        <div className='game-header-message'>
+          <h5>{this.errors()}</h5>
+          <h5>{this.gameMessage()}</h5>
+        </div>
+        <GameInterface
+          currTurn={this.currTurn()}
+          game={this.state.game}/>
+        {gameTail}
       </div>
     );
   }

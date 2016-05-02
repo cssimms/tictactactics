@@ -63,7 +63,8 @@ var MenuBar = React.createClass({
           className="menu-bar-item">{userButtonTitle}</button>
         <button onClick={gameButtonAction}
           className="menu-bar-item">Your Games</button>
-        <button onClick={statsButtonAction}>Your Sweet Stats</button>
+        <button onClick={statsButtonAction}
+          className='menu-bar-item'>Your Sweet Stats</button>
       </ul>
     );
   }

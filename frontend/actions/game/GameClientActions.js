@@ -18,6 +18,13 @@ module.exports = {
     });
   },
 
+  deSelectMove: function (move) {
+    Dispatcher.dispatch({
+      actionType: GameConstants.MOVE_DESELECTED,
+      move: move
+    });
+  },
+
   fetchUserGames: function (userId, param) {
     GameApiUtil.fetchUserGames(userId, param);
   },

@@ -34,6 +34,11 @@ GameStore.loadGames = function (games) {
   });
 };
 
+GameStore.addGame = function (game) {
+  game = GameTranslator.translate(game);
+  _games[game.id] = game;
+};
+
 GameStore.errors = function () {
   return _errors;
 };
@@ -42,6 +47,9 @@ GameStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case GameConstants.RECEIVE_GAME:
         GameStore.loadGame(payload.game);
+      break;
+    case GameConstants.ADD_GAME:
+        GameStore.addGame(payload.game);
       break;
     case GameConstants.RECEIVE_GAMES:
         GameStore.loadGames(payload.games);
@@ -54,6 +62,9 @@ GameStore.__onDispatch = function (payload) {
       break;
     case GameConstants.MOVE_SELECTED:
         _currentMove = payload.move;
+      break;
+    case GameConstants.MOVE_DESELECTED:
+        _currentMove = null;
       break;
   }
   this.__emitChange();

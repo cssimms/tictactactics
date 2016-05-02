@@ -14,7 +14,7 @@
  *= require_self
  */
 
- html, body, section, article,
+ html, body, section, article, span,
  h1, h2, p, strong, em, a, div, ul, li {
    margin: 0;
    border: 0;
@@ -31,7 +31,7 @@
 
 body {
   background-color: gainsboro;
-  margin-top: 50px;
+  margin-top: 55px;
 }
 
 ul {
@@ -41,6 +41,8 @@ ul {
 .home {
   border: 1px solid grey;
   padding: 10px;
+  margin: auto;
+  width: 520px;
 }
 
 .menu-bar {
@@ -53,10 +55,21 @@ ul {
   z-index: 1;
 }
 
+.menu-bar-item {
+  float: right;
+  display:inline;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.menu-bar-item:hover{
+  background-color: darkgray;
+}
+
 .page-content{
-  display: relative;
+  position: relative;
   margin: 0 auto;
-  width: 60%;
+  width: 900px;
 }
 
 .info-box {
@@ -81,93 +94,10 @@ ul {
   background: lightgrey;
 }
 
-.menu-bar-item {
-  float: right;
-  display:inline;
-  padding: 8px;
-}
-
-.game-menu {
-  padding: 10px;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  height: 150px;
-  width: 150px;
-  border: 1px solid lightgrey;
-}
-
-.game-button {
-  margin: 0 auto;
-  width: 100%;
-  background-color: silver;
-  border-radius: 4px;
-  text-align: center;
-  padding: 1em;
-  font-weight: bold;
-  letter-spacing: .1em;
-}
-
-.game-button.create:hover {
-  background-color: orange;
-}
-
-.game-button:hover {
-  background-color: gray;
-  color: lightgrey;
-}
-
 .player-select {
   font-size: 18px;
   height: 2em;
   width: 30%;
-}
-
-.userForm {
-  /*float: left;*/
-  border: 2px solid grey;
-  padding: 10px;
-}
-
-.game-item-box {
-  padding: 10px;
-}
-
-.game-item-box:hover {
-  background-color: grey;
-}
-
-.game-item-box.your-turn:hover {
-  background: darkorange;
-}
-
-.game-summary {
-  float: left;
-}
-
-.game-info {
-  float: right;
-}
-
-
-.game-container {
-  border: 3px solid lightgrey;
-  width: 450px;
-  height: 450px;
-}
-
-.game-cell {
-  float: left;
-  border: 1px solid grey;
-  box-sizing: border-box;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  line-height: 150px
-}
-
-.game-cell.selected {
-  background-color: orange;
 }
 
 .invis {

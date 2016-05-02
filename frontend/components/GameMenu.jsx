@@ -1,13 +1,10 @@
         var React = require('react'),
             Modal = require('react-modal'),
- CurrentUserMixin = require('../mixins/currentUser'),
         UserStore = require('../stores/UserStore'),
 UserClientActions = require('../actions/user/UserClientActions'),
 GameClientActions = require('../actions/game/GameClientActions');
 
 var GameMenu = React.createClass({
-
-  mixins: [CurrentUserMixin],
 
   getInitialState: function() {
     return({
@@ -27,7 +24,6 @@ var GameMenu = React.createClass({
   },
 
   _onChange: function () {
-    this.updateUser();
     this.setState({
       users: UserStore.allUsers()
     });
@@ -38,7 +34,7 @@ var GameMenu = React.createClass({
       return;
     } else {
       return this.state.users.map(function (usr, i) {
-        if (this.state.currentUser.id === usr.id){
+        if (this.props.currentUser.id === usr.id){
           return;
         } else {
           return <option
@@ -61,7 +57,7 @@ var GameMenu = React.createClass({
     var otherUserId = parseInt(event.target.userId.value);
 
     GameClientActions.createGame({
-      x_id: this.state.currentUser.id,
+      x_id: this.props.currentUser.id,
       o_id: otherUserId
     });
     this.closeModal();
@@ -89,10 +85,10 @@ var GameMenu = React.createClass({
       content: {
         background: 'gainsboro',
         position: 'fixed',
-        top: '100px',
-        left: '300px',
-        right: '300px',
-        bottom: '300px',
+        top: '10%',
+        left: '33%',
+        width: '300px',
+        height: '260px',
         border: '1px solid #ccc',
         padding: '20px',
         zIndex: 11,

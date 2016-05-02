@@ -63,7 +63,7 @@ var GameApiUtil = {
         o_id: players.o_id
       }},
       success: function(response){
-        GameServerActions.receiveGame(response);
+        GameServerActions.addSingleGame(response);
       }
     });
   }

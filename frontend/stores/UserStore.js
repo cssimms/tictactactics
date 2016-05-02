@@ -27,7 +27,6 @@ UserStore.signIn = function (user) {
 };
 
 UserStore.signOut = function (user) {
-  HashHistory.push('signin');
   _currentUser = null;
   _errors = null;
 };

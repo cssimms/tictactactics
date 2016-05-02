@@ -8,7 +8,7 @@ var CurrentUser = {
 			userErrors: UserStore.errors()
 		};
 	},
-  
+
 	componentDidMount: function(){
 		this.token = UserStore.addListener(this.updateUser);
 		if (!UserStore.currentUser()) {

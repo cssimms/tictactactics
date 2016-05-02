@@ -29,11 +29,11 @@ var requireSignOut = function () {
 var routes = (
 	<Route path='/' component={App}>
     <IndexRoute component={Home} />
-    <Route path='home' onEnter={requireSignIn} component={Home} />
+    <Route path='home' component={Home} />
     <Route path='signin' component={SignInForm} />
     <Route path='signup' component={SignUpForm} />
-    <Route path='play/:gameId' onEnter={requireSignIn} component={CurrentGame}/>
-    <Route path='users/:userId' onEnter={requireSignIn} component={UserShow} />
+    <Route path='play/:gameId' component={CurrentGame}/>
+    <Route path='users/:userId' component={UserShow} />
 	</Route>
 );
 
