@@ -15,13 +15,15 @@ var GameApiUtil = {
     });
   },
 
-  fetchUserGames: function (id) {
+  fetchUserGames: function (id, param) {
+
     $.ajax({
       url: "api/games",
       type: "GET",
       data: {
         game: {
-          userId: id
+          userId: id,
+          param: param
         }},
       success: function(response){
         GameServerActions.receiveGames(response);

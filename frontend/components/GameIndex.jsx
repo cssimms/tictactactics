@@ -21,8 +21,9 @@ var GameIndex = React.createClass({
   componentDidMount: function() {
     this.gameToken = GamesStore.addListener(this._onChange);
     var currUser = this.state.currentUser;
+    // are you logged in?
     if (currUser){
-      GameClientActions.fetchUserGames(currUser.id);
+      GameClientActions.fetchUserGames(currUser.id, 'open');
     }
   },
 
@@ -43,6 +44,7 @@ var GameIndex = React.createClass({
     }.bind(this));
 
     var games =  gameArray.map(function (game, i) {
+
       var yourTurn = false;
 
       var mark;

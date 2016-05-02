@@ -79,9 +79,9 @@ the player's turn (not MVP)
   - [x] create `Game` model
   - [X] actually write `Game` model
   - [X] write custom game validations for valid play (backend)
-  - [ ] write custom game validations for valid play (frontend)
+  - [X] write custom game validations for valid play (frontend)
   - [X] CRU API for games (`GamesController`)
-  - [ ] fully test and polish js code for gameplay
+  - [X] fully test and polish js code for gameplay
 
 ### Phase 4: Game API integration (0.5)
 
@@ -106,9 +106,9 @@ the player's turn (not MVP)
 
 - Fill out CurrentGame, GameInterface, and GameMenu Component, enabling:
   - [ ] Game CRUD (including quitting a game - DELETE)
-  - [ ] Making / Submitting a move
-  - [ ] Viewing current game with up-to-date info
-  - [ ] Saving game to DB (when UnMounted)
+  - [X] Making / Submitting a move
+  - [X] Viewing current game with up-to-date info
+  - [X] Saving game to DB (upon move submission)
 - [ ] Use CSS to style associated pages
 - [ ] Full testing, from components to db and back again
 

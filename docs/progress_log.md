@@ -46,6 +46,13 @@
 
 - selecting cells and submitting moves works with backend validations
 
+## Day 7 (5/1/16)
+
+- cleaned up GamesIndex, now displays when it's your turn.
+
+
+
+
 TODO:
 
 - add ruby ~'2.1.2' to gemfile
@@ -55,9 +62,11 @@ TODO much later:
 - refactor queries in game controller
 
 Q's :
+  - fetchUserOpenGames and fetchUserClosedGames or just fetchUserGames and iterate
+  client side??
   - error: 'Unexpected token o in JSON at position 1' from GameTranslator line 5,
   occurs when going back to GameIndex after submitting a move
-  
+
   - rename component files to kneeling camel? or is the inconsistency ok?
   - all backend failures return the error: callback from ApiUtil, I've made this have status
   codes of 400, etc. It's ugly in the console. good? bad? workaround?

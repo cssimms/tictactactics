@@ -18,8 +18,8 @@ module.exports = {
     });
   },
 
-  fetchUserGames: function (userId) {
-    GameApiUtil.fetchUserGames(userId);
+  fetchUserGames: function (userId, param) {
+    GameApiUtil.fetchUserGames(userId, param);
   },
 
   createGame: function (players) {

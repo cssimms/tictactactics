@@ -1,5 +1,5 @@
 var React = require('react'),
-Link = require('react-router').Link;
+     Link = require('react-router').Link;
 
 var InfoBox = React.createClass({
 
