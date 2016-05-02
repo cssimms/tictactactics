@@ -12,7 +12,7 @@ module.exports = React.createClass({
     if (this.state.currentUser){
       return (
           <div>
-            <GameIndex />,
+            <GameIndex />
             <GameMenu />
           </div>
       );

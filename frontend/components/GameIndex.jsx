@@ -1,5 +1,6 @@
 var React = require('react'),
 CurrentUserMixin = require('../mixins/currentUser'),
+GameTranslator = require('../utils/ttt_js/gameTranslator'),
 GamesStore = require('../stores/GamesStore'),
 GameClientActions = require('../actions/game/GameClientActions'),
 GameIndexItem = require('./GameIndexItem'),
@@ -42,13 +43,25 @@ var GameIndex = React.createClass({
     }.bind(this));
 
     var games =  gameArray.map(function (game, i) {
+      var yourTurn = false;
+
+      var mark;
+      if (this.state.currentUser.id === game.x_id) {
+        mark = 'X';
+      } else if (this.state.currentUser.id === game.o_id) {
+        mark = 'O';
+      }
+
+      if (GameTranslator.yourTurn(game, mark)){
+        yourTurn = true;
+      }
       return (
-        <GameIndexItem key={i} game={game} />
+        <GameIndexItem key={i} game={game} yourTurn={yourTurn}/>
       );
-    });
+    }.bind(this));
 
     if (games.length < 1) {
-      return "You don't have any games!";
+      return <h4>"You don't have any games!"</h4>;
     } else {
       return games;
     }
@@ -59,16 +72,17 @@ var GameIndex = React.createClass({
   },
 
   render: function () {
-    var idInfo;
+    var idInfo, gameItems;
     if (this.state.currentUser){
       idInfo = <p>{'Your id is: ' + this.state.currentUser.id}</p>;
+      gameItems = this.gameItems();
     }
 
     return (
       <div>
         <h4>Your Games</h4>
         <h5>{idInfo}</h5><br/>
-        {this.gameItems()}
+        {gameItems}
       </div>
     );
   }

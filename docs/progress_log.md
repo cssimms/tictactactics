@@ -47,18 +47,17 @@
 - selecting cells and submitting moves works with backend validations
 
 TODO:
-- bug free everything WORKS
-- naviagtion buttons and layout
 
 - add ruby ~'2.1.2' to gemfile
-- need to pass CurrentGame and id in props, so redirect(nested)
-under.....user show? not sure
 
 TODO much later:
 - refactor ruby ttt code.. it's amateur...  
 - refactor queries in game controller
 
 Q's :
-  - nest routes under home?
+  - error: 'Unexpected token o in JSON at position 1' from GameTranslator line 5,
+  occurs when going back to GameIndex after submitting a move
+  
   - rename component files to kneeling camel? or is the inconsistency ok?
-  - is it better for game move checks to use falsey return values or throw and catch errors?
+  - all backend failures return the error: callback from ApiUtil, I've made this have status
+  codes of 400, etc. It's ugly in the console. good? bad? workaround?

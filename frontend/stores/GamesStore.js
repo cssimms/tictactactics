@@ -19,7 +19,9 @@ GameStore.currentMove = function () {
 };
 
 GameStore.userGames = function () {
-  return _games;
+  return Object.keys(_games).map(function (key) {
+    return GameTranslator.translate(_games[key]);
+  });
 };
 
 GameStore.loadGame = function(game) {
