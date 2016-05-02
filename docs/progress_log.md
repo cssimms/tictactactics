@@ -50,6 +50,11 @@
 
 - cleaned up GamesIndex, now displays when it's your turn.
 
+## Day 8 (5/2/16)
+
+- ordered gameindex
+
+
 
 
 

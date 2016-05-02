@@ -43,8 +43,10 @@ var GameIndex = React.createClass({
       return this.state.games[key];
     }.bind(this));
 
-    var games =  gameArray.map(function (game, i) {
+    var readyGames = [];
+    var unreadyGames =  [];
 
+    gameArray.forEach(function (game, i) {
       var mark;
       if (this.state.currentUser.id === game.x_id) {
         mark = 'X';
@@ -53,21 +55,22 @@ var GameIndex = React.createClass({
       }
 
       var yourTurn = GameTranslator.yourTurn(game, mark);
+      var gameItem = <GameIndexItem key={i} game={game} yourTurn={yourTurn}/>;
 
-      return (
-        <GameIndexItem key={i} game={game} yourTurn={yourTurn}/>
-      );
+      if (yourTurn){
+        readyGames.push(gameItem);
+      } else {
+        unreadyGames.push(gameItem);
+      }
     }.bind(this));
 
-    if (games.length < 1) {
+    var allGames = readyGames.concat(unreadyGames);
+
+    if (allGames.length < 1) {
       return <h4>"You don't have any games!"</h4>;
     } else {
-      return games;
+      return allGames;
     }
-  },
-
-  newGame: function () {
-    hashHistory.push('/');
   },
 
   render: function () {
