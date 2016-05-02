@@ -45,8 +45,6 @@ var GameIndex = React.createClass({
 
     var games =  gameArray.map(function (game, i) {
 
-      var yourTurn = false;
-
       var mark;
       if (this.state.currentUser.id === game.x_id) {
         mark = 'X';
@@ -54,9 +52,8 @@ var GameIndex = React.createClass({
         mark = 'O';
       }
 
-      if (GameTranslator.yourTurn(game, mark)){
-        yourTurn = true;
-      }
+      var yourTurn = GameTranslator.yourTurn(game, mark);
+
       return (
         <GameIndexItem key={i} game={game} yourTurn={yourTurn}/>
       );

@@ -32,7 +32,8 @@ var routes = (
     <Route path='home' onEnter={requireSignIn} component={Home} />
     <Route path='signin' component={SignInForm} />
     <Route path='signup' component={SignUpForm} />
-    <Route path='play/:gameId' onEnter={requireSignIn} component={CurrentGame} />
+    <Route path='play/:gameId' onEnter={requireSignIn} component={CurrentGame}/>
+    <Route path='users/:userId' onEnter={requireSignIn} component={UserShow} />
 	</Route>
 );
 

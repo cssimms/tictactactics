@@ -38,6 +38,10 @@ UserStore.allUsers = function () {
   });
 };
 
+UserStore.find = function (id) {
+  return _users[id];
+};
+
 UserStore.receiveAllUsers = function (users) {
   users.forEach(function (usr) {
     _users[usr.id] = usr;

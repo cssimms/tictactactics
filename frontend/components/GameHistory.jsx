@@ -1,13 +1,22 @@
-var React = require('react');
+var React = require('react'),
+GameIndexItem = require('./GameIndexItem');
 
 var GameHistory = React.createClass({
-  getInitialState: function() {
 
+  allGames: function () {
+    return this.props.games.map(function (game, i) {
+      return (
+        <GameIndexItem key={i} game={game} yourTurn={null} />
+      );
+    });
   },
+
 
   render: function () {
     return (
-      <div></div>
+      <div>
+        {this.allGames()}
+      </div>
     );
   }
 });

@@ -39,17 +39,23 @@ var MenuBar = React.createClass({
     HashHistory.push('home');
   },
 
+  redirectShow: function () {
+    HashHistory.push('users/' + this.state.currentUser.id);
+  },
+
   render: function () {
-    var userButtonAction, userButtonTitle;
+    var userButtonAction, userButtonTitle, statsButtonAction;
     if (this.state.currentUser) {
+      statsButtonAction = this.redirectShow;
       userButtonAction = this.signOut;
       userButtonTitle = "Sign Out of " + this.state.currentUser.username;
     } else {
+      statsButtonAction = this.signIn;
       userButtonAction = this.signIn;
       userButtonTitle = "Sign In";
     }
-
     var gameButtonAction = this.redirectPlay;
+
 
     return (
       <ul className="menu-bar group">
@@ -57,7 +63,7 @@ var MenuBar = React.createClass({
           className="menu-bar-item">{userButtonTitle}</button>
         <button onClick={gameButtonAction}
           className="menu-bar-item">Your Games</button>
-        <li className="menu-bar-item">more cool stuff!</li>
+        <button onClick={statsButtonAction}>Your Sweet Stats</button>
       </ul>
     );
   }
