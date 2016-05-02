@@ -8,12 +8,14 @@ var InfoBox = React.createClass({
       fontSize: '18px'
     };
     return (
-      <ul className="info-box">
-        <Link to='/'
-          style={titleStyle}
-          className="signon-link">TicTacTactics.com</Link>
-        <li className="info-box-item">App Information</li>
-      </ul>
+      <div className="info-box">
+        <ul>
+          <Link to='/'
+            style={titleStyle}
+            className="signon-link">TicTacTactics.com</Link>
+          <li className="info-box-item">App Information</li>
+        </ul>
+      </div>
     );
   }
 });

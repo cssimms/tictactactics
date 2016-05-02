@@ -34,8 +34,13 @@ body {
   margin-top: 50px;
 }
 
+ul {
+  list-style: none;
+}
+
 .home {
   border: 1px solid grey;
+  padding: 10px;
 }
 
 .menu-bar {
@@ -45,6 +50,31 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
+}
+
+.page-content{
+  display: relative;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.info-box {
+  border: 1px solid lightgrey;
+  padding: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.info-box-title{
+  font-size: 18px;
+}
+
+.info-box-item {
+
 }
 
 .signon-link:hover {
@@ -61,20 +91,6 @@ body {
 
 }
 
-.info-box {
-  border: 1px solid lightgrey;
-  padding: 10px;
-  display: inline-block;
-  width: 150px;
-}
-
-.info-box-title{
-  font-size: 18px;
-}
-
-.info-box-item {
-
-}
 
 .userForm {
   /*float: left;*/

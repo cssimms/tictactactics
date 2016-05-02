@@ -9,8 +9,10 @@ module.exports = React.createClass({
 		return(
 			<div>
 				<MenuBar />
-				<InfoBox />
- 				{this.props.children}
+				<div className='page-content'>
+					{this.props.children}
+					<InfoBox />
+				</div>
 			</div>
 		);
 	}
