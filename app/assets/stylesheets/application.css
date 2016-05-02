@@ -108,11 +108,20 @@ ul {
   letter-spacing: .1em;
 }
 
+.game-button.create:hover {
+  background-color: orange;
+}
+
 .game-button:hover {
   background-color: gray;
   color: lightgrey;
 }
 
+.player-select {
+  font-size: 18px;
+  height: 2em;
+  width: 30%;
+}
 
 .userForm {
   /*float: left;*/
@@ -120,16 +129,26 @@ ul {
   padding: 10px;
 }
 
-.gameItemList:hover {
+.game-item-box {
+  padding: 10px;
+}
+
+.game-item-box:hover {
   background-color: grey;
 }
 
-.gameItem {
-}
-
-.gameItemList.your-turn:hover {
+.game-item-box.your-turn:hover {
   background: darkorange;
 }
+
+.game-summary {
+  float: left;
+}
+
+.game-info {
+  float: right;
+}
+
 
 .game-container {
   border: 3px solid lightgrey;

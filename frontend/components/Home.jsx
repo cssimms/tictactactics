@@ -30,7 +30,7 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <div className='home'>
+      <div className='home group'>
         {this.splash()}
       </div>
     );

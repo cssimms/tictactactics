@@ -54,7 +54,8 @@
 
 - ordered gameindex
 - style and position game menu
-
+- fix mysterious json bug
+- gameindex now displays opponent 
 
 
 
@@ -69,8 +70,6 @@ TODO much later:
 Q's :
   - fetchUserOpenGames and fetchUserClosedGames or just fetchUserGames and iterate
   client side??
-  - error: 'Unexpected token o in JSON at position 1' from GameTranslator line 5,
-  occurs when going back to GameIndex after submitting a move
 
   - rename component files to kneeling camel? or is the inconsistency ok?
   - all backend failures return the error: callback from ApiUtil, I've made this have status

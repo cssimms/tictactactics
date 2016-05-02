@@ -42,7 +42,10 @@ var UserShow = React.createClass({
     return (
       <div className='user-show'>
         <p className='stats'>Here are you sweet stats</p>
-        <GameHistory games={this.state.userGames} users={this.state.users} />
+        <GameHistory
+          owner={this.state.user}
+          games={this.state.userGames}
+          users={this.state.users} />
       </div>
     );
   }

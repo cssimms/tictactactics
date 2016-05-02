@@ -27,6 +27,7 @@ var GameMenu = React.createClass({
   },
 
   _onChange: function () {
+    this.updateUser();
     this.setState({
       users: UserStore.allUsers()
     });
@@ -37,10 +38,14 @@ var GameMenu = React.createClass({
       return;
     } else {
       return this.state.users.map(function (usr, i) {
-        return <option
-          key={i}
-          value={usr.id}>{usr.username}</option>;
-      });
+        if (this.state.currentUser.id === usr.id){
+          return;
+        } else {
+          return <option
+            key={i}
+            value={usr.id}>{usr.username}</option>;
+        }
+      }.bind(this));
     }
   },
 
@@ -82,14 +87,16 @@ var GameMenu = React.createClass({
         zIndex: 10
       },
       content: {
+        background: 'gainsboro',
         position: 'fixed',
         top: '100px',
-        left: '150px',
-        right: '150px',
-        bottom: '100px',
+        left: '300px',
+        right: '300px',
+        bottom: '300px',
         border: '1px solid #ccc',
         padding: '20px',
-        zIndex: 11
+        zIndex: 11,
+        textAlign: 'center'
       }
     };
 
@@ -101,11 +108,16 @@ var GameMenu = React.createClass({
         <h3>Create a New Game</h3>
         <form onSubmit={this.createGame}>
           <h4>Who do you want to challange?</h4>
-          <select name='userId'>
+          <select className='player-select' name='userId'>
             {this.allUsers()}
-          </select><br/>
-        <input type='submit' value='Create Game' />
+          </select><br/><br/>
+        <input className='game-button create'
+               type='submit'
+               value='Create Game' />
         </form>
+        <button className='game-button' onClick={this.closeModal}>
+          Nevermind, take me back to my games.
+        </button>
       </Modal>
     );
   },
@@ -115,7 +127,7 @@ var GameMenu = React.createClass({
     return (
       <div className="game-menu">
         <button
-          className='game-button'
+          className='game-button create'
           onClick={this.openModal}>Create Game</button>
         {this.createGameModal()}
       </div>
