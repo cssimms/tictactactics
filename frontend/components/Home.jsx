@@ -1,8 +1,8 @@
         var React = require('react'),
         GameIndex = require('./GameIndex'),
          GameMenu = require('./GameMenu'),
-         UserIndex = require('./UserIndex'),
-         Tabs = require('./Tabs'),
+         UserIndex = require('./userIndex'),
+         Tabs = require('./tabs'),
  CurrentUserMixin = require('../mixins/currentUser'),
  Link = require('react-router').Link;
 
