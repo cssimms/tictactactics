@@ -1,11 +1,23 @@
 var React = require('react'),
 GameIndexItem = require('./GameIndexItem'),
 UserStore = require('../stores/UserStore'),
-UserClientActions = require('../actions/user/UserClientActions');
+UserClientActions = require('../actions/user/UserClientActions'),
+CurrentUserMixin = require('../mixins/currentUser');
+
+//   <GameHistory
+    // viewer={this.state.currentUser}
+    // owner={this.state.user}
+    // games={this.state.userGames}
+    // users={this.state.users} />
+
 
 var GameHistory = React.createClass({
 
-  // all usergames and users
+  mixins:[CurrentUserMixin],
+
+  currentUserLooking: function () {
+    return (this.props.viewer.id === this.props.owner.id);
+  },
 
   allGames: function () {
       var gameArray = Object.keys(this.props.games).map(function(key){
@@ -60,11 +72,8 @@ var GameHistory = React.createClass({
       }
     },
 
-
-  render: function () {
-    return (
-      <div className='page-container'>
-        <h4>Your Game History</h4>
+    gameTableComposition: function (games) {
+      return (
         <table className='game-index-container'>
           <thead className='game-table header'>
             <tr>
@@ -75,9 +84,36 @@ var GameHistory = React.createClass({
             </tr>
           </thead>
           <tbody>
-            {this.allGames()}
+            {games}
           </tbody>
         </table>
+      );
+    },
+
+
+
+  render: function () {
+    var displayTable = <p>No Games to Show</p>;
+    var message = 'Waiting for Games...';
+    var allRelevantGames = [];
+    var currUserLooking = null;
+
+    if (this.props.owner){
+      message = <h4>{this.props.owner.username + "'s Game History"}</h4>;
+      allRelevantGames = this.allGames();
+      currUserLooking = this.currentUserLooking();
+      if (allRelevantGames.length > 0){
+        displayTable = this.gameTableComposition(allRelevantGames);
+      }
+      if (currUserLooking) {
+        message = <h4>Your Game History</h4>;
+      }
+    }
+
+    return (
+      <div className='page-container'>
+        {message}
+        {displayTable}
       </div>
     );
   }

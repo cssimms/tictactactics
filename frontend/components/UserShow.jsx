@@ -30,7 +30,6 @@ var UserShow = React.createClass({
   },
 
   _onChange: function () {
-    this.updateUser();
     this.setState({
       user: UserStore.find(this.props.params.userId),
       users: UserStore.allUsers(),
@@ -41,8 +40,9 @@ var UserShow = React.createClass({
   render: function () {
     return (
       <div className='home group'>
-        <p className='stats'>Here are you sweet stats</p>
+        <p className='stats'>Here are sweet stats</p>
         <GameHistory
+          viewer={this.state.currentUser}
           owner={this.state.user}
           games={this.state.userGames}
           users={this.state.users} />

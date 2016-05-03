@@ -1,6 +1,7 @@
         var React = require('react'),
         GameIndex = require('./GameIndex'),
          GameMenu = require('./GameMenu'),
+         UserIndex = require('./UserIndex'),
          Tabs = require('./Tabs'),
  CurrentUserMixin = require('../mixins/currentUser'),
  Link = require('react-router').Link;
@@ -13,14 +14,22 @@ module.exports = React.createClass({
     if (this.state.currentUser){
       return (
           <div>
-            <Tabs panes={[{
-                title: 'Human Games',
-                content: <GameIndex />
-            }, {title: 'Computer Games',
-              content: <div className='page-container'>computer games</div>
-          }
-
-            ]} />
+            <Tabs panes={
+                [
+                  {
+                    title: 'Human Games',
+                    content: <GameIndex />
+                },
+                  {
+                    title: 'Computer Games',
+                    content: <div className='page-container'>computer games</div>
+                },
+                  {
+                    title: 'Players',
+                    content: <UserIndex />
+                }
+              ]
+            } />
             <GameMenu currentUser={this.state.currentUser} />
           </div>
       );
