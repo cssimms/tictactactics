@@ -13,8 +13,6 @@ CurrentUserMixin = require('../mixins/currentUser');
 
 var GameHistory = React.createClass({
 
-  mixins:[CurrentUserMixin],
-
   currentUserLooking: function () {
     return (this.props.viewer.id === this.props.owner.id);
   },

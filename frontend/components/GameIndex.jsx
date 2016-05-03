@@ -38,7 +38,6 @@ var GameIndex = React.createClass({
   },
 
   _onChange: function () {
-    this.updateUser();
     this.setState({
       games: GamesStore.userGames()
     });
