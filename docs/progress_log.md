@@ -64,6 +64,8 @@
 - gave gameboard different color background-color,
 - menu bar button margins (for no squishy),
 
+## Day 9 (5/3/16)
+- tabs for games page
 
 
 TODO:

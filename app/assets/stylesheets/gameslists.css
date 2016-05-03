@@ -1,0 +1,66 @@
+.tab-header {
+  font-size: 18px;
+  padding: 10px;
+  padding-bottom: 0;
+  margin: 5px;
+  border: 1px solid darkgrey;
+  border-top: 3px solid darkgrey;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.tab-header.active {
+  border-top-color: orange;
+  border-bottom: 1px solid white;
+  background-color: ghostwhite;
+}
+
+.game-index-page {
+  border: 1px solid darkgrey;
+  background-color: ghostwhite;
+  padding: 10px;
+}
+
+.game-index-container {
+  padding: 3px;
+  border-spacing: 5px
+}
+
+.game-item-box {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid lightgrey;
+}
+
+.game-item-box:hover {
+  background-color: grey;
+}
+
+.game-item-box.your-turn:hover {
+  background: darkorange;
+}
+
+.game-summary {
+  float: left;
+}
+
+.game-table {
+  height: 20px;
+}
+
+.game-table.header {
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+}
+
+.game-table.header-item {
+  padding: 5px;
+  text-align: center;
+}
+
+.game-info-item {
+  padding: 3px;
+  display: table-cell;
+}

@@ -39,25 +39,22 @@ var GameIndexItem = React.createClass({
     var gameInfo = this.gameInfo();
 
     return (
-      <div className={'game-item-box group' + gameInfo.yourTurn}
+      <tr className={'game-item-box group' + gameInfo.yourTurn}
            onClick={this.handleClick}>
 
-        <p className='game-summary'>{gameInfo.message}</p>
-        <ul className='game-info'>
-          <li className='game-info-item'>
-            {gameInfo.opponent}
-          </li>
-          <li className='game-info-item'>
-            {this.props.yourMark}
-          </li>
-          <li className='game-info-item'>
-            {this.props.game.id}
-          </li>
-          <li className='game-info-item'>
-            {this.props.game.status}
-          </li>
-        </ul>
-      </div>
+        <td className='game-info-item'>
+          {gameInfo.opponent}
+        </td>
+        <td className='game-info-item'>
+          {gameInfo.message}
+        </td>
+        <td className='game-info-item'>
+          {this.props.yourMark}
+        </td>
+        <td className='game-info-item'>
+          {this.props.game.id}
+        </td>
+      </tr>
     );
   }
 });

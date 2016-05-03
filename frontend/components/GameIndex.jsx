@@ -90,7 +90,7 @@ var GameIndex = React.createClass({
     var allGames = readyGames.concat(unreadyGames);
 
     if (allGames.length < 1) {
-      return <h4>"You don't have any games!"</h4>;
+      return <tr>"You don't have any games!"</tr>;
     } else {
       return allGames;
     }
@@ -107,18 +107,21 @@ var GameIndex = React.createClass({
     }
 
     return (
-      <div>
-        <h4>Your Games</h4>
-        <h5>{idInfo}</h5><br/>
-        <div className='game-index-container'>
-          <ul className='game-table header'>
-            <li className='game-table header-item'>Opponent</li>
-            <li className='game-table header-item'>Status</li>
-            <li className='game-table header-item'>Side</li>
-            <li className='game-table header-item'>Game ID</li>
-          </ul>
-          {gameItems}
-        </div>
+      <div className='game-index-page'>
+        <h3>{idInfo}</h3><br/>
+        <table className='game-index-container'>
+          <thead className='game-table header'>
+            <tr>
+              <td className='game-table header-item'>Opponent</td>
+              <td className='game-table header-item'>Status</td>
+              <td className='game-table header-item'>Side</td>
+              <td className='game-table header-item'>Game ID</td>
+            </tr>
+          </thead>
+          <tbody>
+            {gameItems}
+          </tbody>
+        </table>
       </div>
     );
   }

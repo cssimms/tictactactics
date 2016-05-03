@@ -54,7 +54,7 @@ var GameHistory = React.createClass({
       var allGames = wonGames.concat(tieGames.concat(lostGames));
 
       if (allGames.length < 1) {
-        return <h4>"You don't have any games!"</h4>;
+        return <tr><td>"You don't have any games!"</td></tr>;
       } else {
         return allGames;
       }
@@ -63,8 +63,21 @@ var GameHistory = React.createClass({
 
   render: function () {
     return (
-      <div>
-        {this.allGames()}
+      <div className='game-index-page'>
+        <h4>Your Game History</h4>
+        <table className='game-index-container'>
+          <thead className='game-table header'>
+            <tr>
+              <td className='game-table header-item'>Opponent</td>
+              <td className='game-table header-item'>Status</td>
+              <td className='game-table header-item'>Side</td>
+              <td className='game-table header-item'>Game ID</td>
+            </tr>
+          </thead>
+          <tbody>
+            {this.allGames()}
+          </tbody>
+        </table>
       </div>
     );
   }
