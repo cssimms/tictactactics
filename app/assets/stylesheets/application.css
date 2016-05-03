@@ -14,7 +14,7 @@
  *= require_self
  */
 
- html, body, section, article, span,
+ html, body, section, article, span, table,
  h1, h2, p, strong, em, a, div, ul, li {
    margin: 0;
    border: 0;
@@ -39,9 +39,12 @@ ul {
 }
 
 .home {
-  padding: 10px;
+  padding: 0;
   margin: auto;
-  width: 520px;
+  width: 500px;
+  min-height: 600px;
+  background-image: url('small_logo.png');
+  background-size: contain;
 }
 
 .menu-bar {
@@ -63,24 +66,28 @@ ul {
   font-weight: bold;
 }
 
+img.logo {
+  height: 47px;
+}
+
 .menu-bar-item:hover{
   background-color: darkgray;
 }
 
 .page-content{
   position: relative;
+  padding-top: 15px;
   margin: 0 auto;
   width: 900px;
 }
 
 .info-box {
-  border: 1px solid lightgrey;
+  border: 1px solid grey;
   padding: 10px;
   position: absolute;
   top: 50px;
   left: 0;
   width: 150px;
-  height: 150px;
 }
 
 .info-box-title{

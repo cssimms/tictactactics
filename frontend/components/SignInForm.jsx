@@ -72,21 +72,23 @@ var SignInForm = React.createClass({
   render: function () {
     return(
       <div className='home group'>
-        <h3>Sign In</h3>
-        <h4>{this.errors()}</h4>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='name' className='invis'>Username</label>
-            <input id='name' type='text'
-              onChange={this.nameChange}
-              placeholder='Username'/>
-            <br/><br/>
-        <label htmlFor='pass' className='invis'>Password</label>
-            <input id='pass' type='text'
-              onChange={this.passwordChange}
-              placeholder='Password'/>
-          <input type='submit' />
-        </form><br/>
-      <Link className='signon-link' to='signup'>Not a Member?</Link>
+        <div className='page-container'>
+          <h3>Sign In</h3>
+          <h4>{this.errors()}</h4>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor='name' className='invis'>Username</label>
+              <input id='name' type='text'
+                onChange={this.nameChange}
+                placeholder='Username'/>
+              <br/><br/>
+          <label htmlFor='pass' className='invis'>Password</label>
+              <input id='pass' type='password'
+                onChange={this.passwordChange}
+                placeholder='Password'/>
+              <input type='submit' /><br/><br/>
+          </form><br/>
+        <Link className='signon-link' to='signup'>Not a Member?</Link>
+        </div>
       </div>
     );
   }

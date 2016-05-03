@@ -96,21 +96,21 @@ the player's turn (not MVP)
 
 **Objective:** Get layout and coloring down for all existing pages.
 
-- [ ] get existing components into correct position
-- [ ] add basic colors & styles
-- [ ] finish menuBar and infoBox components
+- [X] get existing components into correct position
+- [X] add basic colors & styles
+- [X] finish menuBar and infoBox components
 
 ### Phase 5: CurrentGame / GameInterface Component / Page (2.5 days)
 
 **Objective:** Connect game logic to components, then to DB
 
 - Fill out CurrentGame, GameInterface, and GameMenu Component, enabling:
-  - [ ] Game CRUD (including quitting a game - DELETE)
+  - [X] Game CRUD (including quitting a game - DELETE)
   - [X] Making / Submitting a move
   - [X] Viewing current game with up-to-date info
   - [X] Saving game to DB (upon move submission)
-- [ ] Use CSS to style associated pages
-- [ ] Full testing, from components to db and back again
+- [X] Use CSS to style associated pages
+- [X] Full testing, from components to db and back again
 
 ### Phase 6: Home Page (1 day)
 

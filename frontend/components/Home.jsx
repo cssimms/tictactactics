@@ -17,15 +17,16 @@ module.exports = React.createClass({
                 title: 'Human Games',
                 content: <GameIndex />
             }, {title: 'Computer Games',
-              content: <div className='game-index-page'>computer games</div>
-            }
+              content: <div className='page-container'>computer games</div>
+          }
+
             ]} />
             <GameMenu currentUser={this.state.currentUser} />
           </div>
       );
     } else {
       return (
-        <div>
+        <div className='page-container'>
           <h2>Welcome to TicTacTactics</h2>
           <Link className='signon-link' to='signin'>Click here to Sign In</Link>
           <br/>

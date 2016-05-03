@@ -90,7 +90,7 @@ var GameIndex = React.createClass({
     var allGames = readyGames.concat(unreadyGames);
 
     if (allGames.length < 1) {
-      return <tr>"You don't have any games!"</tr>;
+      return <tr><td>"You don't have any games!"</td></tr>;
     } else {
       return allGames;
     }
@@ -107,7 +107,7 @@ var GameIndex = React.createClass({
     }
 
     return (
-      <div className='game-index-page'>
+      <div className='page-container'>
         <h3>{idInfo}</h3><br/>
         <table className='game-index-container'>
           <thead className='game-table header'>

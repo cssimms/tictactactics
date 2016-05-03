@@ -63,7 +63,7 @@ var GameHistory = React.createClass({
 
   render: function () {
     return (
-      <div className='game-index-page'>
+      <div className='page-container'>
         <h4>Your Game History</h4>
         <table className='game-index-container'>
           <thead className='game-table header'>

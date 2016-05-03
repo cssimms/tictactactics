@@ -66,10 +66,11 @@
 
 ## Day 9 (5/3/16)
 - tabs for games page
+- backgound image - pretty!
 
 
 TODO:
-- game table header not displaying
+- game history show broken
 - apply signout bug to stats page (userShow)
 - when O wins, 'd' is shown as winner
 - add ruby ~'2.1.2' to gemfile
@@ -78,25 +79,11 @@ styles:
 
 hover shows mark,
 
-backgound image - pretty!
-table for games (opacity)
 tabs for players/games
-make a logogogogo
-
+draw results in victory message
 
 marks look lame... transitions?
-
-
-
 
 TODO much later:
 - refactor ruby ttt code.. it's amateur...  
 - refactor queries in game controller
-
-Q's :
-  - fetchUserOpenGames and fetchUserClosedGames or just fetchUserGames and iterate
-  client side??
-
-  - rename component files to kneeling camel? or is the inconsistency ok?
-  - all backend failures return the error: callback from ApiUtil, I've made this have status
-  codes of 400, etc. It's ugly in the console. good? bad? workaround?

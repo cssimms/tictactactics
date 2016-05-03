@@ -59,6 +59,7 @@ var MenuBar = React.createClass({
 
     return (
       <ul className="menu-bar group">
+        <img className='logo' src='/assets/logo.png'/>
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
         <button onClick={gameButtonAction}
