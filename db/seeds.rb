@@ -7,12 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+guest = User.create({username: 'GuestUser', password: 'password'})
+
 user1 = User.create({username: 'charlie', password:'password'})
 user2 = User.create({username: 'sara', password:'asdfasdf'})
 user3 = User.create({username: 'taEmily', password:'ilovekittens'})
 user4 = User.create({username: 'megan', password:'ilovekittens'})
 user5 = User.create({username: 'rob', password:'ilovekittens'})
 user6 = User.create({username: 'victor', password:'ilovekittens'})
+
 
 Game.create({x_id: user1.id, o_id: user2.id})
 Game.create({x_id: user3.id, o_id: user2.id})

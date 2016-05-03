@@ -13,7 +13,10 @@ var InfoBox = React.createClass({
           <Link to='/'
             style={titleStyle}
             className="signon-link">TicTacTactics.com</Link>
-          <li className="info-box-item">App Information</li>
+          <li className="info-box-item">Charles Simms</li>
+          <li className="info-box-item">personal site link</li>
+          <li className="info-box-item">github link</li>
+          <li className="info-box-item">linkedin link</li>
         </ul>
       </div>
     );

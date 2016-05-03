@@ -20,6 +20,7 @@ var UserShow = React.createClass({
 
   componentDidMount: function() {
     this.gameToken = GameStore.addListener(this._onChange);
+    this.userToken = UserStore.addListener(this._onChange);
     var userId = this.props.params.userId;
     UserClientActions.fetchUsers(userId);
     GameClientActions.fetchUserGames(userId, 'closed');
@@ -27,6 +28,7 @@ var UserShow = React.createClass({
 
   componentWillUnmount: function() {
     this.gameToken.remove();
+    this.userToken.remove();
   },
 
   _onChange: function () {

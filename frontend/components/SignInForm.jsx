@@ -57,6 +57,13 @@ var SignInForm = React.createClass({
     });
   },
 
+  guestSignIn: function () {
+    UserClientActions.signIn({
+      username: 'guest',
+      password: 'password'
+    });
+  },
+
   errors: function () {
     if (this.state.errors) {
       return(
@@ -77,17 +84,21 @@ var SignInForm = React.createClass({
           <h4>{this.errors()}</h4>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='name' className='invis'>Username</label>
-              <input id='name' type='text'
+              <input className='user-form-input' id='name' type='text'
                 onChange={this.nameChange}
                 placeholder='Username'/>
               <br/><br/>
           <label htmlFor='pass' className='invis'>Password</label>
-              <input id='pass' type='password'
+              <input className='user-form-input' id='pass' type='password'
                 onChange={this.passwordChange}
-                placeholder='Password'/>
-              <input type='submit' /><br/><br/>
+                placeholder='Password'/><br/><br/>
+              <input className='sign-button'type='submit' />
           </form><br/>
         <Link className='signon-link' to='signup'>Not a Member?</Link>
+        <br/><br/><br/>
+        <button className='sign-button guest' onClick={this.guestSignIn}>
+          Sign in as Guest
+        </button>
         </div>
       </div>
     );

@@ -98,6 +98,30 @@ img.logo {
 
 }
 
+.user-form-input{
+  height: 20px;
+  border-radius: 6px;
+}
+
+.sign-button {
+  margin: 0 auto;
+  width: 20%;
+  background-color: silver;
+  border-radius: 4px;
+  text-align: center;
+  padding: 3px;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.sign-button.guest{
+}
+
+.sign-button:hover {
+  background-color: darkorange;
+  color: lightgrey;
+}
+
 .signon-link:hover {
   background: lightgrey;
 }

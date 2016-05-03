@@ -76,15 +76,15 @@ var SignUpForm = React.createClass({
           <h4>{this.errors()}</h4>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='name' className='invis'>Username</label>
-              <input id='name' type='text'
+              <input className='user-form-input' id='name' type='text'
                 onChange={this.nameChange}
                 placeholder='Username'/>
               <br/><br/>
             <label htmlFor='pass' className='invis'>Password</label>
-              <input id='pass' type='text'
+              <input className='user-form-input' id='pass' type='text'
                 onChange={this.passwordChange}
                 placeholder='Password'/><br/><br/>
-            <input type='submit' />
+              <input className='sign-button' type='submit' />
           </form><br/>
         <Link className='signon-link' to='signin'>Already Registered?</Link>
       </div>

@@ -11,8 +11,8 @@
 
 .tab-header.active {
   border-top-color: orange;
-  border-bottom: 1px solid white;
-  background-color: ghostwhite;
+  border-bottom: 1px solid rgba(248, 248, 255, .7);
+  background-color: rgba(248, 248, 255, .7);
 }
 
 .page-container {

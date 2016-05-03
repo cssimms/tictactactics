@@ -14,18 +14,6 @@ hashHistory = require('react-router').hashHistory,
 CurrentGame = require('./components/CurrentGame'),
   UserStore = require('./stores/UserStore');
 
-var requireSignIn = function () {
-  if (!UserStore.currentUser()){
-    hashHistory.push('signin');
-  }
-};
-
-var requireSignOut = function () {
-  if (UserStore.currentUser()){
-    hashHistory.push('/');
-  }
-};
-
 var routes = (
 	<Route path='/' component={App}>
     <IndexRoute component={Home} />

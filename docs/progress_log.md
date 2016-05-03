@@ -1,3 +1,4 @@
+
 ## Day 1 (4/25/16)
 
 - generate all frontend folders
@@ -67,10 +68,12 @@
 ## Day 9 (5/3/16)
 - tabs for games page
 - backgound image - pretty!
-
+- game history show a little better
+- center signin/signup buttons
+- add nav buttons to and from current game
+- add mark selection to create game modal
 
 TODO:
-- game history show broken
 - apply signout bug to stats page (userShow)
 - when O wins, 'd' is shown as winner
 - add ruby ~'2.1.2' to gemfile
@@ -78,8 +81,6 @@ TODO:
 styles:
 
 hover shows mark,
-
-tabs for players/games
 draw results in victory message
 
 marks look lame... transitions?

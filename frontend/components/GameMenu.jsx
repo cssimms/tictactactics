@@ -55,10 +55,20 @@ var GameMenu = React.createClass({
   createGame: function (event) {
     event.preventDefault();
     var otherUserId = parseInt(event.target.userId.value);
+    var chosenMark = event.target.mark.value;
+    var xId, oId;
+
+    if (chosenMark === 'X'){
+      xId = this.props.currentUser.id;
+      oId = otherUserId;
+    } else {
+      oId = this.props.currentUser.id;
+      xId = otherUserId;
+    }
 
     GameClientActions.createGame({
-      x_id: this.props.currentUser.id,
-      o_id: otherUserId
+      x_id: xId,
+      o_id: oId
     });
     this.closeModal();
   },
@@ -88,7 +98,7 @@ var GameMenu = React.createClass({
         top: '10%',
         left: '33%',
         width: '300px',
-        height: '260px',
+        height: '340px',
         border: '1px solid #ccc',
         padding: '20px',
         zIndex: 11,
@@ -107,6 +117,10 @@ var GameMenu = React.createClass({
           <select className='player-select' name='userId'>
             {this.allUsers()}
           </select><br/><br/>
+        <h4>Which Mark do you choose?</h4>
+        <input type='radio' name='mark' value='X' defaultChecked>X's</input>
+        <input type='radio' name='mark' value='O'>O's</input>
+        <br/><br/>
         <input className='game-button create'
                type='submit'
                value='Create Game' />

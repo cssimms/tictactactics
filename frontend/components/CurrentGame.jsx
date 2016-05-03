@@ -3,7 +3,8 @@
 GameClientActions = require('../actions/game/GameClientActions'),
     GameInterface = require('./GameInterface'),
     GameTranslator = require('../utils/ttt_js/gameTranslator'),
-CurrentUserMixin = require('../mixins/currentUser');
+CurrentUserMixin = require('../mixins/currentUser'),
+Link = require('react-router').Link;
 
 var CurrentGame = React.createClass({
 
@@ -110,11 +111,21 @@ var CurrentGame = React.createClass({
     var gameTail;
     if (this.state.game) {
       if (this.state.game.status === 'closed') {
-        gameTail = '';
+        gameTail = <div className='game-tail-message'>
+          <Link
+            className='signon-link'
+            to={'/users/' + this.state.currentUser.id}>
+            Back to your Games
+          </Link>
+        </div>;
       } else if (!this.currTurn()) {
         gameTail =
-          <div className='game-tail-message'>
-            Waiting for other player to move...</div>;
+           <div className='game-tail-message'>
+            Waiting for other player to move...<br/>
+            <Link
+              className='signon-link'
+              to='/home'>Back to your Games</Link>
+           </div>;
       } else {
         gameTail =
           <button className='game-button submit'
