@@ -10,7 +10,7 @@ var GameIndexItem = React.createClass({
   },
 
   gameInfo: function () {
-    var yourTurn = ''; 
+    var yourTurn = '';
     var opponent;
 
 
@@ -45,22 +45,16 @@ var GameIndexItem = React.createClass({
         <p className='game-summary'>{gameInfo.message}</p>
         <ul className='game-info'>
           <li className='game-info-item'>
-            {"Opponent: " + gameInfo.opponent}
+            {gameInfo.opponent}
           </li>
           <li className='game-info-item'>
-            {"You are playing as: " + this.props.yourMark}
+            {this.props.yourMark}
           </li>
           <li className='game-info-item'>
-            {"Game ID: " + this.props.game.id}
+            {this.props.game.id}
           </li>
           <li className='game-info-item'>
-            {"Game Status: " + this.props.game.status}
-          </li>
-          <li className='game-info-item'>
-            {"Player as X: " + this.props.game.x_id}
-          </li>
-          <li className='game-info-item'>
-            {"Player as O: " + this.props.game.o_id}
+            {this.props.game.status}
           </li>
         </ul>
       </div>

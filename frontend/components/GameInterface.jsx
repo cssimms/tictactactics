@@ -20,6 +20,8 @@ var GameInterface = React.createClass({
   cells: function () {
     var grid = this.generateGrid();
     if (this.props.game) {
+      var status = (this.props.game) ? ' ' + this.props.game.status : '';
+
       this.props.game.moveset.forEach(function (move) {
         for (var i = 0; i < grid.length; i++){
           if (grid[i].pos[0] === move.pos[0] &&
@@ -34,6 +36,7 @@ var GameInterface = React.createClass({
               pos={cell.pos}
               mark={cell.mark}
               currTurn={this.props.currTurn}
+              status={status}
               id={this.props.game.id}/>
         );
       }.bind(this));
@@ -41,10 +44,9 @@ var GameInterface = React.createClass({
   },
 
   render: function () {
-    var status = (this.props.game) ? ' ' + this.props.game.status : '';
-    
+
     return (
-      <div className={'game-container group' + status}>
+      <div className='game-container group'>
         {this.cells()}
       </div>
     );

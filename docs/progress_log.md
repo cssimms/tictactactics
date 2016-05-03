@@ -59,18 +59,22 @@
 - gameindex now displays opponent
 - games index layout made a little better
 - modal fixed width
-- fix submit button,
+- fix submit button
+- fixed overlap of side elements
+- gave gameboard different color background-color,
 
 
 
 TODO:
-- fix overlap when sqwishedededed
+- game table header not displaying
+- apply signout bug to stats page (userShow)
+- when O wins, 'd' is shown as winner
 - add ruby ~'2.1.2' to gemfile
 
 styles:
 
 hover shows mark,
-gameboard different color background-color,
+
 menu bar button margins (for no squishy),
 backgound image - pretty!
 table for games (opacity)

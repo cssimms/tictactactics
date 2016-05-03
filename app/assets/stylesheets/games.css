@@ -54,10 +54,25 @@
   float: left;
 }
 
-.game-info {
-  float: right;
+.game-table {
+  height: 20px;
 }
 
+.game-table.header {
+  display: table-row;
+}
+
+.game-table.header-item {
+  display: table-column;
+}
+
+.game-info {
+  display: table-row;
+}
+
+.game-info-item {
+  display: table-cell;
+}
 
 .game-container {
   border: 2px solid black;
@@ -66,20 +81,12 @@
   margin: auto;
 }
 
-.game-container.closed {
-  background: repeating-linear-gradient(
-    45deg,
-    darkgrey,
-    darkgrey 10px,
-    lightgrey 10px,
-    lightgrey 20px
-  );
-}
 
 .game-cell {
   float: left;
   border: 1px solid black;
   box-sizing: border-box;
+  background: wheat;
   width: 150px;
   height: 150px;
   color: goldenrod;
@@ -87,6 +94,16 @@
   text-align: center;
   line-height: 150px
 }
+
+.game-cell.closed {
+  background: repeating-linear-gradient(
+    45deg,
+    darkgrey,
+    darkgrey 10px,
+    lightgrey 10px,
+    lightgrey 20px
+    );
+  }
 
 .game-cell.filled{
   background-color: grey;

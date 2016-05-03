@@ -43,8 +43,13 @@ var GameCell = React.createClass({
     var filled = (mark !== '') ? ' filled' : '';
     var sel = (this.state.selected) ? ' selected' : '';
     var avail = (this.props.currTurn) ? ' avail' : '';
+    var status = '';
+    if (this.props.status && filled === ''){
+      status = this.props.status;
+    }
+
     return (
-      <div className={'game-cell' + sel + filled + avail}
+      <div className={'game-cell' + sel + filled + avail + status}
         onClick={this.handleClick} >
         {mark}
       </div>
