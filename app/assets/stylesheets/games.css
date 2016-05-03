@@ -39,6 +39,8 @@
   background-color: orange;
 }
 .game-item-box {
+  display: flex;
+  flex-direction: row;
   padding: 10px;
 }
 
@@ -54,12 +56,19 @@
   float: left;
 }
 
+.game-index-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .game-table {
   height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .game-table.header {
-  display: table-row;
 }
 
 .game-table.header-item {
@@ -67,10 +76,13 @@
 }
 
 .game-info {
+  float: right;
+  flex-direction: row;
   display: table-row;
 }
 
 .game-info-item {
+  padding: 3px;
   display: table-cell;
 }
 

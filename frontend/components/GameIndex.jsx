@@ -110,13 +110,15 @@ var GameIndex = React.createClass({
       <div>
         <h4>Your Games</h4>
         <h5>{idInfo}</h5><br/>
-        <ul className='game-table header'>
-          <li className='game-table header-item'>Opponent</li>
-          <li className='game-table header-item'>Status</li>
-          <li className='game-table header-item'>Side</li>
-          <li className='game-table header-item'>Game ID</li>
-        </ul>
-        {gameItems}
+        <div className='game-index-container'>
+          <ul className='game-table header'>
+            <li className='game-table header-item'>Opponent</li>
+            <li className='game-table header-item'>Status</li>
+            <li className='game-table header-item'>Side</li>
+            <li className='game-table header-item'>Game ID</li>
+          </ul>
+          {gameItems}
+        </div>
       </div>
     );
   }

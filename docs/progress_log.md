@@ -62,6 +62,7 @@
 - fix submit button
 - fixed overlap of side elements
 - gave gameboard different color background-color,
+- menu bar button margins (for no squishy),
 
 
 
@@ -75,7 +76,6 @@ styles:
 
 hover shows mark,
 
-menu bar button margins (for no squishy),
 backgound image - pretty!
 table for games (opacity)
 tabs for players/games
