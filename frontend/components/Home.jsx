@@ -13,7 +13,7 @@ module.exports = React.createClass({
   splash: function () {
     if (this.state.currentUser){
       return (
-          <div>
+          <div className='tabs-header-container'>
             <Tabs panes={
                 [
                   {

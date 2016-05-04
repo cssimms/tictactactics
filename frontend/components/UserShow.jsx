@@ -22,7 +22,7 @@ var UserShow = React.createClass({
     this.gameToken = GameStore.addListener(this._onChange);
     this.userToken = UserStore.addListener(this._onChange);
     var userId = this.props.params.userId;
-    UserClientActions.fetchUsers(userId);
+    UserClientActions.fetchUsers();
     GameClientActions.fetchUserGames(userId, 'closed');
   },
 
@@ -32,14 +32,15 @@ var UserShow = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps) {
+    var focusUser = UserStore.find(nextProps.params.userId);
     this.setState({
-      focusUser: nextProps.params.userId
+      focusUser: focusUser
     });
   },
 
   _onChange: function () {
     this.setState({
-      user: UserStore.find(this.props.params.userId),
+      focusUser: UserStore.find(this.props.params.userId),
       users: UserStore.allUsers(),
       userGames: GameStore.userGames()
     });
@@ -48,7 +49,6 @@ var UserShow = React.createClass({
   render: function () {
     return (
       <div className='home group'>
-        <p className='stats'>Here are sweet stats</p>
         <GameHistory
           viewer={this.state.currentUser}
           owner={this.state.focusUser}

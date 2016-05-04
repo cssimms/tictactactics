@@ -33,7 +33,8 @@ var GameMenu = React.createClass({
     });
     if (GameStore.newGame()){
       HashHistory.push('play/' + GameStore.newGame().id);
-      GameClientActions.clearNewGame();
+      GameStore.clearNewGame();
+      // GameClientActions.clearNewGame();
     }
   },
 
@@ -133,10 +134,11 @@ var GameMenu = React.createClass({
       content: {
         background: 'gainsboro',
         position: 'fixed',
+        overflow: 'hidden',
         top: '10%',
         left: '33%',
         width: '300px',
-        height: '340px',
+        height: '350px',
         border: '1px solid #ccc',
         padding: '20px',
         zIndex: 11,
@@ -158,8 +160,10 @@ var GameMenu = React.createClass({
             {this.allUsers()}
           </select><br/><br/>
         <h4>Which Mark do you choose?</h4>
-        <input type='radio' name='mark' value='X' defaultChecked>X's</input>
-        <input type='radio' name='mark' value='O'>O's</input>
+        <input className='mark-selector'
+          type='radio' name='mark' value='X' defaultChecked>X's</input>
+        <input className='mark-selector'
+          type='radio' name='mark' value='O'>O's</input>
         <br/><br/>
         <input className='game-button create'
                type='submit'
@@ -185,8 +189,10 @@ var GameMenu = React.createClass({
 
           <br/><br/>
         <h4>Which Mark do you choose?</h4>
-        <input type='radio' name='mark' value='X' defaultChecked>X's</input>
-        <input type='radio' name='mark' value='O'>O's</input>
+        <input className='mark-selector'
+          type='radio' name='mark' value='X' defaultChecked>X's</input>
+        <input className='mark-selector'
+          type='radio' name='mark' value='O'>O's</input>
         <br/><br/>
         <input className='game-button create'
                type='submit'

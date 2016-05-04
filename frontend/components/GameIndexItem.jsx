@@ -32,7 +32,11 @@ var GameIndexItem = React.createClass({
       yourTurn = ' your-turn';
       moveMessage = "It's your move!";
     } else if (this.props.game.status === 'closed'){
-      moveMessage = this.props.game.winner + ' was the winner';
+      if (this.props.game.winner === 'd'){
+        moveMessage = 'It was a draw.';
+      } else {
+        moveMessage = this.props.game.winner + ' was the winner';
+      }
     }
 
     return ({

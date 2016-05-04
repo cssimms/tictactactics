@@ -1,3 +1,7 @@
+.tabs-header-container{
+  text-align: center;
+}
+
 .tab-header {
   font-size: 18px;
   padding: 10px;
@@ -7,6 +11,11 @@
   border-top: 3px solid darkgrey;
   box-sizing: border-box;
   z-index: 1;
+  cursor: pointer;
+}
+
+.tab-header:hover {
+  background-color: wheat;
 }
 
 .tab-header.active {
@@ -34,6 +43,8 @@
   padding: 10px;
   width: 100%;
   border: 1px solid lightgrey;
+  cursor: pointer;
+
 }
 
 .game-item-box:hover {

@@ -133,7 +133,7 @@ var CurrentGame = React.createClass({
     if (this.state.game) {
       if (this.state.game.status === 'closed') {
         victoriousMark = this.state.game.winner;
-        if (victoriousMark === 'f'){
+        if (victoriousMark === 'd'){
           gameMessage = "It's a Draw...";
         } else {
           gameMessage = "Congratulations " +
@@ -183,8 +183,11 @@ var CurrentGame = React.createClass({
            </div>;
       } else {
         gameTail =
-          <button className='game-button submit'
-            onClick={this.submitMove}>Submit Move</button>;
+          <div className='game-tail-message'>
+            <h3>{this.markMessage()}</h3>
+            <button className='game-button submit'
+              onClick={this.submitMove}>Submit Move</button>
+          </div>;
       }
     }
     return gameTail;

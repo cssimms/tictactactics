@@ -27,6 +27,7 @@
    color: inherit;
    background: transparent;
    font-family: sans-serif;
+   cursor: default;
  }
 
 body {
@@ -37,6 +38,11 @@ body {
 ul {
   list-style: none;
 }
+
+button, input {
+  cursor: pointer;
+}
+
 
 .home {
   padding: 0;
@@ -98,6 +104,16 @@ img.logo {
 
 }
 
+.page-form-container {
+  margin: auto;
+  background-color: rgba(222,222,222, .9);
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+
+}
+
 .user-form-input{
   height: 20px;
   border-radius: 6px;
@@ -105,7 +121,7 @@ img.logo {
 
 .sign-button {
   margin: 0 auto;
-  width: 20%;
+  width: 100px;
   background-color: silver;
   border-radius: 4px;
   text-align: center;

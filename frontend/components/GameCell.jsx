@@ -42,7 +42,7 @@ var GameCell = React.createClass({
     var mark = (this.props.mark === 'e') ? '' : this.props.mark;
     var filled = (mark !== '') ? ' filled' : '';
     var sel = (this.state.selected) ? ' selected' : '';
-    var avail = (this.props.currTurn) ? ' avail' : '';
+    var avail = (this.props.currTurn && filled === '') ? ' avail' : '';
     var status = '';
     if (this.props.status && filled === ''){
       status = this.props.status;

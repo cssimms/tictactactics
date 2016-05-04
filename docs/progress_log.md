@@ -75,24 +75,35 @@
 
 ## Day 10 (5/4/16)
 - fix game tabs to show correct information game menu
-- recenter game menu buttons
+- re-center game menu buttons
 - add opponent name to currentgame
+- current game naviagation on submit move fixed
+- fix name display in game history
+- fix current game highlighting
+- correct modal length
+- fixed game draw display
+- correctly show draws in game history
 
 TODO:
-- game index is still buggy
-  - when new game is created, list doesn't update...
-    possible fix would be just redirect to the game show for the new game
+
+- REFACTORING
+
 - errors when opening both modals
+
 - apply signout bug to stats page (userShow)
-- when O wins, 'd' is shown as winner ('d' is winner status for draw games)
-- add ruby ~'2.1.2' to gemfile
 
 styles:
-
-hover shows mark,
-draw results in victory message
-
-marks look lame... transitions?
+- Too greyscale - needs more colors
+- Do not use default font. Go choose one from googlefonts.
+- Box to left with site info needs more styling - space out links
+- Main box styling on splash page needs styling - links should be spaced our more, use nicer fonts
+- Sign in / sign up forms - need some sort of overlay with opacity over main background so they look less cluttered, form inputs should have more padding and margin + be wider
+- Games index - needs overlay with bgcolor and opacity
+- Tabs - look nice but give them more bottom padding
+- Play games modal - mostly very nice! x/o radio buttons should be spaced out more. make more exciting somehow?
+- hover shows mark,
+- hover over inner div in tabs header doesn't show pointer :(
+- marks look lame... transitions?
 
 TODO much later:
 - refactor ruby ttt code.. it's amateur...  
