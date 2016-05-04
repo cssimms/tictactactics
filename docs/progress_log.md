@@ -74,6 +74,7 @@
 - add mark selection to create game modal
 
 TODO:
+- center game menu buttons
 - apply signout bug to stats page (userShow)
 - when O wins, 'd' is shown as winner ('d' is winner status for draw games)
 - add ruby ~'2.1.2' to gemfile

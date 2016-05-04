@@ -20,6 +20,21 @@ var GameIndex = React.createClass({
     });
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.category !== this.props.category) {
+      var currUser = this.state.currentUser;
+      var searchParam;
+      if (currUser){
+        if (nextProps.category === 'human'){
+          searchParam = 'open';
+        } else if (nextProps.category === 'computer'){
+          searchParam = 'comp';
+        }
+        GameClientActions.fetchUserGames(currUser.id, searchParam);
+      }
+    }
+  },
+
   componentDidMount: function() {
     this.gameToken = GamesStore.addListener(this._onChange);
     this.userToken = UserStore.addListener(this._onChange);
@@ -27,8 +42,16 @@ var GameIndex = React.createClass({
 
     // are you logged in?
     var currUser = this.state.currentUser;
+    var searchParam;
     if (currUser){
-      GameClientActions.fetchUserGames(currUser.id, 'open');
+      if (this.props) {
+        if (this.props.category === 'human'){
+          searchParam = 'open';
+        } else if (this.props.category === 'computer'){
+          searchParam = 'comp';
+        }
+      }
+      GameClientActions.fetchUserGames(currUser.id, searchParam);
     }
   },
 
@@ -64,10 +87,14 @@ var GameIndex = React.createClass({
       }
 
       // find opponent
-      if (oppMark === 'O'){
-        opponent = UserStore.find(game.o_id);
-      } else if (oppMark === 'X'){
-        opponent = UserStore.find(game.x_id);
+      if (game.comp_id < 1) {
+        if (oppMark === 'O'){
+          opponent = UserStore.find(game.o_id);
+        } else if (oppMark === 'X'){
+          opponent = UserStore.find(game.x_id);
+        }
+      } else {
+        opponent = {username: 'Easy Computer'};
       }
 
       // determine who's turn

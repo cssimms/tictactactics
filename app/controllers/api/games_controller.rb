@@ -3,7 +3,16 @@ class Api::GamesController < ApplicationController
     userId = game_params[:userId]
     search_param = game_params[:param]
 
-    @games = Game.where('x_id = ? OR o_id = ?', userId, userId).where('status = ?', search_param)
+    if search_param == 'open'
+      @games = Game.where('x_id = ? OR o_id = ?', userId, userId)
+                   .where('status = ?', search_param)
+    elsif search_param == 'closed'
+      @games = Game.where('x_id = ? OR o_id = ?', userId, userId)
+                   .where('status = ?', 'closed')
+    elsif search_param == 'comp'
+      @games = Game.where('x_id = ? OR o_id = ?', userId, userId).where('comp_id > 0').where('status = ?', 'open')
+    end
+    render :index
   end
 
   def show

@@ -39,10 +39,14 @@ var GameHistory = React.createClass({
         }
 
         // find opponent
-        if (oppMark === 'O'){
-          opponent = UserStore.find(game.o_id);
-        } else if (oppMark === 'X'){
-          opponent = UserStore.find(game.x_id);
+        if (game.comp_id < 1) {
+          if (oppMark === 'O'){
+            opponent = UserStore.find(game.o_id);
+          } else if (oppMark === 'X'){
+            opponent = UserStore.find(game.x_id);
+          }
+        } else {
+          opponent = {username: 'Easy Computer'};
         }
 
         var gameItem = <GameIndexItem key={i}

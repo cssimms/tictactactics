@@ -31,6 +31,12 @@ var UserShow = React.createClass({
     this.userToken.remove();
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      focusUser: nextProps.params.userId
+    });
+  },
+
   _onChange: function () {
     this.setState({
       user: UserStore.find(this.props.params.userId),
@@ -45,7 +51,7 @@ var UserShow = React.createClass({
         <p className='stats'>Here are sweet stats</p>
         <GameHistory
           viewer={this.state.currentUser}
-          owner={this.state.user}
+          owner={this.state.focusUser}
           games={this.state.userGames}
           users={this.state.users} />
       </div>

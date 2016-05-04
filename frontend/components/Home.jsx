@@ -1,8 +1,8 @@
         var React = require('react'),
         GameIndex = require('./GameIndex'),
          GameMenu = require('./GameMenu'),
-         UserIndex = require('./userIndex'),
-         Tabs = require('./tabs'),
+        UserIndex = require('./userIndex'),
+             Tabs = require('./tabs'),
  CurrentUserMixin = require('../mixins/currentUser'),
  Link = require('react-router').Link;
 
@@ -18,11 +18,11 @@ module.exports = React.createClass({
                 [
                   {
                     title: 'Human Games',
-                    content: <GameIndex />
+                    content: <GameIndex category='human'/>
                 },
                   {
                     title: 'Computer Games',
-                    content: <div className='page-container'>computer games</div>
+                    content: <GameIndex category='computer'/>
                 },
                   {
                     title: 'Players',
