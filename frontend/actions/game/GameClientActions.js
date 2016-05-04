@@ -29,7 +29,7 @@ module.exports = {
     GameApiUtil.fetchUserGames(userId, param);
   },
 
-  createGame: function (players) {
-    GameApiUtil.createGame(players);
+  createGame: function (gameInfo) {
+    GameApiUtil.createGame(gameInfo);
   }
 };

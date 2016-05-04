@@ -54,13 +54,14 @@ var GameApiUtil = {
     });
   },
 
-  createGame: function (players) {
+  createGame: function (gameInfo) {
     $.ajax({
       url: "api/games",
       type: "POST",
       data: {game:{
-        x_id: players.x_id,
-        o_id: players.o_id
+        x_id: gameInfo.x_id,
+        o_id: gameInfo.o_id,
+        comp_id: gameInfo.comp_id
       }},
       success: function(response){
         GameServerActions.addSingleGame(response);

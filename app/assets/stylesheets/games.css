@@ -37,6 +37,10 @@
   background-color: orange;
 }
 
+.game-button.create {
+  margin: 5px;
+}
+
 .game-button.create:hover {
   background-color: orange;
 }

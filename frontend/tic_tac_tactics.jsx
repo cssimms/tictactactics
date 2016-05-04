@@ -12,6 +12,7 @@ hashHistory = require('react-router').hashHistory,
  SignInForm = require('./components/SignInForm'),
  SignUpForm = require('./components/SignUpForm'),
 CurrentGame = require('./components/CurrentGame'),
+gameApiUtil = require('./utils/gameApiUtil'),
   UserStore = require('./stores/UserStore');
 
 var routes = (
@@ -24,6 +25,8 @@ var routes = (
     <Route path='users/:userId' component={UserShow} />
 	</Route>
 );
+
+window.ApiUtil = gameApiUtil;
 
 document.addEventListener('DOMContentLoaded', function () {
   Modal.setAppElement(document.body);

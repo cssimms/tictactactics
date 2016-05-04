@@ -10,7 +10,7 @@ var GameMenu = React.createClass({
     return({
       users: [],
       selected: "",
-      modalOpen: false
+      playerModalOpen: false
     });
   },
 
@@ -70,19 +70,49 @@ var GameMenu = React.createClass({
       x_id: xId,
       o_id: oId
     });
-    this.closeModal();
+    this.closePlayerModal();
   },
 
-  closeModal: function(){
-    this.setState({ modalOpen: false });
+  createComputerGame: function (event) {
+    event.preventDefault();
+    var compLevel = parseInt(event.target.comp.value);
+    var chosenMark = event.target.mark.value;
+
+    var xId, oId;
+    if (chosenMark === 'X'){
+      xId = this.props.currentUser.id;
+      oId = 0;
+    } else {
+      oId = this.props.currentUser.id;
+      xId = 0;
+    }
+
+    GameClientActions.createGame({
+      x_id: xId,
+      o_id: oId,
+      comp_id: compLevel
+    });
+    this.closeCompModal();
   },
 
-  openModal: function(){
-    this.setState({ modalOpen: true });
+  closePlayerModal: function(){
+    this.setState({ playerModalOpen: false });
   },
 
-  createGameModal: function () {
-    var modalStyle = {
+  openPlayerModal: function(){
+    this.setState({ playerModalOpen: true });
+  },
+
+  closeCompModal: function(){
+    this.setState({ compModalOpen: false });
+  },
+
+  openCompModal: function(){
+    this.setState({ compModalOpen: true });
+  },
+
+  modalStyle: function () {
+    return {
       overlay: {
         position: 'fixed',
         top: 0,
@@ -105,12 +135,14 @@ var GameMenu = React.createClass({
         textAlign: 'center'
       }
     };
+  },
 
+  createPlayerModal: function () {
     return (
       <Modal
-        style={modalStyle}
-        isOpen={this.state.modalOpen}
-        onRequestClose={this.closeModal}>
+        style={this.modalStyle()}
+        isOpen={this.state.playerModalOpen}
+        onRequestClose={this.closePlayerModal}>
         <h3>Create a New Game</h3>
         <form onSubmit={this.createGame}>
           <h4>Who do you want to challange?</h4>
@@ -125,21 +157,51 @@ var GameMenu = React.createClass({
                type='submit'
                value='Create Game' />
         </form>
-        <button className='game-button' onClick={this.closeModal}>
+        <button className='game-button' onClick={this.closePlayerModal}>
           Nevermind, take me back to my games.
         </button>
       </Modal>
     );
   },
 
+  createCompModal: function () {
+    return (
+      <Modal
+        style={this.modalStyle()}
+        isOpen={this.state.compModalOpen}
+        onRequestClose={this.closeCompModal}>
+        <h3>Play a Computer</h3>
+        <form onSubmit={this.createComputerGame}>
+          <h4>What Level of Computer do you want to play?</h4>
+          <input type='radio' name='comp' value='1' defaultChecked>Easy</input>
+
+          <br/><br/>
+        <h4>Which Mark do you choose?</h4>
+        <input type='radio' name='mark' value='X' defaultChecked>X's</input>
+        <input type='radio' name='mark' value='O'>O's</input>
+        <br/><br/>
+        <input className='game-button create'
+               type='submit'
+               value='Create Game' />
+        </form>
+        <button className='game-button' onClick={this.closeCompModal}>
+          Nevermind, take me back to my games.
+        </button>
+      </Modal>
+    );
+  },
 
   render: function () {
     return (
       <div className="game-menu">
         <button
           className='game-button create'
-          onClick={this.openModal}>Create Game</button>
-        {this.createGameModal()}
+          onClick={this.openPlayerModal}>Play a Person</button>
+        <button
+          className='game-button create'
+          onClick={this.openCompModal}>Play Computer</button>
+        {this.createPlayerModal()}
+        {this.createCompModal()}
       </div>
     );
   }

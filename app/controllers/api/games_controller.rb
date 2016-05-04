@@ -17,7 +17,12 @@ class Api::GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new({x_id: game_params[:x_id], o_id: game_params[:o_id]})
+    comp_id = game_params[:comp_id] ? game_params[:comp_id] : 0
+    @game = Game.new({x_id: game_params[:x_id],
+                      o_id: game_params[:o_id],
+                      comp_id: comp_id})
+    @game.computer_first_move
+
     if @game.save
       render :show
     else
@@ -43,6 +48,14 @@ class Api::GamesController < ApplicationController
 
   private
   def game_params
-    params.require(:game).permit(:x_coord, :y_coord, :mark, :userId, :x_id, :o_id, :param)
+    params.require(:game)
+          .permit(:x_coord,   #coords for new move to be made
+                  :y_coord,
+                  :mark,      #mark for new move to be made
+                  :userId,    #id for searching user-specifc games
+                  :param,     #status for searching user-specific games
+                  :x_id,      #ids for new game creation (id of 0
+                  :o_id,      # implies computer opponent)
+                  :comp_id)   # 0 = no comp, 1 = easy, 2 = hard
   end
 end
