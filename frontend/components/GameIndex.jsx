@@ -125,10 +125,10 @@ var GameIndex = React.createClass({
   render: function () {
     var idInfo, gameItems;
     if (this.state.currentUser){
-      idInfo = <p>
-        {'Hello, ' + this.state.currentUser.username +
-        '! Are you ready to play? \n Your id is: ' + this.state.currentUser.id}
-      </p>;
+      idInfo = <div>
+        <p>{'Hello, ' + this.state.currentUser.username + '!'}</p>
+        <p>{'Are you ready to play? \n Your id is: ' + this.state.currentUser.id}</p>
+      </div>;
       gameItems = this.gameItems();
     }
 

@@ -32,7 +32,7 @@ var Headers = React.createClass({
 var Tabs = React.createClass({
 
   getInitialState: function () {
-    return {selectedPane: 1 };
+    return {selectedPane: 0 };
   },
 
   selectTab: function (num) {

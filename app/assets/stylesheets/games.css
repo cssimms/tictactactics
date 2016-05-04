@@ -7,7 +7,7 @@
   top: 50px;
   right: 0;
   width: 150px;
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
 }
 
 .game-button {
@@ -38,7 +38,8 @@
 }
 
 .game-button.create {
-  margin: 5px;
+  margin: 5px auto;
+  font-size: 12px;
 }
 
 .game-button.create:hover {
@@ -94,11 +95,20 @@
 
 .game-header-message {
   font-size: 24px;
+  font-weight: bold;
   width: 450px;
   height: 50px;
   text-align: center;
   margin-bottom: 10px;
   margin: auto;
+}
+
+.game-message-primary {
+
+}
+
+.game-message-secondary {
+
 }
 
 .game-tail-message {

@@ -1,9 +1,11 @@
         var React = require('react'),
         GameStore = require('../stores/GamesStore'),
 GameClientActions = require('../actions/game/GameClientActions'),
+        UserStore = require('../stores/UserStore'),
+UserClientActions = require('../actions/user/UserClientActions'),
     GameInterface = require('./GameInterface'),
-    GameTranslator = require('../utils/ttt_js/gameTranslator'),
-CurrentUserMixin = require('../mixins/currentUser'),
+   GameTranslator = require('../utils/ttt_js/gameTranslator'),
+ CurrentUserMixin = require('../mixins/currentUser'),
 Link = require('react-router').Link;
 
 var CurrentGame = React.createClass({
@@ -19,12 +21,24 @@ var CurrentGame = React.createClass({
   },
 
   componentDidMount: function() {
-    this.gameStoreToken = GameStore.addListener(this._onChange);
+    this.gameToken = GameStore.addListener(this._onChange);
+    this.userToken = UserStore.addListener(this._onChange);
     GameClientActions.fetchGame(this.props.params.gameId);
+    UserClientActions.fetchUsers();
   },
 
   componentWillUnmount: function () {
-    this.gameStoreToken.remove();
+    this.gameToken.remove();
+    this.userToken.remove();
+  },
+
+  _onChange: function () {
+    this.setState({
+      game: GameStore.currentGame(),
+      errors: GameStore.errors(),
+      currentMove: this.appropriateMark(),
+      opponent: this.opponent()
+    });
   },
 
   appropriateMark: function () {
@@ -43,12 +57,36 @@ var CurrentGame = React.createClass({
     return null;
   },
 
-  _onChange: function () {
-    this.setState({
-      game: GameStore.currentGame(),
-      errors: GameStore.errors(),
-      currentMove: this.appropriateMark()
-    });
+  opponent: function () {
+    var oppId, xId, oId, currId;
+    var oppUser = null;
+
+    if (this.state.game && this.state.currentUser){
+      xId = this.state.game.x_id;
+      oId = this.state.game.o_id;
+      currId = this.state.currentUser.id;
+      if (xId === currId){
+        oppId = this.state.game.o_id;
+      } else if (oId === currId){
+        oppId = this.state.game.x_id;
+      }
+
+      if (oppId === 0){
+        oppUser = this.computerPlayer();
+      } else {
+        oppUser = UserStore.find(oppId);
+      }
+    }
+    return oppUser;
+  },
+
+  computerPlayer: function () {
+    if (this.state.game.comp_id === 1){
+      return ({
+        username: 'The Easy Computer',
+        id: 0
+      });
+    }
   },
 
   submitMove: function (event) {
@@ -102,12 +140,28 @@ var CurrentGame = React.createClass({
                             victoriousMark +
                             "! You are the winner!";
         }
+      } else if (this.state.opponent){
+        gameMessage = 'Your Opponent is ' + this.state.opponent.username;
       }
     }
     return gameMessage;
   },
 
-  render: function () {
+  markMessage: function () {
+    var mark;
+
+    if (this.state.game && this.state.currentUser){
+      if (this.state.game.x_id === this.state.currentUser.id){
+        mark = 'X';
+      } else if (this.state.game.o_id === this.state.currentUser.id){
+        mark = 'O';
+      }
+    }
+
+    return ("You're playing as " + mark);
+  },
+
+  gameTail: function () {
     var gameTail;
     if (this.state.game) {
       if (this.state.game.status === 'closed') {
@@ -121,6 +175,7 @@ var CurrentGame = React.createClass({
       } else if (!this.currTurn()) {
         gameTail =
            <div className='game-tail-message'>
+             <h3>{this.markMessage()}</h3>
             Waiting for other player to move...<br/>
             <Link
               className='signon-link'
@@ -132,16 +187,24 @@ var CurrentGame = React.createClass({
             onClick={this.submitMove}>Submit Move</button>;
       }
     }
+    return gameTail;
+  },
+
+  render: function () {
+
     return (
       <div>
         <div className='game-header-message'>
           <h5>{this.errors()}</h5>
-          <h5>{this.gameMessage()}</h5>
+          <div>
+            <div className='game-message-primary'>
+              {this.gameMessage()}</div><br/>
+          </div>
         </div>
         <GameInterface
           currTurn={this.currTurn()}
           game={this.state.game}/>
-        {gameTail}
+        {this.gameTail()}
       </div>
     );
   }

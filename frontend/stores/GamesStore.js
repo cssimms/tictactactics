@@ -6,6 +6,7 @@ GameTranslator = require('../utils/ttt_js/gameTranslator');
 var GameStore = new Store(Dispatcher);
 
 var _games = [],
+    _newGame = null,
     _currentGame,
     _currentMove,
     _errors;
@@ -22,10 +23,22 @@ GameStore.userGames = function () {
   return _games;
 };
 
+GameStore.newGame = function () {
+  return _newGame;
+};
+
 GameStore.loadGame = function(game) {
   _currentGame = GameTranslator.translate(game);
   _errors = null;
   _currentMove = null;
+};
+
+GameStore.loadNewGame = function (game) {
+  _newGame = game;
+};
+
+GameStore.clearNewGame = function () {
+  _newGame = null;
 };
 
 GameStore.loadGames = function (games) {
@@ -50,6 +63,12 @@ GameStore.__onDispatch = function (payload) {
       break;
     case GameConstants.ADD_GAME:
         GameStore.addGame(payload.game);
+      break;
+    case GameConstants.ADD_NEW_GAME:
+        GameStore.loadNewGame(payload.game);
+      break;
+    case GameConstants.CLEAR_NEW_GAME:
+        GameStore.clearNewGame();
       break;
     case GameConstants.RECEIVE_GAMES:
         GameStore.loadGames(payload.games);

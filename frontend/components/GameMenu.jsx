@@ -2,7 +2,9 @@
             Modal = require('react-modal'),
         UserStore = require('../stores/UserStore'),
 UserClientActions = require('../actions/user/UserClientActions'),
-GameClientActions = require('../actions/game/GameClientActions');
+        GameStore = require('../stores/GamesStore'),
+GameClientActions = require('../actions/game/GameClientActions'),
+      HashHistory = require('react-router').hashHistory;
 
 var GameMenu = React.createClass({
 
@@ -16,17 +18,23 @@ var GameMenu = React.createClass({
 
   componentDidMount: function() {
     this.userToken = UserStore.addListener(this._onChange);
+    this.gameToken = GameStore.addListener(this._onChange);
     UserClientActions.fetchUsers();
   },
 
   componentWillUnmount: function() {
     this.userToken.remove();
+    this.gameToken.remove();
   },
 
   _onChange: function () {
     this.setState({
       users: UserStore.allUsers()
     });
+    if (GameStore.newGame()){
+      HashHistory.push('play/' + GameStore.newGame().id);
+      GameClientActions.clearNewGame();
+    }
   },
 
   allUsers: function () {
@@ -197,6 +205,7 @@ var GameMenu = React.createClass({
         <button
           className='game-button create'
           onClick={this.openPlayerModal}>Play a Person</button>
+        <br/><br/>
         <button
           className='game-button create'
           onClick={this.openCompModal}>Play Computer</button>

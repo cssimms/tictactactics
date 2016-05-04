@@ -31,5 +31,11 @@ module.exports = {
 
   createGame: function (gameInfo) {
     GameApiUtil.createGame(gameInfo);
+  },
+
+  clearNewGame: function () {
+    Dispatcher.dispatch({
+      actionType: GameConstants.CLEAR_NEW_GAME,
+    });
   }
 };

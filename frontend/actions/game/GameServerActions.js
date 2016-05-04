@@ -16,6 +16,13 @@ module.exports = {
     });
   },
 
+  addNewGame: function (res) {
+    Dispatcher.dispatch({
+      actionType: GameConstants.ADD_NEW_GAME,
+      game: res
+    });
+  },
+
   receiveGames: function (res) {
     Dispatcher.dispatch({
       actionType: GameConstants.RECEIVE_GAMES,

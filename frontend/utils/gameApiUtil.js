@@ -64,7 +64,7 @@ var GameApiUtil = {
         comp_id: gameInfo.comp_id
       }},
       success: function(response){
-        GameServerActions.addSingleGame(response);
+        GameServerActions.addNewGame(response);
       }
     });
   }

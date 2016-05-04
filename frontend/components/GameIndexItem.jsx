@@ -3,6 +3,13 @@ UserStore = require('../stores/UserStore'),
 UserClientActions = require('../actions/user/UserClientActions'),
 HashHistory = require('react-router').hashHistory;
 
+// <GameIndexItem key={i}
+//                               game={game}
+//                               yourMark={mark}
+//                               yourTurn={false}
+//                               opponent={opponent} />
+
+
 var GameIndexItem = React.createClass({
 
   handleClick: function () {

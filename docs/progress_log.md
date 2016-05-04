@@ -73,8 +73,16 @@
 - add nav buttons to and from current game
 - add mark selection to create game modal
 
+## Day 10 (5/4/16)
+- fix game tabs to show correct information game menu
+- recenter game menu buttons
+- add opponent name to currentgame
+
 TODO:
-- center game menu buttons
+- game index is still buggy
+  - when new game is created, list doesn't update...
+    possible fix would be just redirect to the game show for the new game
+- errors when opening both modals
 - apply signout bug to stats page (userShow)
 - when O wins, 'd' is shown as winner ('d' is winner status for draw games)
 - add ruby ~'2.1.2' to gemfile
