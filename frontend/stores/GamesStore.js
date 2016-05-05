@@ -7,9 +7,9 @@ var GameStore = new Store(Dispatcher);
 
 var _games = [],
     _newGame = null,
-    _currentGame,
-    _currentMove,
-    _errors;
+    _currentGame = null,
+    _currentMove = null,
+    _errors = null;
 
 GameStore.currentGame = function () {
   return _currentGame;
@@ -17,6 +17,10 @@ GameStore.currentGame = function () {
 
 GameStore.currentMove = function () {
   return _currentMove;
+};
+
+GameStore.clearCurrentMove = function () {
+  _currentMove = null;
 };
 
 GameStore.userGames = function () {

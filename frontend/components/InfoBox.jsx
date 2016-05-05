@@ -16,11 +16,14 @@ var InfoBox = React.createClass({
             className="info-box-url">TicTacTactics</Link>
           <div className="info-box-item">Site designed and built by
           </div>
-          <div className='personal-link'>Charlie Simms<br/>
-            <a className='personal-logo' href="http://github.com/cssimms">
-              <img className='personal-img' src='assets/personal_logo.png'/>
-            </a>
-          </div>
+          <a href="http://github.com/cssimms">
+            <div onClick={this.redirectToPersonalPage}
+               className='personal-link'>Charlie Simms<br/>
+             <div className='personal-logo'>
+                <img className='personal-img' src='assets/personal_logo.png'/>
+            </div>
+            </div>
+          </a>
           <a className='github-logo' href="http://github.com/cssimms">
             <img className='github-black' src='assets/github_logo_black.png'/>
             <img className='github-inverse' src='assets/github_logo_inverse.png'/>

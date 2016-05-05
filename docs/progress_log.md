@@ -92,23 +92,28 @@
 - sign in/out forms tweaked
 - hover over inner div in tabs header does show pointer! :)
 - add game buttons to app.jsx (available everywhere)
+- fix game menu bug
+- info box final clean up
+- fix currentmove bug - if move is selected and different game loaded,
+currentmove needs to be cleared
+
 
 TODO:
+- splash
+- integrate hard AI
+- gameplay transitions
 - main logo hover/ inverse image
 - player ranks/wins?
-- info box final clean up
-
 
 - give tables cooler hover animation? look up css animations?
 
-- integrate hard AI
 - REFACTORING
 
 styles:
 - Do not use default font. Go choose one from googlefonts.
 - Box to left with site info needs more styling - space out links
 - Main box styling on splash page needs styling - links should be spaced our more, use nicer fonts
-- Sign in / sign up forms - need some sort of overlay with opacity over main background so they look less cluttered, form inputs should have more padding and margin + be wider
+
 - hover shows mark,
 - marks look lame... transitions?
 

@@ -4,13 +4,14 @@
         UserIndex = require('./userIndex'),
              Tabs = require('./tabs'),
  CurrentUserMixin = require('../mixins/currentUser'),
- Link = require('react-router').Link;
+ Link = require('react-router').Link,
+ HashHistory = require('react-router').hashHistory;
 
 module.exports = React.createClass({
 
   mixins: [CurrentUserMixin],
 
-  splash: function () {
+  entry: function () {
     if (this.state.currentUser){
       return (
           <div className='tabs-header-container'>
@@ -31,26 +32,49 @@ module.exports = React.createClass({
               ]
             } />
             <GameMenu currentUser={this.state.currentUser} />
-
           </div>
       );
     } else {
-      return (
-        <div className='page-container'>
-          <h2>Welcome to TicTacTactics</h2>
-          <Link className='signon-link' to='signin'>Click here to Sign In</Link>
-          <br/>
-          <Link className='signon-link' to='signup'>Or here to Sign Up</Link>
-        </div>
-      );
+      return (this.splash());
     }
+  },
+
+  toSignIn: function () {
+    HashHistory.push('signin');
+  },
+
+  toSignUp: function () {
+    HashHistory.push('signup');
+  },
+
+  splash: function () {
+    return (
+        <div className='page-container'>
+          <div className='splash'>
+            <img className='splash-title' src='assets/logo.png'></img>
+            <br/><br/>
+            <p className='splash-text'>
+            TTT is a correspondance WebApp based off of Lichess.org,
+            with a Tic-Tac-Toe spin. For more information,
+            check out my GitHub on the left.
+            Enjoy!</p>
+            <br/><br/>
+            <button
+              className='sign-button'
+              onClick={this.toSignIn}>Click here to Sign In</button>
+            <br/><br/>
+            <button
+              className='sign-button'
+              onClick={this.toSignUp}>Or here to Sign Up</button>
+          </div>
+        </div>
+    );
   },
 
   render: function () {
     return (
       <div className='home group'>
-        {this.splash()}
-
+        {this.entry()}
       </div>
     );
   }

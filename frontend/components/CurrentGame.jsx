@@ -26,6 +26,7 @@ var CurrentGame = React.createClass({
     this.userToken = UserStore.addListener(this._onChange);
     GameClientActions.fetchGame(this.props.params.gameId);
     UserClientActions.fetchUsers();
+    GameStore.clearCurrentMove();
   },
 
   componentWillUnmount: function () {
