@@ -30,7 +30,8 @@ module.exports = React.createClass({
                 }
               ]
             } />
-            
+            <GameMenu currentUser={this.state.currentUser} />
+
           </div>
       );
     } else {
@@ -49,6 +50,7 @@ module.exports = React.createClass({
     return (
       <div className='home group'>
         {this.splash()}
+
       </div>
     );
   }

@@ -15,7 +15,6 @@ module.exports = React.createClass({
 				<div className='page-content'>
 					{this.props.children}
 					<InfoBox />
-					<GameMenu currentUser={this.state.currentUser} />
 				</div>
 			</div>
 		);

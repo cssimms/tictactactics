@@ -165,7 +165,7 @@ var GameMenu = React.createClass({
             type='radio' name='mark' value='X' defaultChecked/>
         </label>
         <label className='mark-selector'>O's
-          <input 
+          <input
             type='radio' name='mark' value='O'/>
         </label>
         <br/><br/>

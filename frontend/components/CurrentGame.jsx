@@ -3,6 +3,7 @@
 GameClientActions = require('../actions/game/GameClientActions'),
         UserStore = require('../stores/UserStore'),
 UserClientActions = require('../actions/user/UserClientActions'),
+         GameMenu = require('./GameMenu'),
     GameInterface = require('./GameInterface'),
    GameTranslator = require('../utils/ttt_js/gameTranslator'),
  CurrentUserMixin = require('../mixins/currentUser'),
@@ -213,6 +214,8 @@ var CurrentGame = React.createClass({
           currTurn={this.currTurn()}
           game={this.state.game}/>
         {this.gameTail()}
+        <GameMenu currentUser={this.state.currentUser} />
+
       </div>
     );
   }

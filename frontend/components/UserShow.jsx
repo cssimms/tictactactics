@@ -1,8 +1,9 @@
-var React = require('react'),
-GameHistory = require('./GameHistory'),
-GameStore = require('../stores/GamesStore'),
-UserStore = require('../stores/UserStore'),
-CurrentUserMixin = require('../mixins/currentUser'),
+        var React = require('react'),
+      GameHistory = require('./GameHistory'),
+        GameStore = require('../stores/GamesStore'),
+        UserStore = require('../stores/UserStore'),
+         GameMenu = require('./GameMenu'),
+ CurrentUserMixin = require('../mixins/currentUser'),
 UserClientActions = require('../actions/user/UserClientActions'),
 GameClientActions = require('../actions/game/GameClientActions');
 
@@ -54,6 +55,7 @@ var UserShow = React.createClass({
           owner={this.state.focusUser}
           games={this.state.userGames}
           users={this.state.users} />
+          <GameMenu currentUser={this.state.currentUser} />
       </div>
     );
   }
