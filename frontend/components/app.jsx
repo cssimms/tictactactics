@@ -1,9 +1,12 @@
 var React = require('react'),
 MenuBar = require('./MenuBar'),
-InfoBox = require('./InfoBox');
+InfoBox = require('./InfoBox'),
+GameMenu = require('./GameMenu'),
+CurrentUserMixin = require('../mixins/currentUser');
 
 module.exports = React.createClass({
 
+	mixins: [CurrentUserMixin],
 
 	render: function () {
 		return(
@@ -12,6 +15,7 @@ module.exports = React.createClass({
 				<div className='page-content'>
 					{this.props.children}
 					<InfoBox />
+					<GameMenu currentUser={this.state.currentUser} />
 				</div>
 			</div>
 		);

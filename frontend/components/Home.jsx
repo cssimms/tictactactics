@@ -30,7 +30,7 @@ module.exports = React.createClass({
                 }
               ]
             } />
-            <GameMenu currentUser={this.state.currentUser} />
+            
           </div>
       );
     } else {

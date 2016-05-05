@@ -16,7 +16,7 @@ var CurrentGame = React.createClass({
     return ({
       game: null,
       currentMove: null,
-      errors: null
+      errors: null,
     });
   },
 
@@ -40,6 +40,11 @@ var CurrentGame = React.createClass({
       opponent: this.opponent()
     });
   },
+
+  componentWillReceiveProps: function(nextProps) {
+      GameClientActions.fetchGame(nextProps.params.gameId);
+  },
+
 
   appropriateMark: function () {
     var mark;

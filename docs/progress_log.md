@@ -91,11 +91,10 @@
 - fixed signout bug
 - sign in/out forms tweaked
 - hover over inner div in tabs header does show pointer! :)
--
+- add game buttons to app.jsx (available everywhere)
 
 TODO:
 - main logo hover/ inverse image
-- game play buttons everywhere??
 - player ranks/wins?
 - info box final clean up
 
