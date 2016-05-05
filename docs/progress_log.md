@@ -85,24 +85,32 @@
 - correctly show draws in game history
 - Tabs - look nice but give them more bottom padding
 
+## Day 11 (5/5/16)
+- logo links styled (not positioned)
+- info box general styling
+- fixed signout bug
+- sign in/out forms tweaked
+- hover over inner div in tabs header does show pointer! :)
+-
 
 TODO:
+- main logo hover/ inverse image
+- game play buttons everywhere??
+- player ranks/wins?
+- info box final clean up
 
+
+- give tables cooler hover animation? look up css animations?
+
+- integrate hard AI
 - REFACTORING
-
-- errors when opening both modals
-
-- apply signout bug to stats page (userShow)
 
 styles:
 - Do not use default font. Go choose one from googlefonts.
 - Box to left with site info needs more styling - space out links
 - Main box styling on splash page needs styling - links should be spaced our more, use nicer fonts
 - Sign in / sign up forms - need some sort of overlay with opacity over main background so they look less cluttered, form inputs should have more padding and margin + be wider
-- Games index - needs overlay with bgcolor and opacity
-- Play games modal - mostly very nice! x/o radio buttons should be spaced out more. make more exciting somehow?
 - hover shows mark,
-- hover over inner div in tabs header doesn't show pointer :(
 - marks look lame... transitions?
 
 TODO much later:

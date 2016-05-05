@@ -72,21 +72,23 @@ var SignUpForm = React.createClass({
     return(
       <div className='home group'>
         <div className='page-container'>
-          <h3>Register</h3>
-          <h4>{this.errors()}</h4>
-          <form onSubmit={this.handleSubmit}>
-            <label htmlFor='name' className='invis'>Username</label>
-              <input className='user-form-input' id='name' type='text'
-                onChange={this.nameChange}
-                placeholder='Username'/>
-              <br/><br/>
-            <label htmlFor='pass' className='invis'>Password</label>
-              <input className='user-form-input' id='pass' type='text'
-                onChange={this.passwordChange}
-                placeholder='Password'/><br/><br/>
-              <input className='sign-button' type='submit' />
-          </form><br/>
-        <Link className='signon-link' to='signin'>Already Registered?</Link>
+          <div className='page-form-container'>
+            <h3>Register</h3>
+            <h4>{this.errors()}</h4>
+            <form onSubmit={this.handleSubmit}>
+              <label htmlFor='name' className='invis'>Username</label>
+                <input className='user-form-input' id='name' type='text'
+                  onChange={this.nameChange}
+                  placeholder='Username'/>
+                <br/><br/>
+              <label htmlFor='pass' className='invis'>Password</label>
+                <input className='user-form-input' id='pass' type='text'
+                  onChange={this.passwordChange}
+                  placeholder='Password'/><br/><br/>
+                <input className='sign-button' type='submit' />
+            </form><br/>
+          <Link className='signon-link' to='signin'>Already Registered?</Link>
+        </div>
       </div>
     </div>
     );

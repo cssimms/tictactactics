@@ -80,15 +80,7 @@ img.logo {
   height: 47px;
 }
 
-img.github-logo {
-  width: 15px;
-  height: 10px;
-}
 
-img.linkedin-logo {
-  width: 15px;
-  height: 15px;
-}
 
 .menu-bar-item:hover{
   background-color: #6b6a43;
@@ -115,56 +107,108 @@ img.linkedin-logo {
   box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
 }
 
-.info-box-title{
+.info-box-mat {
+  background-color: rgba(222,222,222,.9);
+  height: 100%;
+  border-radius: 6px;
+  padding: 5px;
+  text-align: center;
+}
+
+.info-box-url{
   font-size: 18px;
-}
-
-.info-box-item {
-  padding: 2px;
-}
-
-.page-form-container {
-  margin: auto;
-  background-color: rgba(222,222,222, .9);
-  border-radius: 8px;
-  padding: 10px;
-  width: 300px;
-  height: 300px;
-
-}
-
-.user-form-input{
-  height: 20px;
+  padding: 5px;
+  margin: 10px, auto;
   border-radius: 6px;
 }
 
-.sign-button {
-  margin: 0 auto;
-  width: 100px;
-  background-color: #cfd773;
-  border-radius: 4px;
+.info-box-url:hover {
+
+}
+
+.info-box-item {
+  font-size: 16px;
   text-align: center;
-  padding: 3px;
+}
+
+.personal-link {
+  text-align: center;
+  margin: 0 auto;
   font-weight: bold;
-  letter-spacing: .1em;
+  border-radius: 8px;
+  padding: 10px;
 }
 
-.sign-button.guest{
+.personal-link:hover {
+  background-color: rgba(114, 188, 212, .5);
 }
 
-.sign-button:hover {
-  background-color: #72bcd4;
+a.personal-logo {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  display: block;
 }
 
-.signon-link:hover {
-  background: lightgrey;
+a.personal-logo > img {
+  width: 100%;
+  height: 100%;
 }
 
-.player-select {
-  font-size: 18px;
-  height: 2em;
-  width: 30%;
+a.github-logo {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 5px;
 }
+
+.github-black {
+  width: 100%;
+  height: 100%;
+}
+
+.github-inverse {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+a.github-logo:hover .github-black{
+  display: none;
+}
+
+a.github-logo:hover .github-inverse{
+  display: block;
+}
+
+a.linkedin-logo {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin: 5px;
+}
+
+.linkedin-black {
+  width: 100%;
+  height: 100%;
+}
+
+.linkedin-inverse {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+a.linkedin-logo:hover .linkedin-black {
+  display: none;
+}
+
+a.linkedin-logo:hover .linkedin-inverse {
+  display: block;
+}
+
+
+
 
 .invis {
   display: none;

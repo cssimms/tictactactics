@@ -2,7 +2,8 @@ var React = require('react'),
 HashHistory = require('react-router').hashHistory,
 UserStore = require('../stores/UserStore'),
 UserClientActions = require('../actions/user/UserClientActions'),
-CurrentUserMixin = require('../mixins/currentUser');
+CurrentUserMixin = require('../mixins/currentUser'),
+Link = require('react-router').Link;
 
 
 var MenuBar = React.createClass({
@@ -59,7 +60,9 @@ var MenuBar = React.createClass({
 
     return (
       <ul className="menu-bar group">
-        <img className='logo' src='/assets/logo.png'/>
+        <Link to='/' >
+          <img className='logo' src='/assets/logo.png'/>
+        </Link>
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
         <button onClick={gameButtonAction}

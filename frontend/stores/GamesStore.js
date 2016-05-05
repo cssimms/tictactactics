@@ -80,6 +80,7 @@ GameStore.__onDispatch = function (payload) {
         _errors = payload.errors;
       break;
     case GameConstants.MOVE_SELECTED:
+    // debugger
         _currentMove = payload.move;
       break;
     case GameConstants.MOVE_DESELECTED:

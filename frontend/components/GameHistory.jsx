@@ -1,8 +1,7 @@
 var React = require('react'),
 GameIndexItem = require('./GameIndexItem'),
 UserStore = require('../stores/UserStore'),
-UserClientActions = require('../actions/user/UserClientActions'),
-CurrentUserMixin = require('../mixins/currentUser');
+UserClientActions = require('../actions/user/UserClientActions');
 
 //   <GameHistory
     // viewer={this.state.currentUser}

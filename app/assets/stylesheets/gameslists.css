@@ -14,8 +14,12 @@
   cursor: pointer;
 }
 
+.tab-header > span {
+  cursor: pointer;
+}
+
 .tab-header:hover {
-  background-color: #72bcd4;
+  background-color: rgba(114, 188, 212, .5);
 }
 
 .tab-header.active {

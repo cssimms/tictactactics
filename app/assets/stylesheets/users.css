@@ -1,0 +1,42 @@
+.page-form-container {
+  margin: auto;
+  background-color: rgba(222,222,222, .9);
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+
+}
+
+.user-form-input{
+  height: 20px;
+  border-radius: 6px;
+}
+
+.sign-button {
+  margin: 0 auto;
+  width: 100px;
+  background-color: #cfd773;
+  border-radius: 4px;
+  text-align: center;
+  padding: 3px;
+  font-weight: bold;
+  letter-spacing: .1em;
+}
+
+.sign-button.guest{
+}
+
+.sign-button:hover {
+  background-color: #72bcd4;
+}
+
+.signon-link:hover {
+  background: lightgrey;
+}
+
+.player-select {
+  font-size: 18px;
+  height: 2em;
+  width: 30%;
+}
