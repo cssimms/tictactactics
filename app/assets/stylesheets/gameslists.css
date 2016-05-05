@@ -4,8 +4,8 @@
 
 .tab-header {
   font-size: 18px;
-  padding: 10px;
-  padding-bottom: 0;
+  background-color: gainsboro;
+  padding: 11px;
   margin: 5px;
   border: 1px solid darkgrey;
   border-top: 3px solid darkgrey;
@@ -15,11 +15,11 @@
 }
 
 .tab-header:hover {
-  background-color: wheat;
+  background-color: #72bcd4;
 }
 
 .tab-header.active {
-  border-top-color: orange;
+  border-top-color: #72bcd4;
   border-bottom: 1px solid rgba(248, 248, 255, .7);
   background-color: rgba(248, 248, 255, .7);
 }
@@ -30,11 +30,16 @@
   padding: 10px;
   min-height: 600px;
   text-align: center;
+  margin-top: 10px;
+  -webkit-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
 }
 
 .game-index-container {
   padding: 3px;
   border-spacing: 5px;
+  background-color: rgba(255,255,255,.8);
   border-collapse: collapse;
   width: 100%;
 }
@@ -48,11 +53,13 @@
 }
 
 .game-item-box:hover {
-  background-color: grey;
+  background-color: #6b6a43;
+  color: gainsboro;
 }
 
 .game-item-box.your-turn:hover {
-  background: darkorange;
+  background: #72bcd4;
+  color: black;
 }
 
 .game-summary {
@@ -64,7 +71,7 @@
 }
 
 .game-table.header {
-  border-bottom: 1px solid black;
+  border: 1px solid lightgrey;
   text-align: center;
   padding: 5px;
   width: 100%;

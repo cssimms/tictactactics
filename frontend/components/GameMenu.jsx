@@ -138,7 +138,7 @@ var GameMenu = React.createClass({
         top: '10%',
         left: '33%',
         width: '300px',
-        height: '350px',
+        height: '370px',
         border: '1px solid #ccc',
         padding: '20px',
         zIndex: 11,
@@ -160,10 +160,14 @@ var GameMenu = React.createClass({
             {this.allUsers()}
           </select><br/><br/>
         <h4>Which Mark do you choose?</h4>
-        <input className='mark-selector'
-          type='radio' name='mark' value='X' defaultChecked>X's</input>
-        <input className='mark-selector'
-          type='radio' name='mark' value='O'>O's</input>
+        <label className='mark-selector'>X's
+          <input
+            type='radio' name='mark' value='X' defaultChecked/>
+        </label>
+        <label className='mark-selector'>O's
+          <input 
+            type='radio' name='mark' value='O'/>
+        </label>
         <br/><br/>
         <input className='game-button create'
                type='submit'
@@ -185,14 +189,17 @@ var GameMenu = React.createClass({
         <h3>Play a Computer</h3>
         <form onSubmit={this.createComputerGame}>
           <h4>What Level of Computer do you want to play?</h4>
-          <input type='radio' name='comp' value='1' defaultChecked>Easy</input>
-
+          <label>Easy
+            <input type='radio' name='comp' value='1' defaultChecked/>
+          </label>
           <br/><br/>
         <h4>Which Mark do you choose?</h4>
-        <input className='mark-selector'
-          type='radio' name='mark' value='X' defaultChecked>X's</input>
-        <input className='mark-selector'
-          type='radio' name='mark' value='O'>O's</input>
+        <label className='mark-selector'>X's
+          <input type='radio' name='mark' value='X' defaultChecked/>
+        </label>
+        <label className='mark-selector'>O's
+          <input type='radio' name='mark' value='O'/>
+        </label>
         <br/><br/>
         <input className='game-button create'
                type='submit'

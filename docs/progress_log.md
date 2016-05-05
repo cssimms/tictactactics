@@ -83,6 +83,8 @@
 - correct modal length
 - fixed game draw display
 - correctly show draws in game history
+- Tabs - look nice but give them more bottom padding
+
 
 TODO:
 
@@ -93,13 +95,11 @@ TODO:
 - apply signout bug to stats page (userShow)
 
 styles:
-- Too greyscale - needs more colors
 - Do not use default font. Go choose one from googlefonts.
 - Box to left with site info needs more styling - space out links
 - Main box styling on splash page needs styling - links should be spaced our more, use nicer fonts
 - Sign in / sign up forms - need some sort of overlay with opacity over main background so they look less cluttered, form inputs should have more padding and margin + be wider
 - Games index - needs overlay with bgcolor and opacity
-- Tabs - look nice but give them more bottom padding
 - Play games modal - mostly very nice! x/o radio buttons should be spaced out more. make more exciting somehow?
 - hover shows mark,
 - hover over inner div in tabs header doesn't show pointer :(

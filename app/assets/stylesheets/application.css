@@ -26,12 +26,12 @@
    text-align: inherit;
    color: inherit;
    background: transparent;
-   font-family: sans-serif;
+   font-family: 'Arimo', sans-serif;
    cursor: default;
  }
 
 body {
-  background-color: gainsboro;
+  background-color: #dfecfa;
   margin-top: 65px;
 }
 
@@ -54,17 +54,21 @@ button, input {
 }
 
 .menu-bar {
-  background-color: lightgrey;
+  background-color: #958568;
   list-style-type: none;
   padding: 5px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
+  -webkit-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
 }
 
 .menu-bar-item {
   margin: 10px;
+  background-color: #cfd773;
   float: right;
   display:inline;
   padding: 8px;
@@ -76,24 +80,39 @@ img.logo {
   height: 47px;
 }
 
+img.github-logo {
+  width: 15px;
+  height: 10px;
+}
+
+img.linkedin-logo {
+  width: 15px;
+  height: 15px;
+}
+
 .menu-bar-item:hover{
-  background-color: darkgray;
+  background-color: #6b6a43;
+  color: gainsboro;
 }
 
 .page-content{
   position: relative;
-  padding-top: 15px;
+  padding-top: 30px;
   margin: 0 auto;
   width: 900px;
 }
 
 .info-box {
   border: 1px solid grey;
+  background-color: #958568;
   padding: 10px;
   position: absolute;
   top: 50px;
   left: 0;
   width: 150px;
+  -webkit-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
 }
 
 .info-box-title{
@@ -101,7 +120,7 @@ img.logo {
 }
 
 .info-box-item {
-
+  padding: 2px;
 }
 
 .page-form-container {
@@ -122,7 +141,7 @@ img.logo {
 .sign-button {
   margin: 0 auto;
   width: 100px;
-  background-color: silver;
+  background-color: #cfd773;
   border-radius: 4px;
   text-align: center;
   padding: 3px;
@@ -134,8 +153,7 @@ img.logo {
 }
 
 .sign-button:hover {
-  background-color: darkorange;
-  color: lightgrey;
+  background-color: #72bcd4;
 }
 
 .signon-link:hover {

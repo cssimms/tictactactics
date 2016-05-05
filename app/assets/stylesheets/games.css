@@ -7,16 +7,20 @@
   top: 50px;
   right: 0;
   width: 150px;
-  /*border: 1px solid grey;*/
 }
 
 .mark-selector {
-width: 40px;}
+  width: 40px;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
 
 .game-button {
   margin: 0 auto;
   width: 100%;
-  background-color: silver;
+  background-color: #cfd773;
   border-radius: 4px;
   text-align: center;
   padding: 1em;
@@ -26,7 +30,6 @@ width: 40px;}
 
 .game-button:hover {
   background-color: gray;
-  color: lightgrey;
 }
 
 .game-button.submit {
@@ -35,7 +38,7 @@ width: 40px;}
 }
 
 .game-button.submit:hover {
-  background-color: orange;
+  background-color: #72bcd4;
 }
 
 .game-button.create {
@@ -44,7 +47,7 @@ width: 40px;}
 }
 
 .game-button.create:hover {
-  background-color: orange;
+  background-color: #72bcd4;
 }
 
 .game-container {
@@ -52,6 +55,9 @@ width: 40px;}
   width: 450px;
   height: 450px;
   margin: auto;
+  -webkit-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
 }
 
 
@@ -87,11 +93,11 @@ width: 40px;}
 }
 
 .game-cell.selected {
-  background-color: orange;
+  background-color: #6b6a43;
 }
 
 .game-cell.selected.avail:hover {
-  background-color: saddlebrown;
+  background-color: #4c3f33;
 }
 
 .game-header-message {
