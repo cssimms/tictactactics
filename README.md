@@ -4,7 +4,7 @@
 
 [heroku]: https://tic-tac-tactics.herokuapp.com/#/
 
-## This is a WebApp project fully designed, produced, and styled by Charlie Simms.
+## This is a WebApp fully designed, produced, and styled by Charles Simms.
 It is a single-page web-app, using Ruby on Rails and React.js with Flux organization.
 
 The inspiration for this project came from Lichess.org, the free Correspondence Chess site. The original idea was to copy Lichess more directly, but as the planning phase started the project migrated towards a more original look and feel.
@@ -87,12 +87,15 @@ For the process of selecting and submitting a move, there are roughly fifteen st
 Once the game is updated on the server, the response that is sent back triggers the re-render of CurrentGame and all it's squares are given new props, which causes the selected square to re-render.
 
 When highlighted
+
 ![highlighted](https://github.com/cssimms/tictactactics/blob/master/docs/highlighted.png)
 
 After the first Flux loop (square selection)
+
 ![selected](https://github.com/cssimms/tictactactics/blob/master/docs/selected.png)
 
 After the second complete loop - to the server and back.
+
 ![filled](https://github.com/cssimms/tictactactics/blob/master/docs/filled.png)
 
 [Initial Proposal][proposal]

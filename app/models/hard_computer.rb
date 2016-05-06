@@ -9,7 +9,6 @@ class HardComputer
 
   def get_move
     node = TicTacToeNode.new(@board, @mark)
-debugger
     # The computer looks gets the array of places it can move to. We
     # shuffle the array so that the computer will play differently
     # each time (though it will always make a winning move if

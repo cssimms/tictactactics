@@ -18,7 +18,7 @@ var InfoBox = React.createClass({
           </div>
           <a href="http://github.com/cssimms">
             <div onClick={this.redirectToPersonalPage}
-               className='personal-link'>Charlie Simms<br/>
+               className='personal-link'>Charles Simms<br/>
              <div className='personal-logo'>
                 <img className='personal-img' src='assets/personal_logo.png'/>
             </div>

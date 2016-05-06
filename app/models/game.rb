@@ -68,13 +68,6 @@ class Game < ActiveRecord::Base
       @board.place_mark(comp_move, comp_mark)
       self.update_moveset({'pos'=>comp_move, 'mark'=>comp_mark})
       self.correct_status
-    when 2
-      comp_mark = self.opp_mark(human_mark)
-      comp = HardComputer.new(@board, comp_mark)
-      comp_move = comp.get_move
-      @board.place_mark(comp_move, comp_mark)
-      self.update_moveset({'pos'=>comp_move, 'mark'=>comp_mark})
-      self.correct_status
     end
   end
 end
