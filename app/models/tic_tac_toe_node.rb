@@ -1,4 +1,3 @@
-require_relative 'tic_tac_toe'
 
 class TicTacToeNode
   attr_reader :board, :next_mover_mark, :prev_move_pos
@@ -13,7 +12,8 @@ class TicTacToeNode
       # Note that a loss in this case is explicitly the case where the
       # OTHER person wins: a draw is NOT a loss. Board#won? returns
       # false in the case of a draw.
-      return board.won? && board.winner != evaluator
+      # return board.won? && board.winner != evaluator
+      return board.winner && board.winner != evaluator
     end
 
     if self.next_mover_mark == evaluator
@@ -61,8 +61,8 @@ class TicTacToeNode
         next unless board.empty?(pos)
 
         new_board = board.dup
-        new_board[pos] = self.next_mover_mark
-        next_mover_mark = (self.next_mover_mark == :x ? :o : :x)
+        new_board[*pos] = self.next_mover_mark
+        next_mover_mark = (self.next_mover_mark == 'X' ? 'O' : 'X')
 
         children << TicTacToeNode.new(new_board, next_mover_mark, pos)
       end

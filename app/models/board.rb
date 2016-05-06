@@ -13,6 +13,11 @@ class Board
     @grid[row][col] = mark
   end
 
+  def dup
+    duped_rows = rows.map(&:dup)
+    self.class.new(duped_rows)
+  end
+
   def place_mark(pos, mark)
     if in_bounds?(pos) && your_turn?(mark) && empty?(pos)
       self[*pos] = mark
@@ -57,6 +62,15 @@ class Board
     win
   end
 
+  def over?
+    return true if winner || full?
+    false
+  end
+
+  def full?
+    !grid.any?{|row| row.any?{|x| x.nil?}}
+  end
+
   def rows
     rows_array = []
     for idx in (0..2) do
@@ -90,10 +104,5 @@ class Board
       columns_array << one_column
     end
     columns_array
-  end
-
-  def over?
-    return true if winner || !grid.any?{|row| row.any?{|x| x.nil?}}
-    false
   end
 end

@@ -2,7 +2,7 @@
         GameIndex = require('./GameIndex'),
          GameMenu = require('./GameMenu'),
         UserIndex = require('./userIndex'),
-UserClientActions = require('../actions/user/UserClientActions');
+UserClientActions = require('../actions/user/UserClientActions'),
              Tabs = require('./tabs'),
  CurrentUserMixin = require('../mixins/currentUser'),
  Link = require('react-router').Link,
@@ -17,20 +17,16 @@ module.exports = React.createClass({
       return (
           <div className='tabs-header-container'>
             <Tabs panes={
-                [
-                  {
+                [{
                     title: 'Human Games',
                     content: <GameIndex category='human'/>
-                },
-                  {
+                },{
                     title: 'Computer Games',
                     content: <GameIndex category='computer'/>
-                },
-                  {
+                },{
                     title: 'Players',
                     content: <UserIndex />
-                }
-              ]
+                }]
             } />
             <GameMenu currentUser={this.state.currentUser} />
           </div>

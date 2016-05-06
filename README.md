@@ -88,7 +88,7 @@ the player's turn (not MVP)
 **Objective** Successfully save and retrieve games through API
 
   - [X] jBuilder views for games
-  - [ ] seed the database with a small amount of test data
+  - [X] seed the database with a small amount of test data
   - [X] setup `APIUtil` to interact with the API
   - [X] test out API interaction in the console
 
@@ -119,21 +119,21 @@ the player's turn (not MVP)
 - fill out GamesIndex and GameIndexItem components, enabling:
   - [X] home page listing all current games
   - [X] linking GameIndexItem to CurrentGame, so moves can be made
-- [ ] Work in MenuBar, InfoBox, GamesIndex and GameMenu
-- [ ] Style all of above
+- [X] Work in MenuBar, InfoBox, GamesIndex and GameMenu
+- [X] Style all of above
 
 ### Phase 7: UserShow page / component (0.5 days)
 
 **objective:** Be able to view all past games on UserShow
 
-- [ ] fill out UserShow, GameHistory, and GameHistoryItem components
-- [ ] Style page
+- [X] fill out UserShow, GameHistory, and GameHistoryItem components
+- [X] Style page
 
 ### Phase 8: Styling Cleanup and Seeding (1 day)
 
 **objective:** Check everything for pretty level.
 
-- [ ] tweak all styling, nitpick
+- [X] tweak all styling, nitpick
 - [ ] seed with quality data
 - [ ] Refactor HTML classes & CSS rules
 - [ ] Add animations or transitions

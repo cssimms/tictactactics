@@ -1,6 +1,6 @@
 class EasyComputer
 
-  def initialize(mark, board)
+  def initialize(board, mark)
     @mark = mark
     @board = board
   end

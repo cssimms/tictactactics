@@ -1,3 +1,4 @@
+[{"pos":[0,0],"mark":"X"},{"pos":[0,1],"mark":"O"},{"pos":[2,0],"mark":"X"},{"pos":[1,0],"mark":"O"},{"pos":[1,2],"mark":"X"},{"pos":[1,1],"mark":"O"},{"pos":[2,1],'mark':'X'}]
 
 ## Day 1 (4/25/16)
 
@@ -97,6 +98,10 @@
 - fix currentmove bug - if move is selected and different game loaded,
   currentmove needs to be cleared
 - style splash page
+
+## Day 12 (5/6/16)
+- favicon!
+
 
 
 TODO:
