@@ -95,11 +95,11 @@
 - fix game menu bug
 - info box final clean up
 - fix currentmove bug - if move is selected and different game loaded,
-currentmove needs to be cleared
+  currentmove needs to be cleared
+- style splash page
 
 
 TODO:
-- splash
 - integrate hard AI
 - gameplay transitions
 - main logo hover/ inverse image

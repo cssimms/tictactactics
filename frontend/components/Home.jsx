@@ -2,6 +2,7 @@
         GameIndex = require('./GameIndex'),
          GameMenu = require('./GameMenu'),
         UserIndex = require('./userIndex'),
+UserClientActions = require('../actions/user/UserClientActions');
              Tabs = require('./tabs'),
  CurrentUserMixin = require('../mixins/currentUser'),
  Link = require('react-router').Link,
@@ -47,6 +48,13 @@ module.exports = React.createClass({
     HashHistory.push('signup');
   },
 
+  guestSignIn: function () {
+    UserClientActions.signIn({
+      username: 'guest',
+      password: 'password'
+    });
+  },
+
   splash: function () {
     return (
         <div className='page-container'>
@@ -60,11 +68,15 @@ module.exports = React.createClass({
             Enjoy!</p>
             <br/><br/>
             <button
-              className='sign-button'
+              className='sign-button entry'
               onClick={this.toSignIn}>Click here to Sign In</button>
             <br/><br/>
             <button
-              className='sign-button'
+              className='sign-button entry'
+              onClick={this.guestSignIn}>Here to Sign in as a Guest</button>
+            <br/><br/>
+            <button
+              className='sign-button entry'
               onClick={this.toSignUp}>Or here to Sign Up</button>
           </div>
         </div>
