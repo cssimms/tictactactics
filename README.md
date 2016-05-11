@@ -101,6 +101,9 @@ After the second complete loop - to the server and back.
 [Initial Proposal][proposal]
 [proposal]: ./docs/proposal_README.md
 
+### Last Thoughts
+
+The initial build for this project took place over 13 days at the end of my term at App Academy. Over the course of the week and a half I put in approxia
 
 ### Future Goals
 I had so many ideas for this app, and hope to get to these features in the future.
