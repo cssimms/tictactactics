@@ -1,4 +1,3 @@
-[{"pos":[0,0],"mark":"X"},{"pos":[0,1],"mark":"O"},{"pos":[2,0],"mark":"X"},{"pos":[1,0],"mark":"O"},{"pos":[1,2],"mark":"X"},{"pos":[1,1],"mark":"O"},{"pos":[2,1],'mark':'X'}]
 
 ## Day 1 (4/25/16)
 
@@ -101,10 +100,14 @@
 
 ## Day 12 (5/6/16)
 - favicon!
-
+- production README
 
 
 TODO:
+- visuals - better colors? images in background?
+
+- nav bar shadow extend to the left
+- center the signin/signup form on symbol
 - integrate hard AI
 - gameplay transitions
 - main logo hover/ inverse image
