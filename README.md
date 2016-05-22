@@ -4,6 +4,8 @@
 
 [heroku]: https://tic-tac-tactics.herokuapp.com/#/
 
+Tic Tac Toe Correspondence App - Play with your friends or the Computer!
+
 ## This is a WebApp fully designed, produced, and styled by Charles Simms.
 It is a single-page web-app, using Ruby on Rails and React.js with Flux organization.
 

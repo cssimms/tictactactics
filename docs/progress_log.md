@@ -106,6 +106,9 @@
 TODO:
 - visuals - better colors? images in background?
 
+- get some better seed data - half-finished games,
+
+- better error handling for malicious move attempts
 - nav bar shadow extend to the left
 - center the signin/signup form on symbol
 - integrate hard AI
