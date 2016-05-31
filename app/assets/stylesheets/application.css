@@ -31,7 +31,7 @@
  }
 
 body {
-  background-color: #dfecfa;
+  background-image: url('geo_bg2.png');
   margin-top: 65px;
 }
 
@@ -49,7 +49,7 @@ button, input, a {
   margin: 0 ;
   height: 662px;
   font-size: 20px;
-  background-color: rgba(172,206,242,.6);
+  background-color: rgba(200,200,200,.6);
   border-radius: 14px;
   -webkit-box-shadow: inset 0px 10px 55px -15px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 10px 55px -15px rgba(0,0,0,0.75);
@@ -91,8 +91,8 @@ button, input, a {
   margin: 10px;
   margin-left: 0;
   background-color: transparent;
-  border: solid 2px #CFD773;
-  color: #CFD773;
+  border: solid 2px #ebebeb;
+  color: #ebebeb;
   width: 100px;
   float: right;
   display:inline;
@@ -118,9 +118,12 @@ img.logo {
   width: 900px;
 }
 
-i {
+.fa-question {
+  background-color: black;
+  color: #ebebeb;
+  border-radius: 100%;
+  text-align: center;
   position: absolute;
-  font-size: 40px;
   top: 50px;
   left: 0;
   width: 50px;
@@ -128,20 +131,19 @@ i {
   opacity: 1;
 }
 
-i:hover {
+.fa-question:hover {
   display: none;
   opacity: 0;
 }
 
-i:hover ~ div {
+.fa-question:hover ~ div {
   display: block;
 }
 
 .info-box {
   display: block;
-  /*border: 1px solid grey;*/
   border-radius: 4px;
-  background-color: #CFD773;
+  background-color: #CCE7F0;
   padding: 10px;
   position: absolute;
   top: 50px;
@@ -161,7 +163,7 @@ i:hover ~ div {
 }
 
 .info-box-mat {
-  background-color: rgba(222,222,222,.9);
+  background-color: #f5f5f5;
   height: 200px;
   border-radius: 2px;
   padding: 5px;

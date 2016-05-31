@@ -10,7 +10,7 @@ var InfoBox = React.createClass({
     };
     return (
       <div>
-        <i className="fa fa-question-circle-o fa-3x" aria-hidden="true"></i>
+        <i className="fa fa-question fa-3x" aria-hidden="true"></i>
         <div className="info-box">
           <div className='info-box-mat'>
             <Link to='/'

@@ -20,10 +20,12 @@
 .game-button {
   margin: 0 auto;
   width: 100%;
-  background-color: #cfd773;
+  /*background-color: #aed9e6;*/
+  background-color: #cce7f0;
   border-radius: 4px;
   text-align: center;
   padding: 1em;
+  font-size: 14px;
   font-weight: bold;
   letter-spacing: .1em;
 }
@@ -43,7 +45,6 @@
 
 .game-button.create {
   margin: 5px auto;
-  font-size: 12px;
 }
 
 .game-button.create:hover {
@@ -93,11 +94,11 @@
 }
 
 .game-cell.selected {
-  background-color: #6b6a43;
+  background-color: #eec77f;
 }
 
 .game-cell.selected.avail:hover {
-  background-color: #4c3f33;
+  background-color: #e5a93a;
 }
 
 .game-header-message {
@@ -111,7 +112,8 @@
 }
 
 .game-message-primary {
-
+  color: white;
+  text-shadow: 1px 1px 5px black;
 }
 
 .game-message-secondary {
@@ -123,6 +125,11 @@
   height: 50px;
   text-align: center;
   margin: 5% auto;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+.game-tail-message {
 
 }
 

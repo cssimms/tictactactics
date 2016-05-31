@@ -4,7 +4,7 @@
 
 .tab-header {
   font-size: 18px;
-  background-color: gainsboro;
+  background-color: rgba(248, 248, 255, .9);
   padding: 11px;
   margin: 5px;
   border: 1px solid darkgrey;
@@ -19,19 +19,19 @@
 }
 
 .tab-header:hover {
-  background-color: rgba(114, 188, 212, .5);
+  background-color: rgba(114, 188, 212, 1);
 }
 
 .tab-header.active {
-  border-top-color: #72bcd4;
-  border-bottom: 1px solid rgba(248, 248, 255, .7);
-  background-color: rgba(248, 248, 255, .7);
+  border-top-color: #235f73;
+  border-bottom: 1px solid rgba(248, 248, 255, .9);
+  background-color: rgba(248, 248, 255, .9);
 }
 
 .page-container {
   border: 1px solid darkgrey;
   border-radius: 16px;
-  background-color: rgba(248, 248, 255, .7);
+  background-color: rgba(248, 248, 255, .9);
   padding: 10px;
   min-height: 600px;
   text-align: center;

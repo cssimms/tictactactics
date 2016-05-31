@@ -138,7 +138,7 @@ var GameMenu = React.createClass({
         top: '10%',
         left: '33%',
         width: '300px',
-        height: '370px',
+        height: '390px',
         border: '1px solid #ccc',
         padding: '20px',
         zIndex: 11,
@@ -172,8 +172,8 @@ var GameMenu = React.createClass({
         <input className='game-button create'
                type='submit'
                value='Create Game' />
-        </form>
-        <button className='game-button' onClick={this.closePlayerModal}>
+           </form>
+        <button className='game-button create' onClick={this.closePlayerModal}>
           Nevermind, take me back to my games.
         </button>
       </Modal>
@@ -204,8 +204,8 @@ var GameMenu = React.createClass({
         <input className='game-button create'
                type='submit'
                value='Create Game' />
-        </form>
-        <button className='game-button' onClick={this.closeCompModal}>
+           </form>
+        <button className='game-button create' onClick={this.closeCompModal}>
           Nevermind, take me back to my games.
         </button>
       </Modal>
