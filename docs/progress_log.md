@@ -103,6 +103,8 @@
 - production README
 
 
+
+
 TODO:
 - visuals - better colors? images in background?
 
@@ -122,6 +124,7 @@ TODO:
 
 styles:
 - Do not use default font. Go choose one from googlefonts.
+- info box should be hidden behind a ? logo or something
 - Box to left with site info needs more styling - space out links
 - Main box styling on splash page needs styling - links should be spaced our more, use nicer fonts
 

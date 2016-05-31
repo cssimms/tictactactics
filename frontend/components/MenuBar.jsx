@@ -49,7 +49,7 @@ var MenuBar = React.createClass({
     if (this.state.currentUser) {
       statsButtonAction = this.redirectShow;
       userButtonAction = this.signOut;
-      userButtonTitle = "Sign Out of " + this.state.currentUser.username;
+      userButtonTitle = "Sign Out";
     } else {
       statsButtonAction = this.signIn;
       userButtonAction = this.signIn;
@@ -66,9 +66,9 @@ var MenuBar = React.createClass({
         <button onClick={userButtonAction}
           className="menu-bar-item">{userButtonTitle}</button>
         <button onClick={gameButtonAction}
-          className="menu-bar-item">Your Games</button>
+          className="menu-bar-item">Games</button>
         <button onClick={statsButtonAction}
-          className='menu-bar-item'>Your Sweet Stats</button>
+          className='menu-bar-item'>Stats</button>
       </ul>
     );
   }

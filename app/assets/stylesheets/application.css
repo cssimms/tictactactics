@@ -17,9 +17,9 @@
  html, body, section, article, span, table,
  h1, h2, p, strong, em, a, div, ul, li {
    margin: 0;
-   border: 0;
+   border: none;
    padding: 0;
-   outline: 0;
+   outline: none;
    box-sizing: inherit;
    font: inherit;
    text-decoration: inherit;
@@ -40,6 +40,8 @@ ul {
 }
 
 button, input, a {
+  font-family: 'Arimo', sans-serif;
+  outline: 0;
   cursor: pointer;
 }
 
@@ -73,37 +75,40 @@ button, input, a {
 }
 
 .menu-bar {
-  background-color: #958568;
+  background-color: #686868;
   list-style-type: none;
-  padding: 5px;
+  padding: 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
-  -webkit-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -6px 5px 5px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: -6px 5px 5px -5px rgba(0,0,0,0.75);
+  box-shadow: -6px 5px 5px -5px rgba(0,0,0,0.75);
 }
 
 .menu-bar-item {
   margin: 10px;
-  background-color: #cfd773;
+  margin-left: 0;
+  background-color: transparent;
+  border: solid 2px #CFD773;
+  color: #CFD773;
+  width: 100px;
   float: right;
   display:inline;
-  padding: 8px;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 img.logo {
   height: 47px;
 }
 
-
-
 .menu-bar-item:hover{
-  background-color: #6b6a43;
-  color: gainsboro;
+  background-color: #72BCD4;
+  border: solid 2px black;
+  color: black;
 }
 
 .page-content{
@@ -113,23 +118,52 @@ img.logo {
   width: 900px;
 }
 
+i {
+  position: absolute;
+  font-size: 40px;
+  top: 50px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+
+i:hover {
+  display: none;
+  opacity: 0;
+}
+
+i:hover ~ div {
+  display: block;
+}
+
 .info-box {
-  border: 1px solid grey;
-  background-color: #958568;
+  display: block;
+  /*border: 1px solid grey;*/
+  border-radius: 4px;
+  background-color: #CFD773;
   padding: 10px;
   position: absolute;
   top: 50px;
   left: 0;
   width: 150px;
+  height: auto;
   -webkit-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
   box-shadow: 10px 10px 11px -5px rgba(0,0,0,0.75);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.info-box:hover {
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
 
 .info-box-mat {
   background-color: rgba(222,222,222,.9);
   height: 200px;
-  border-radius: 6px;
+  border-radius: 2px;
   padding: 5px;
   text-align: center;
 }

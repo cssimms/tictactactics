@@ -30,6 +30,7 @@
 
 .page-container {
   border: 1px solid darkgrey;
+  border-radius: 16px;
   background-color: rgba(248, 248, 255, .7);
   padding: 10px;
   min-height: 600px;
@@ -53,15 +54,9 @@
   width: 100%;
   border: 1px solid lightgrey;
   cursor: pointer;
-
 }
 
 .game-item-box:hover {
-  background-color: #6b6a43;
-  color: gainsboro;
-}
-
-.game-item-box.your-turn:hover {
   background: #72bcd4;
   color: black;
 }
