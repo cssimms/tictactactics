@@ -69,7 +69,7 @@ module.exports = React.createClass({
             <br/><br/>
             <button
               className='sign-button entry'
-              onClick={this.guestSignIn}>Here to Sign in as a Guest</button>
+              onClick={this.guestSignIn}>Sign in as a Guest</button>
             <br/><br/>
             <button
               className='sign-button entry'

@@ -101,8 +101,21 @@ button, input, a {
   font-size: 16px;
 }
 
-img.logo {
+img.logo-black {
   height: 47px;
+}
+
+img.logo-white {
+  display: none;
+  height: 47px;
+}
+
+img.logo-black:hover .logo-white {
+  display: block;
+}
+
+img.logo-white:hover .logo-black {
+  display: none;
 }
 
 .menu-bar-item:hover{
@@ -114,6 +127,7 @@ img.logo {
 .page-content{
   position: relative;
   padding-top: 30px;
+  padding-bottom: 30px;
   margin: 0 auto;
   width: 900px;
 }
@@ -129,11 +143,17 @@ img.logo {
   width: 50px;
   height: 50px;
   opacity: 1;
+  transition-property: width, height;
+  transition-duration: .5s;
 }
 
 .fa-question:hover {
   display: none;
+  width: 0px;
+  height: 0px;
   opacity: 0;
+  transition-property: width, height;
+  transition-duration: .5s;
 }
 
 .fa-question:hover ~ div {
@@ -263,9 +283,6 @@ a.linkedin-logo:hover .linkedin-black {
 a.linkedin-logo:hover .linkedin-inverse {
   display: block;
 }
-
-
-
 
 .invis {
   display: none;

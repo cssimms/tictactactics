@@ -106,7 +106,10 @@
 
 
 TODO:
-- visuals - better colors? images in background?
+- logo white/hover color change
+- question mark shrink while info box appears
+- bottom padding (when game list is long)
+
 
 - get some better seed data - half-finished games,
 
