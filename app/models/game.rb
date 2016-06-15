@@ -58,16 +58,19 @@ class Game < ActiveRecord::Base
   end
 
   def computer_move(human_mark)
+    return nil if self.comp_id == 0
+
+    comp_mark = self.opp_mark(human_mark)
+
     case self.comp_id
-    when 0
-      nil
     when 1
-      comp_mark = self.opp_mark(human_mark)
       comp = EasyComputer.new(@board, comp_mark)
-      comp_move = comp.get_move
-      @board.place_mark(comp_move, comp_mark)
-      self.update_moveset({'pos'=>comp_move, 'mark'=>comp_mark})
-      self.correct_status
+    when 2
+      comp = HardComputer.new(@board, comp_mark)
     end
+    comp_move = comp.get_move
+    @board.place_mark(comp_move, comp_mark)
+    self.update_moveset({'pos'=>comp_move, 'mark'=>comp_mark})
+    self.correct_status
   end
 end

@@ -1,4 +1,5 @@
 require_relative 'tic_tac_toe_node'
+require 'byebug'
 
 class HardComputer
 
@@ -9,14 +10,13 @@ class HardComputer
 
   def get_move
     node = TicTacToeNode.new(@board, @mark)
-    # The computer looks gets the array of places it can move to. We
+    # The computer gets the array of places it can move to. We
     # shuffle the array so that the computer will play differently
     # each time (though it will always make a winning move if
     # possible, and a non-losing move if there are no winning moves).
     #
     # The shuffling is optional.
     possible_moves = node.children.shuffle
-
     # If any move results in a #winning_node? we want to choose that
     # one. Find picks the first of the winning moves in
     # `possible_moves`.
@@ -29,7 +29,7 @@ class HardComputer
     # Maybe there is no winning move. Then at least don't pick a
     # loser.
     node =  possible_moves.find{ |child| !child.losing_node?(@mark) }
-# debugger
+
     return node.prev_move_pos if node
 
     # If the computer plays perfectly, we should never be able to

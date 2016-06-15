@@ -14,7 +14,7 @@ class Board
   end
 
   def dup
-    duped_rows = rows.map(&:dup)
+    duped_rows = @grid.map(&:dup)
     self.class.new(duped_rows)
   end
 
@@ -56,8 +56,8 @@ class Board
   def winner
     win = nil
     (diagonals + columns + rows).each do |line|
-      win = "X" if line.all?{|pos| self[*pos] == "X"}
-      win = "O" if line.all?{|pos| self[*pos] == "O"}
+      win = "X" if line.all?{ |pos| self[*pos] == "X" }
+      win = "O" if line.all?{ |pos| self[*pos] == "O" }
     end
     win
   end
@@ -104,5 +104,9 @@ class Board
       columns_array << one_column
     end
     columns_array
+  end
+
+  def to_s
+    @grid.each {|row| p row}
   end
 end

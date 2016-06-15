@@ -192,6 +192,9 @@ var GameMenu = React.createClass({
           <label>Easy
             <input type='radio' name='comp' value='1' defaultChecked/>
           </label>
+          <label>Hard
+            <input type='radio' name='comp' value='2'/>
+          </label>
           <br/><br/>
         <h4>Which Mark do you choose?</h4>
         <label className='mark-selector'>X's

@@ -93,8 +93,10 @@ var GameIndex = React.createClass({
         } else if (oppMark === 'X'){
           opponent = UserStore.find(game.x_id);
         }
-      } else {
+      } else if (game.comp_id === 1){
         opponent = {username: 'Easy Computer'};
+      } else {
+        opponent = {username: 'Hard Computer'};
       }
 
       // determine who's turn
