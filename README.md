@@ -18,6 +18,7 @@ The inspiration for this project came from Lichess.org, the free Correspondence 
 - The illusion and convenience of multiple pages using React-Router
 - Asynchronous HTTP requests using jQuery's Ajax
 - Users can challenge other Users or the Computer
+- Hard AI uses a tree of all possible game outcomes to play a flawless game
 - Leave current game at anytime, every submitted move is saved to the db
 - Users can open any previous game, to view the ending state of the game
 
@@ -52,6 +53,35 @@ end
 def update_moveset(move)
   moves = JSON.parse(self.moveset)
   self.moveset = JSON.generate(moves.push(move))
+end
+```
+
+#### Hard AI
+
+The AI uses a TicTacToeNode class that I built in order to map out all possible outcomes for the game. Using the node class it builds a tree where each branch is a possible outcome of the game given a certain move. After building the tree, the computer selects one of the possible non-losing moves at random. This process takes care of blocking the typical traps set up in Tic Tac Toe, though it doesn't include a way to set the traps itself.
+
+```ruby
+# This method generates an array of all moves that can be made after
+# the current move.
+def children
+  children = []
+
+  (0..2).each do |row_idx|
+    (0..2).each do |col_idx|
+      pos = [row_idx, col_idx]
+
+      # Can't move here if it's not free
+      next unless board.empty?(pos)
+
+      new_board = board.dup
+      new_board[*pos] = self.current_mark
+      current_mark = (self.current_mark == 'X' ? 'O' : 'X')
+
+      children << TicTacToeNode.new(new_board, current_mark, pos)
+    end
+  end
+
+  children
 end
 ```
 
@@ -110,7 +140,7 @@ The initial build for this project took place over 13 days at the end of my term
 ### Future Goals
 I had so many ideas for this app, and hope to get to these features in the future.
 
-- [ ] Hard difficulty AI
+- [X] Hard difficulty AI
 - [ ] Integrate pusher, for immediate response when it's player's turn
 - [ ] User Rankings
 - [ ] Animated gameplay
