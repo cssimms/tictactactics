@@ -189,10 +189,10 @@ var GameMenu = React.createClass({
         <h3>Play a Computer</h3>
         <form onSubmit={this.createComputerGame}>
           <h4>What Level of Computer do you want to play?</h4>
-          <label>Easy
+          <label className='mark-selector'>Easy
             <input type='radio' name='comp' value='1' defaultChecked/>
           </label>
-          <label>Hard
+          <label className='mark-selector'>Hard
             <input type='radio' name='comp' value='2'/>
           </label>
           <br/><br/>
