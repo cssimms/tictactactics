@@ -18,7 +18,7 @@ var InfoBox = React.createClass({
               className="info-box-url">TicTacTactics</Link>
             <div className="info-box-item">Site designed and built by
             </div>
-            <a href="http://github.com/cssimms">
+            <a href="http://cssimms.github.io">
               <div onClick={this.redirectToPersonalPage}
                  className='personal-link'>Charles Simms<br/>
                <div className='personal-logo'>
@@ -30,7 +30,7 @@ var InfoBox = React.createClass({
               <img className='github-black' src='assets/github_logo_black.png'/>
               <img className='github-inverse' src='assets/github_logo_inverse.png'/>
             </a>
-            <a className='linkedin-logo' href="">
+            <a className='linkedin-logo' href="https://www.linkedin.com/in/cssimms">
               <img className='linkedin-black' src='assets/linkedin_logo_black.png'/>
               <img className='linkedin-inverse' src='assets/linkedin_logo_inverse.png'/>
             </a>
