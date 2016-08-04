@@ -114,7 +114,7 @@ How they look in the browser
 
 Though it wasn't strictly necessary, I wanted to make the frontend as inline with the Flux data flow as possible. This lead to some fairly complicated Flux Loops, which where at first hard to keep track of, but ultimately really fun to implement.
 
-For the process of selecting and submitting a move, there are roughly fifteen step from when the user clicks on the board to when the appropriate mark is displayed on a square. There is an entire Flux loop just for registering the selection of a square. This enables the parent game component (CurrentGame) to send the move to the server without iterating through it's child components to check which one is selected.
+For the process of selecting and submitting a move, there are roughly fifteen steps from when the user clicks on the board to when the appropriate mark is displayed on a square. There is an entire Flux loop just for registering the selection of a square. This enables the parent game component (CurrentGame) to send the move to the server without iterating through it's child components to check which one is selected.
 
 Once the game is updated on the server, the response that is sent back triggers the re-render of CurrentGame and all it's squares are given new props, which causes the selected square to re-render.
 
@@ -135,7 +135,7 @@ After the second complete loop - to the server and back.
 
 ### Last Thoughts
 
-The initial build for this project took place over 13 days at the end of my term at App Academy. Over the course of the week and a half I put in approxia
+The initial build for this project took place over 13 days at the end of my term at App Academy. Over the course of the week and a half I put about 130 hours into the project. It was quite a rush, as you can see from the green squares on my GitHub account :)
 
 ### Future Goals
 I had so many ideas for this app, and hope to get to these features in the future.
